@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect("", {
+mongoose.connect("mongodb+srv://mariem:454@mawi.mmctnm7.mongodb.net/mawi",{ 
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -143,5 +143,4 @@ const Admin = mongoose.model('Admin', AdminSchema);
 const Recipe = mongoose.model('Recipe', RecipeSchema);
 const Post = mongoose.model('Post', PostSchema);
 const Shop = mongoose.model('Shop', ShopSchema);
-
 module.exports = { User, Admin, Recipe, Post, Shop }
