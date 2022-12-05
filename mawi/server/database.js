@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://mariem:454@mawi.mmctnm7.mongodb.net/mawi",{ 
+mongoose.connect("mongodb+srv://mariem:4545@mawi.mmctnm7.mongodb.net/mawi",{ 
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
     .then((res) => console.log("data connected"))
-    .catch((err) => console.log("err"))
+    .catch((err) => console.log(err))
 
 
 const UserSchema = new mongoose.Schema({
@@ -79,7 +79,7 @@ const RecipeSchema = new mongoose.Schema({
         default: 0
     },
     Rcategorie: {
-        type: Array,
+        type: String,
         enum: ["breakfast", "dinner", "desert"]
     }
 })
@@ -134,7 +134,7 @@ const PostSchema = new mongoose.Schema({
         required: true
     },
     Pcategorie: {
-        type: Array,
+        type: String,
         enum: ["breakfast", "dinner", "desert"]
     }
 })
