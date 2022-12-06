@@ -83,7 +83,6 @@ const RecipeSchema = new mongoose.Schema({
         enum: ["breakfast", "dinner", "desert"]
     }
 })
-
 const ShopSchema = new mongoose.Schema({
     Sname: {
         type: String,
