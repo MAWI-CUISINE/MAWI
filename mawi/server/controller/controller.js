@@ -1,4 +1,5 @@
 
+
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { User, Admin, Recipe, Post, Shop } = require("../database");
@@ -23,6 +24,7 @@ await User.create({
 
 const Login=async(req,res)=>{
   let body=req.body
+
 
 const user=await User.findOne({Uname:body.username})
 
@@ -53,6 +55,29 @@ const post=async(req,res)=>{
         console.log(err);
     }
 }
+
+const Precipe=async(req,res)=>{
+    const body=req.body
+    try{
+      await  Recipe.create(body,(err,result)=>{
+        if (err) res.json(err)
+        res.json(result)
+      })
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+const get=async(req,res)=>{
+  try{
+      await Post.find({}).then (result=>{res.send(result)})
+  }
+  catch(err){
+      res.send(err)
+  }
+}
+module.exports = {post ,get,Precipe}
+
 
 
 const get=async(req,res)=>{

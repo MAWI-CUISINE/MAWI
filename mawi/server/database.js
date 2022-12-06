@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
     },
     Uimage: {
         type: String
-    }
+    }   
 
 })
 const AdminSchema = new mongoose.Schema({

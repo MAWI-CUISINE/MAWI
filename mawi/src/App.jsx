@@ -1,4 +1,5 @@
-import React from 'react';
+import React , {useEffect,useState}from 'react';
+import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
 import SignUp from './components/login/SignUp.jsx';
@@ -7,6 +8,21 @@ import Post from './components/user/PostRecipie.jsx'
 import Recipies from './components/user/RecipeDetails.jsx';
 
  function App() {
+  const [recipe,setRecipe]=useState([])
+  let [trigger,setTrigger]=useState(false)
+  
+console.log(recipe,'rrrr');
+
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/user/getAllPost`).then((response) => {
+       console.log(response.data , "amin");
+      setRecipe(response.data)
+      
+       
+      }).catch((err) => console.error(err));
+    },[]);
+  
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
@@ -118,16 +134,18 @@ import Recipies from './components/user/RecipeDetails.jsx';
       </nav>
       <Routes>
         <Route>
-          <Route path="/detail" element={<Recipies />} />
+          <Route path="/detail" element={<Recipies recipe={recipe} />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<Home />} />
+
           <Route path="/post" element={<Post />} />
+
         </Route>
       </Routes>
     </div>
   );
-}
+  }
 
 export default App;
