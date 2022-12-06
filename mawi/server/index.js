@@ -17,5 +17,5 @@ app.use("/user",mawiRouter)
 const PORT = 5000;
 
 app.listen(PORT, function () {
-  console.log("server yejri fi  http://localhost:" + PORT);
+  console.log("server yejri fi  http://localhost/:" + PORT);
 });
