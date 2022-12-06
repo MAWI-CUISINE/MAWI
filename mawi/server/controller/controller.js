@@ -80,13 +80,6 @@ module.exports = {post ,get,Precipe}
 
 
 
-const get=async(req,res)=>{
-    try{
-        await Post.find({}).then (result=>{res.send(result)})
-    }
-    catch(err){
-        res.send(err)
-    }
-}
+
 module.exports = {post,get}
 
