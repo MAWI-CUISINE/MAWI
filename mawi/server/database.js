@@ -9,66 +9,53 @@ mongoose.connect("mongodb+srv://mariem:4545@mawi.mmctnm7.mongodb.net/mawi",{
 
 const UserSchema = new mongoose.Schema({
     Uname: {
-        type: String,
-        required: true
+        type: String
     },
     Uemail: {
-        type: String,
-        required: true
+        type: String
     },
     Upassword: {
-        type: String,
-        required: true
+        type: String
     },
     Uimage: {
         type: String
-    }   
+    }
 
 })
 const AdminSchema = new mongoose.Schema({
     Aname: {
-        type: String,
-        required: true
+        type: String
     },
     Apassword: {
-        type: String,
-        required: true
+        type: String
     },
     Aemail: {
-        type: String,
-        required: true
+        type: String
     }
 })
 
 const RecipeSchema = new mongoose.Schema({
     Rname: {
-        type: String,
-        required: true
+        type: String
     },
     Rpeparation_time: {
-        type: Number,
-        required: true
+        type: Number
     },
     Rcook_time: {
-        type: Number,
-        required: true
+        type: Number
     },
     Rserves: {
-        type: Number,
-        required: true
+        type: Number
     },
     Ringredients: {
-        type: Array,
-        required: true
+        type: Array
     },
     Rmethodecook: {
-        type: Array,
-        required: true
+        type: Array
 
     },
     Rimage: {
-        type: String,
-        required: true
+        type: String
     },
     Rlike: {
         type: Number,
@@ -85,52 +72,41 @@ const RecipeSchema = new mongoose.Schema({
 })
 const ShopSchema = new mongoose.Schema({
     Sname: {
-        type: String,
-        required: true
+        type: String
     },
     Sprice: {
-        type: Number,
-        required: true
+        type: Number
     },
     Squantite: {
-        type: Number,
-        required: true
+        type: Number
     },
     Simage: {
-        type: String,
-        required: true
+        type: String
     }
 })
 
 const PostSchema = new mongoose.Schema({
     Pname: {
-        type: String,
-        required: true
+        type: String
     },
     Ppeparation_time: {
-        type: Number,
-        required: true
+        type: Number
     },
     Pcook_time: {
-        type: Number,
-        required: true
+        type: Number
     },
     Pserves: {
-        type: Number,
-        required: true
+        type: Number
     },
     Pingredients: {
-        type: Array,
-        required: true
+        type: Array
     },
     Pmethodecook: {
-        type: Array,
-        required: true
+        type: Array
 
     },
     Pimage: {
-        type: String,
-        required: true
+        type: String
     },
     Pcategorie: {
         type: String,
