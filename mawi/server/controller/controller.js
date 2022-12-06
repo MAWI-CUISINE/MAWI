@@ -1,6 +1,8 @@
+
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { User, Admin, Recipe, Post, Shop } = require("../database");
+
 
 
 const SignUp= async(req,res)=>{
@@ -51,4 +53,15 @@ const post=async(req,res)=>{
         console.log(err);
     }
 }
-module.exports = {post,SignUp,Login}
+
+
+const get=async(req,res)=>{
+    try{
+        await Post.find({}).then (result=>{res.send(result)})
+    }
+    catch(err){
+        res.send(err)
+    }
+}
+module.exports = {post,get}
+
