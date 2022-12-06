@@ -81,5 +81,5 @@ module.exports = {post ,get,Precipe}
 
 
 
-module.exports = {post,get}
+
 
