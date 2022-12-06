@@ -15,7 +15,7 @@ const { model } = require("mongoose");
 // }
 
 
-const post=async(req,res,next)=>{
+const post=async(req,res)=>{
     const body=req.body
     try{
       await  Post.create(body,(err,result)=>{

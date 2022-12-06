@@ -1,7 +1,7 @@
 const express = require("express");
 var morgan = require('morgan');
 const {User}=require('./database')
-const mawiRouter=require('../server/routes/routes.js')
+const mawiRouter=require('../server/routes/route.js')
 const app=express()
 const cors = require("cors");
 // const { Router } = require("express");
