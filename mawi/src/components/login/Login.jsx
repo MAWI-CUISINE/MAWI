@@ -1,6 +1,30 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./Login.css";
+import axios from "axios";
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [result, setResult] = useState("");
+
+  const [password, setPassword] = useState("");
+  console.log(result);
+  //a function to handle the changes of the input
+  const handleChanges = (e, cb) => {
+    cb(e.target.value);
+  };
+  //finction to allow the user to login
+  const Login = async (body, event) => {
+  
+    await axios
+      .post("http://localhost:5000/user/login", body)
+      .then(async (res) => {
+        
+        await setResult(res.data);
+        if(result.user){
+          localStorage.setItem('token',result.user)
+          window.location.href='/home'
+        }
+      });
+  };
   return (
     <section
       className="h-100 gradient-form"
@@ -34,10 +58,13 @@ const Login = () => {
                       <p>Please login to your account</p>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="form2Example11">
+                        <label className="form-label" htmlor="form2Example11">
                           Username
                         </label>
                         <input
+                          onChange={(e) => {
+                            handleChanges(e, setUsername);
+                          }}
                           type="email"
                           id="form2Example11"
                           className="form-control"
@@ -46,10 +73,13 @@ const Login = () => {
                       </div>
 
                       <div className="form-outline mb-4">
-                        <label className="form-label" for="form2Example22">
+                        <label className="form-label" htmlor="form2Example22">
                           Password
                         </label>
                         <input
+                          onChange={(e) => {
+                            handleChanges(e, setPassword);
+                          }}
                           type="password"
                           id="form2Example22"
                           className="form-control"
@@ -58,6 +88,9 @@ const Login = () => {
 
                       <div className="text-center pt-1 mb-5 pb-1">
                         <button
+                        onClick={()=>{
+                          Login({username,password})
+                        }}
                           className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                           type="button"
                           style={{ color: "#715561" }}
@@ -75,9 +108,10 @@ const Login = () => {
                         <button
                           type="button"
                           className="btn btn-outline-danger "
-                          onClick={()=>{console.log('cliked')
-                        window.location.href='/signup'
-                        }}
+                          onClick={() => {
+                            console.log("cliked");
+                            window.location.href = "/signup";
+                          }}
                         >
                           Create new
                         </button>

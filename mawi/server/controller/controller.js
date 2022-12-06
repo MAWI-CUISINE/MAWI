@@ -1,22 +1,48 @@
-// const jwt = require("jsonwebtoken");
-// const bcrypt = require("bcryptjs");
-const {Post}=require("../database")
 
-const { model } = require("mongoose");
-// const SignUp= async(req,res)=>{
-//     const body=req.body
-//     try{
-// const Password= await bcrypt.hash(body.Password,10)
-// await User.create({
-//     Uname:body.username,
-//     Uemail:body.email,
-//     Upassword:body.Password})
-// }catch(err){}
-// }
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const { User, Admin, Recipe, Post, Shop } = require("../database");
 
+
+
+const SignUp= async(req,res)=>{
+    let body=req.body
+    try{
+const Password= await bcrypt.hash(body.password,10)
+await User.create({
+    Uname:body.username,
+    Uemail:body.email,
+    Upassword:Password},(err,result)=>{
+      if (err)console.log(err);
+      else res.json(result);
+    })
+}catch(err){
+  console.log(err);
+}
+}
+
+const Login=async(req,res)=>{
+  let body=req.body
+
+const user=await User.findOne({Uname:body.username})
+
+if (!user){
+  return { status:'error',error:'username not found'}
+}
+let Check=await bcrypt.compare(
+  body.password,user.Upassword
+)
+if(Check){
+  const token=jwt.sign({name:user.Uname,email:user.Uemail},'topsecret')
+  return res.json({user:token,status:'all good'})
+}
+else{
+  return res.json({status:'error',user:false})
+}
+}
 
 const post=async(req,res)=>{
-    const body=req.body
+    let body=req.body
     try{
       await  Post.create(body,(err,result)=>{
         if (err) res.json(err)
@@ -28,6 +54,7 @@ const post=async(req,res)=>{
     }
 }
 
+
 const get=async(req,res)=>{
     try{
         await Post.find({}).then (result=>{res.send(result)})
@@ -37,3 +64,4 @@ const get=async(req,res)=>{
     }
 }
 module.exports = {post,get}
+
