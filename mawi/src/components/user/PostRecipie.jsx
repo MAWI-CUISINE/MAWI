@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
@@ -20,7 +21,7 @@ const PostRecipie = () => {
     return (
 
         <div>
-            {/* { <!-- ##### Breadcumb Area Start ##### --> } */}
+            {/* { <!-- ///// Breadcumb Area Start ///// --> } */}
             <div
                 className="breadcumb-area bg-img bg-overlay"
                 style={{
@@ -43,9 +44,11 @@ const PostRecipie = () => {
                 <div className="receipe-content-area">
                     <div className="container">
 
-                        <div className="row">
+
+                         <div className="row">
                             <div className="col-12 col-lg-8">
                             </div>
+
 
                             {/* <!-- Ingredients --> */}
                             <div className="col-12 col-lg-4">
@@ -162,7 +165,8 @@ const PostRecipie = () => {
                 </div>
             </div>
 
-            {/* <!-- ##### Follow Us Instagram Area Start ##### --> */}
+
+            {/* <!-- ///// Follow Us Instagram Area Start ///// --> */}
             <div className="follow-us-instagram">
                 <div className="container">
                     <div className="row">
@@ -181,7 +185,7 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
 
                             </a>
                         </div>
@@ -195,7 +199,7 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -209,7 +213,7 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -223,7 +227,7 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -237,7 +241,7 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -251,7 +255,7 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -265,38 +269,38 @@ const PostRecipie = () => {
                         />
                         {/* <!-- Icon --> */}
                         <div className="insta-icon">
-                            <a href="#">
+                            <a href="/">
                                 <i className="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* <!-- ##### Follow Us Instagram Area End ##### --> */}
+            {/* <!-- ///// Follow Us Instagram Area End ///// --> */}
 
-            {/* <!-- ##### Footer Area Start ##### --> */}
+            {/* <!-- ///// Footer Area Start ///// --> */}
             <footer className="footer-area">
                 <div className="container h-100">
                     <div className="row h-100">
                         <div className="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
                             {/* <!-- Footer Social Info --> */}
                             <div className="footer-social-info text-right">
-                                <a href="#">
+                                <a href="/">
                                     <i className="fa fa-pinterest" aria-hidden="true"></i>
                                 </a>
-                                <a href="#">
+                                <a href="/">
                                     <i className="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="#">
+                                <a href="/">
                                     <i className="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="#">
+                                <a href="/">
                                     <i className="fa fa-dribbble" aria-hidden="true"></i>
                                 </a>
-                                <a href="#">
+                                <a href="/">
                                     <i className="fa fa-behance" aria-hidden="true"></i>
                                 </a>
-                                <a href="#">
+                                <a href="/">
                                     <i className="fa fa-linkedin" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -315,9 +319,7 @@ const PostRecipie = () => {
                             <script>document.write(new Date().getFullYear());</script> All
                             rights reserved | This template is made with{" "}
                             <i className="fa fa-heart-o" aria-hidden="true"></i> by{" "}
-                            <a href="https://colorlib.com" target="_blank">
-                                Colorlib
-                            </a>
+                          
                             {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p> */}
                         </div>
                     </div>

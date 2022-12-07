@@ -39,11 +39,17 @@ const RecipeSchema = new mongoose.Schema({
         type: String
     },
     Rpeparation_time: {
-        type: Number
+
+        type: String,
+        required: true
     },
     Rcook_time: {
-        type: Number
+        type: String,
+        required: true
+
+       
     },
+   
     Rserves: {
         type: Number
     },

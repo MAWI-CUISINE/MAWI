@@ -9,25 +9,25 @@ import Recipies from './components/user/RecipeDetails.jsx';
 
  function App() {
   const [recipe,setRecipe]=useState([])
-  let [trigger,setTrigger]=useState(false)
   
-console.log(recipe,'rrrr');
+  
+
 
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/user/getAllPost`).then((response) => {
-       console.log(response.data , "amin");
+    axios.get(`http://localhost:5000/user/getRecipies`).then((response) => {
+       
       setRecipe(response.data)
       
        
       }).catch((err) => console.error(err));
     },[]);
-  
+  console.log(recipe,"walid");
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <i className="fa-solid fa-shop me-2"></i>{" "}
             <strong>MAWI CUISINE</strong>
           </a>
@@ -91,40 +91,40 @@ console.log(recipe,'rrrr');
                 <a
                   className="nav-link mx-2 text-uppercase active"
                   aria-current="page"
-                  href="#"
+                  href="/"
                 >
                   Offers
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link mx-2 text-uppercase" href="#">
+                <a className="nav-link mx-2 text-uppercase" href="/">
                   Products
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link mx-2 text-uppercase" href="#">
+                <a className="nav-link mx-2 text-uppercase" href="/">
                   Catalog
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link mx-2 text-uppercase" href="#">
+                <a className="nav-link mx-2 text-uppercase" href="/">
                   Services
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link mx-2 text-uppercase" href="#">
+                <a className="nav-link mx-2 text-uppercase" href="/">
                   About
                 </a>
               </li>
             </ul>
             <ul className="navbar-nav ms-auto ">
               <li className="nav-item">
-                <a className="nav-link mx-2 text-uppercase" href="#">
+                <a className="nav-link mx-2 text-uppercase" href="/">
                   <i className="fa-solid fa-cart-shopping me-1"></i> Cart
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link mx-2 text-uppercase" href="#">
+                <a className="nav-link mx-2 text-uppercase" href="/">
                   <i className="fa-solid fa-circle-user me-1"></i> Account
                 </a>
               </li>
@@ -134,7 +134,7 @@ console.log(recipe,'rrrr');
       </nav>
       <Routes>
         <Route>
-          <Route path="/detail" element={<Recipies recipe={recipe} />} />
+          <Route path="/detail" element={<Recipies recipe={recipe[0]} />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />

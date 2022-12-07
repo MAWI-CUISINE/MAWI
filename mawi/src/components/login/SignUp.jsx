@@ -112,7 +112,7 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
                         htmlFor="form2Example3g"
                       >
                         I agree all statements in
-                        <a href="#!" className="text-body">
+                        <a href="/" className="text-body">
                           <u>Terms of service</u>
                         </a>
                       </label>

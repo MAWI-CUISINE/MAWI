@@ -56,7 +56,9 @@ const addPost=async(req,res)=>{
     }
 }
 
-const Postrecipe=async(req,res)=>{
+
+const PostRecipe=async(req,res)=>{
+
     const body=req.body
     try{
       await  Recipe.create(body,(err,result)=>{
@@ -68,7 +70,18 @@ const Postrecipe=async(req,res)=>{
         console.log(err);
     }
 }
+
+const GetAllRecipes=async(req,res)=>{
+  try{
+      await Recipe.find({}).then (result=>{res.send(result)})
+  }
+  catch(err){
+      res.send(err)
+  }
+}
+
 const getAllPosts=async(req,res)=>{
+
   try{
       await Post.find({}).then (result=>{res.send(result)})
   }
@@ -76,7 +89,16 @@ const getAllPosts=async(req,res)=>{
       res.send(err)
   }
 }
-module.exports = {addPost ,getAllPosts,Postrecipe,SignUp,Login}
+
+module.exports = {
+  addPost,
+  GetAllRecipes,
+  getAllPosts,
+  PostRecipe,
+  SignUp,
+  Login,
+};
+
 
 
 

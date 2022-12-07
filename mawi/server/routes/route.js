@@ -3,41 +3,21 @@
 const Mawirouter = require('express').Router();
 const {
   addPost,
+  GetAllRecipes,
   getAllPosts,
-  Postrecipe,
+  PostRecipe,
   SignUp,
-  Login
+  Login,
 } = require("../controller/controller");
+Mawirouter.route('/post').post(addPost)//mtea mariem
+Mawirouter.route("/getallrecipes").get(GetAllRecipes); //mtea wiwi
 
-
-
-
-
-
-
-Mawirouter.route('/post').post(addPost)
-Mawirouter.route('/getAllPost').get(getAllPosts)
-Mawirouter.route('/postRecipies').post(Postrecipe)
-
-
-
-
-
-
-
-
-
-
-
-
-
+Mawirouter.route('/getAllPost').get(getAllPosts)//mtea maryem
+Mawirouter.route('/postRecipies').post(PostRecipe)//mtea wiwi
 Mawirouter.route("/signup").post(SignUp);
 Mawirouter.route("/login").post(Login);
 
 
-// Mawirouter.route('/getRecipies').get(get)
-
-// Mawirouter.route("/signup").post(SignUp);
-// Mawirouter.route("/login").post(Login);
 
 module.exports = Mawirouter;
+
