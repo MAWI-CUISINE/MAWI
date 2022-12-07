@@ -98,7 +98,7 @@ const Login = () => {
                           Log in
                         </button>
                         <br />
-                        <a className="text-muted" href="#!">
+                        <a className="text-muted" href="/">
                           Forgot password?
                         </a>
                       </div>
