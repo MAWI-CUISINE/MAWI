@@ -14,6 +14,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(cors());
 
 app.use("/user",mawiRouter)
+
 const PORT = 5000;
 
 app.listen(PORT, function () {
