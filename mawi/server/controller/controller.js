@@ -43,7 +43,7 @@ else{
 }
 }
 
-const post=async(req,res)=>{
+const addPost=async(req,res)=>{
     let body=req.body
     try{
       await  Post.create(body,(err,result)=>{
@@ -56,7 +56,7 @@ const post=async(req,res)=>{
     }
 }
 
-const Precipe=async(req,res)=>{
+const Postrecipe=async(req,res)=>{
     const body=req.body
     try{
       await  Recipe.create(body,(err,result)=>{
@@ -68,7 +68,7 @@ const Precipe=async(req,res)=>{
         console.log(err);
     }
 }
-const get=async(req,res)=>{
+const getAllPosts=async(req,res)=>{
   try{
       await Post.find({}).then (result=>{res.send(result)})
   }
@@ -76,10 +76,10 @@ const get=async(req,res)=>{
       res.send(err)
   }
 }
-module.exports = {post ,get,Precipe}
+module.exports = {addPost ,getAllPosts,Postrecipe,SignUp,Login}
 
 
 
 
-module.exports = {post,get}
+
 
