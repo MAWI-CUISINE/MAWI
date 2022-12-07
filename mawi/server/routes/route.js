@@ -1,4 +1,5 @@
 
+
 const Mawirouter = require('express').Router();
 const {
   addPost,
@@ -34,5 +35,9 @@ Mawirouter.route("/signup").post(SignUp);
 Mawirouter.route("/login").post(Login);
 
 
-module.exports = Mawirouter;
+// Mawirouter.route('/getRecipies').get(get)
 
+// Mawirouter.route("/signup").post(SignUp);
+// Mawirouter.route("/login").post(Login);
+
+module.exports = Mawirouter;
