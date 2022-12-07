@@ -6,7 +6,8 @@ import SignUp from './components/login/SignUp.jsx';
 import Home from './components/user/Home.jsx';
 import Post from './components/user/PostRecipie.jsx'
 import Recipies from './components/user/RecipeDetails.jsx';
-import NavBar from './components/NavBar.jsx';
+import NewHome from './components/user/NewHome.jsx';
+import NavBar from './components/user/NavBar.jsx';
 
  function App() {
   const [recipe,setRecipe]=useState([])
@@ -26,15 +27,14 @@ import NavBar from './components/NavBar.jsx';
   console.log(recipe,"walid");
   return (
     <div>
-     
       <Routes>
         <Route>
           <Route path="/detail" element={<Recipies recipe={recipe[0]} />} />
-          <Route path="/Nav" element={<NavBar/>} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<NewHome />} />
+          <Route path="/NavBar" element={<NavBar />} />
 
           <Route path="/post" element={<Post />} />
         </Route>
