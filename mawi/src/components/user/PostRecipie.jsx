@@ -1,140 +1,170 @@
-// import React, { useState } from 'react'
-// import { Button } from 'react-bootstrap';
 
-// const PostRecipie = () => {
-//     const [Pname, setPname] = useState("")
-//     const [Ppeparation_time, setPpeparation_time] = useState(0)
-//     const [Pcook_time, setPcook_time] = useState(0)
-//     const [Pserves, setPserves] = useState(0)
-//     const [Pingredients, setPingredients] = useState([])
-//     const [Pmethodecook, setPmethodecook] = useState([])
-//     const [Pimage, setPimage] = useState("")
-//     const [Pcategorie, setPcategorie] = useState("")
-//     return (
-        
-//         <div>
-//             {/* { <!-- ##### Breadcumb Area Start ##### --> } */}
-//             <div
-//                 className="breadcumb-area bg-img bg-overlay"
-//                 style={{
-//                     backgroundImage:
-//                         " url('https://res.cloudinary.com/dugewmeeh/image/upload/v1670248688/breadcumb3_r0b4mn.jpg')",
-//                 }}
-//             >
-//                 <div className="container h-100">
-//                     <div className="row h-100 align-items-center">
-//                         <div className="col-12">
-//                             <div className="breadcumb-text text-center">
-//                                 <h2>Recipe</h2>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="receipe-post-area section-padding-80">
-//                 {/* <!-- Receipe Content Area --> */}
-//                 <div className="receipe-content-area">
-//                     <div className="container">
+import React, { useState } from 'react'
+import { Button } from 'react-bootstrap';
+import axios from 'axios';
+const PostRecipie = () => {
+    console.log();
+    const [Pname, setPname] = useState("")
+    const [Ppeparation_time, setPpeparation_time] = useState(0)
+    const [Pcook_time, setPcook_time] = useState(0)
+    const [Pserves, setPserves] = useState(0)
+    const [Pdescription, setPdescription] = useState(0)
+    const [Pingredients, setPingredients] = useState([])
+    const [Pmethodecook, setPmethodecook] = useState([])
+    const [Pimage, setPimage] = useState("")
+    const [Pcategorie, setPcategorie] = useState("")
+
+    const add=(para)=>{
+            axios.post('http://localhost:5000/user/post',para)
+            .then (res=>{console.log(res);})
+    }
+    return (
+
+        <div>
+            {/* { <!-- ##### Breadcumb Area Start ##### --> } */}
+            <div
+                className="breadcumb-area bg-img bg-overlay"
+                style={{
+                    backgroundImage:
+                        " url('https://res.cloudinary.com/dugewmeeh/image/upload/v1670248688/breadcumb3_r0b4mn.jpg')",
+                }}
+            >
+                <div className="container h-100">
+                    <div className="row h-100 align-items-center">
+                        <div className="col-12">
+                            <div className="breadcumb-text text-center">
+                                <h2>Recipe</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="receipe-post-area section-padding-80">
+                {/* <!-- Receipe Content Area --> */}
+                <div className="receipe-content-area">
+                    <div className="container">
+
 
 //                         <div className="row">
 //                             <div className="col-12 col-lg-8">
 //                             </div>
 
-//                             {/* <!-- Ingredients --> */}
-//                             <div className="col-12 col-lg-4">
-//                             </div>
-//                         </div>
-//                         <div className="row">
-//                             <div className="col-12">
-//                                 <div className="contact-form-area">
-//                                     <form action="#" method="post">
-//                                         <div className="row">
-//                                             <div >
-//                                                 <p1>Recipe Name :</p1>
-//                                                 <input
-//                                                     type="text"
-//                                                     className="form-control"
-//                                                     id="name"
-//                                                     placeholder="Name"
-//                                                     onChange={(event) => setPname(event.target.value) }
-//                                                 />
-//                                                 <p1>Preparetion Time :</p1>
-//                                                 <input
-//                                                     type="text"
-//                                                     className="form-control"
-//                                                     id="name"
-//                                                     placeholder="Time"
-//                                                     onChange={(event) => setPpeparation_time(event.target.value)}
-//                                                 />
-//                                                 <p1>Cook Time :</p1>
-//                                                 <input
-//                                                     type="text"
-//                                                     className="form-control"
-//                                                     id="name"
-//                                                     placeholder="Time"
-//                                                     onChange={(event) => setPcook_time(event.target.value)}
-//                                                 />
-//                                                 <p1>Serves :</p1>
-//                                                 <input
-//                                                     type="text"
-//                                                     className="form-control"
-//                                                     id="name"
-//                                                     placeholder="Serves"
-//                                                     onChange={(event) => setPserves(event.target.value)}
-                                                    
-//                                                 />
-//                                                 <p1>Description :</p1>
-//                                                 <input
-//                                                     type="text"
-//                                                     className="form-control"
-//                                                     placeholder="Description"
-//                                                 />
-//                                                 <div className="col-12">
-//                                                     <p1>Ingredients :</p1>
-//                                                     <textarea
-//                                                         name="message"
-//                                                         className="form-control"
-//                                                         cols="30"
-//                                                         rows="10"
-//                                                         placeholder="Ingredients"
-//                                                     ></textarea>
-//                                                 </div>
-//                                                 <div className="col-12">
-//                                                     <p1>Methode to cook :</p1>
-//                                                     <textarea
-//                                                         name="message"
-//                                                         className="form-control"
-//                                                         cols="30"
-//                                                         rows="10"
-//                                                         placeholder="Methode to cook"
-//                                                     ></textarea>
-//                                                 </div>
-//                                             </div>
 
-//                                             {/* <div className="col-12 col-lg-6">
-//                            <input
-//                              type="text"
-//                              className="form-control"
-//                              id="email"
-//                              placeholder="E-mail"
-//                            />
-//                          </div> */}
-//                                             <div className="col-12">
-//                                                 <Button
-//                                                     className="btn delicious-btn mt-30"
-//                                                     type="submit"
-//                                                 >
-//                                                     Post
-//                                                 </Button>
-//                                             </div>
-//                                         </div>
-//                                     </form>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
+                            {/* <!-- Ingredients --> */}
+                            <div className="col-12 col-lg-4">
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="contact-form-area">
+                                   
+                                        <div className="row">
+                                            <div >
+                                               
+                                               <h >Choose the categorie of your recipe </h>
+                                               <br></br>
+                                                <select className="delicious-btn" 
+                                               onChange={(event) =>  setPcategorie(event.target.value)}
+                                                >
+                                                <option> Categorie</option>
+                                                <option> breakfast</option>
+                                                <option> dinner</option>
+                                                <option> desert</option>
+                                                </select>
+                                              <br></br>
+                                                <h>Recipe Name :</h>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    placeholder="Name"
+                                                    onChange={(event) => setPname(event.target.value)}
+                                                />
+                                                <h>Preparetion Time :</h>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    placeholder="Time"
+                                                    onChange={(event) => setPpeparation_time(event.target.value)}
+                                                />
+                                                <h>Cook Time :</h>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    placeholder="Time"
+                                                    onChange={(event) => setPcook_time(event.target.value)}
+                                                />
+                                                <h>Serves :</h>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    placeholder="Serves"
+                                                    onChange={(event) => setPserves(event.target.value)}
+
+                                                />
+                                                <h>Description :</h>
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    placeholder="Description"
+                                                    onChange={(event) => setPdescription(event.target.value)}
+                                                />
+                                                <div className="col-12">
+                                                    <h>Ingredients :</h>
+                                                    <textarea
+                                                        name="message"
+                                                        className="form-control"
+                                                        cols="30"
+                                                        rows="10"
+                                                        placeholder="Ingredients"
+                                                        onChange={(event) => setPingredients(event.target.value)}
+                                                    ></textarea>
+                                                </div>
+                                                <div className="col-12">
+                                                    <h>Methode to cook :</h>
+                                                    <textarea
+                                                        name="message"
+                                                        className="form-control"
+                                                        cols="30"
+                                                        rows="10"
+                                                        placeholder="Methode to cook"
+                                                        onChange={(event) => setPmethodecook(event.target.value)}
+                                                    ></textarea>
+                                                    <div className="col-12">
+                                                        <h>Recipe image url :</h>
+                                                        <input
+                                                            type="text"
+                                                            className="form-control"
+                                                            placeholder='url image'
+                                                            onChange={(event) => setPimage(event.target.value)}>
+                                                        </input>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-12">
+                                                <Button
+                                                    className="btn delicious-btn mt-30"
+                                                    type="submit"
+                                                    onClick={()=>{add({Pname,Ppeparation_time,Pcook_time,Pserves,Pdescription,Pingredients:[Pingredients],Pmethodecook:[Pmethodecook],Pimage,Pcategorie})
+                                                   
+                                                }}
+                                            
+                                                >
+                                                    Post
+                                                </Button>
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 //             {/* <!-- ##### Follow Us Instagram Area Start ##### --> */}
 //             <div className="follow-us-instagram">
