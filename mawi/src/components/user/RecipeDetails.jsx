@@ -13,7 +13,7 @@ const Recipies = (props) => {
   const Im=["https://res.cloudinary.com/dugewmeeh/image/upload/v1670248932/mawi%20cuisine/insta1_qlet3h.jpg","https://res.cloudinary.com/dugewmeeh/image/upload/v1670248989/mawi%20cuisine/insta2_uwrmlo.jpg","https://res.cloudinary.com/dugewmeeh/image/upload/v1670249063/mawi%20cuisine/insta3_ehnaae.jpg","https://res.cloudinary.com/dugewmeeh/image/upload/v1670249083/mawi%20cuisine/insta4_nd6wrw.jpg","https://res.cloudinary.com/dugewmeeh/image/upload/v1670249105/mawi%20cuisine/insta5_oyivr8.jpg","https://res.cloudinary.com/dugewmeeh/image/upload/v1670249126/mawi%20cuisine/insta6_rlzig6.jpg","https://res.cloudinary.com/dugewmeeh/image/upload/v1670249146/mawi%20cuisine/insta7_rjzno4.jpg"]
   return (
     <div>
-      {/* { <!-- ##### Breadcumb Area Start ##### --> } */}
+      {/* { <!-- ///// Breadcumb Area Start ///// --> } */}
       <div
         className="breadcumb-area bg-img bg-overlay"
         style={{
@@ -31,13 +31,13 @@ const Recipies = (props) => {
           </div>
         </div>
       </div>
-      {/* <!-- ##### Breadcumb Area End ##### --> */}
+      {/* <!-- ///// Breadcumb Area End ///// --> */}
 
       <div class="receipe-post-area section-padding-80">
         {/* <!-- Receipe Post Search --> */}
         <div class="receipe-post-search mb-80">
           <div class="container">
-            <form action="#" method="post">
+            <form action="/" method="post">
               <div class="row">
            <div class="col-12 col-lg-5">
                   <input
@@ -50,7 +50,7 @@ const Recipies = (props) => {
                 <div class="col-12 col-lg-1 text-right">
                   <button
                     type="submit"
-                    style={{ background: "#40BA37" }}
+                    style={{ background: "/40BA37" }}
                     className="btn text-white"
                   >
                     Search
@@ -155,7 +155,7 @@ const Recipies = (props) => {
             <div className="row">
               <div className="col-12">
                 <div className="contact-form-area">
-                  <form action="#" method="post">
+                  <form action="/" method="post">
                     <div className="row">
                       <div className="col-12 col-lg-6">
                         <input
@@ -208,7 +208,7 @@ const Recipies = (props) => {
         </div>
       </div>
 
-      {/* <!-- ##### Follow Us Instagram Area Start ##### --> */}
+      {/* <!-- ///// Follow Us Instagram Area Start ///// --> */}
       <div className="follow-us-instagram">
         <div className="container">
           <div className="row">
@@ -229,7 +229,7 @@ const Recipies = (props) => {
               alt=""
             />
             <div class="insta-icon">
-        <a href="#">
+        <a href="/">
         <FontAwesomeIcon icon="fa-brands fa-instagram" />
           </a>
     </div>
@@ -245,31 +245,31 @@ const Recipies = (props) => {
 
        </div>
      </div>
-     {/* <!-- ##### Follow Us Instagram Area End ##### --> */}
+     {/* <!-- ///// Follow Us Instagram Area End ///// --> */}
 
-     {/* <!-- ##### Footer Area Start ##### --> */}
+     {/* <!-- ///// Footer Area Start ///// --> */}
      <footer className="footer-area">
        <div className="container h-100">
          <div className="row h-100">
            <div className="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
              {/* <!-- Footer Social Info --> */}
              <div className="footer-social-info text-right">
-               <a href="#">
+               <a href="/">
                <FontAwesomeIcon icon="fa-brands fa-pinterest" />
                </a>
-               <a href="#">
+               <a href="/">
                  <FontAwesomeIcon icon="fa-brands fa-facebook" />
                </a>
-               <a href="#">
+               <a href="/">
                  <FontAwesomeIcon icon="fa-brands fa-twitter" />
                </a>
-               <a href="#">
+               <a href="/">
                <FontAwesomeIcon icon="fa-brands fa-dribbble" />
                </a>
-               <a href="#">
+               <a href="/">
                <FontAwesomeIcon icon="fa-brands fa-behance" />
                </a>
-               <a href="#">
+               <a href="/">
                <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                </a>
              </div>

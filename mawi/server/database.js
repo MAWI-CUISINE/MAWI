@@ -49,10 +49,7 @@ const RecipeSchema = new mongoose.Schema({
 
        
     },
-    Rcook_time: {
-        type: Number
-
-    },
+   
     Rserves: {
         type: Number
     },

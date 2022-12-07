@@ -376,21 +376,21 @@ const Home = () => {
                 <p className="text-muted">Lead Designer</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Parveen Anand Twitter Profile"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Parveen Anand Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Parveen Anand LinkedIn Profile"
                 >
                   <i className="fab fa-linkedin-in"></i>
@@ -408,21 +408,21 @@ const Home = () => {
                 <p className="text-muted">Lead Marketer</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Diana Petersen Twitter Profile"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Diana Petersen Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Diana Petersen LinkedIn Profile"
                 >
                   <i className="fab fa-linkedin-in"></i>
@@ -440,21 +440,21 @@ const Home = () => {
                 <p className="text-muted">Lead Developer</p>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Larry Parker Twitter Profile"
                 >
                   <i className="fab fa-twitter"></i>
                 </a>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Larry Parker Facebook Profile"
                 >
                   <i className="fab fa-facebook-f"></i>
                 </a>
                 <a
                   className="btn btn-dark btn-social mx-2"
-                  href="#!"
+                  href="/"
                   aria-label="Larry Parker LinkedIn Profile"
                 >
                   <i className="fab fa-linkedin-in"></i>
@@ -478,7 +478,7 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
+              <a href="/">
                 <img
                   className="img-fluid img-brand d-block mx-auto"
                   src="./assets/img/logos/microsoft.svg"
@@ -488,7 +488,7 @@ const Home = () => {
               </a>
             </div>
             <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
+              <a href="/">
                 <img
                   className="img-fluid img-brand d-block mx-auto"
                   src="./assets/img/logos/google.svg"
@@ -498,7 +498,7 @@ const Home = () => {
               </a>
             </div>
             <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
+              <a href="/">
                 <img
                   className="img-fluid img-brand d-block mx-auto"
                   src="./assets/img/logos/facebook.svg"
@@ -508,7 +508,7 @@ const Home = () => {
               </a>
             </div>
             <div className="col-md-3 col-sm-6 my-3">
-              <a href="#!">
+              <a href="/">
                 <img
                   className="img-fluid img-brand d-block mx-auto"
                   src="./assets/img/logos/ibm.svg"
@@ -532,31 +532,31 @@ const Home = () => {
             <div className="col-lg-4 my-3 my-lg-0">
               <a
                 className="btn btn-dark btn-social mx-2"
-                href="#!"
+                href="/"
                 aria-label="Twitter"
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a
                 className="btn btn-dark btn-social mx-2"
-                href="#!"
+                href="/"
                 aria-label="Facebook"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
                 className="btn btn-dark btn-social mx-2"
-                href="#!"
+                href="/"
                 aria-label="LinkedIn"
               >
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
             <div className="col-lg-4 text-lg-end">
-              <a className="link-dark text-decoration-none me-3" href="#!">
+              <a className="link-dark text-decoration-none me-3" href="/">
                 Privacy Policy
               </a>
-              <a className="link-dark text-decoration-none" href="#!">
+              <a className="link-dark text-decoration-none" href="/">
                 Terms of Use
               </a>
             </div>

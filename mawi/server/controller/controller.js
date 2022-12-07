@@ -71,7 +71,7 @@ const PostRecipe=async(req,res)=>{
     }
 }
 
-const GetRecipe=async(req,res)=>{
+const GetAllRecipes=async(req,res)=>{
   try{
       await Recipe.find({}).then (result=>{res.send(result)})
   }
@@ -90,7 +90,14 @@ const getAllPosts=async(req,res)=>{
   }
 }
 
-module.exports = {addPost ,getAllPosts,Postrecipe,SignUp,Login}
+module.exports = {
+  addPost,
+  GetAllRecipes,
+  getAllPosts,
+  PostRecipe,
+  SignUp,
+  Login,
+};
 
 
 
