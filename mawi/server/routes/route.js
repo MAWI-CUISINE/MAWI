@@ -1,18 +1,12 @@
 
 const Mawirouter = require('express').Router();
-const {post,get,Precipe}=require('../controller/controller')
-
-const { post,SignUp,Login } = require("../controller/controller");
-
-
-
-
-
-
-Mawirouter.route('/post').post(post)
-Mawirouter.route('/getAllPost').get(get)
-Mawirouter.route('/postRecipies').post(Precipe)
-// Mawirouter.route('/getRecipies').get(get)
+const {
+  addPost,
+  getAllPosts,
+  Postrecipe,
+  SignUp,
+  Login
+} = require("../controller/controller");
 
 
 
@@ -20,11 +14,22 @@ Mawirouter.route('/postRecipies').post(Precipe)
 
 
 
+Mawirouter.route('/post').post(addPost)
+Mawirouter.route('/getAllPost').get(getAllPosts)
+Mawirouter.route('/postRecipies').post(Postrecipe)
 
 
 
 
-Mawirouter.route("/post").post(post);
+
+
+
+
+
+
+
+
+
 Mawirouter.route("/signup").post(SignUp);
 Mawirouter.route("/login").post(Login);
 
