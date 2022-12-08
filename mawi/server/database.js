@@ -8,20 +8,22 @@ mongoose.connect("mongodb+srv://mariem:4545@mawi.mmctnm7.mongodb.net/mawi",{
 
 
 const UserSchema = new mongoose.Schema({
-    Uname: {
-        type: String
-    },
-    Uemail: {
-        type: String
-    },
-    Upassword: {
-        type: String
-    },
-    Uimage: {
-        type: String
-    }
-
-})
+  Uname: {
+    type: String,
+    unique: true,
+  },
+  Uemail: {
+    type: String,
+    unique: true,
+  },
+  Upassword: {
+    type: String,
+  },
+  Uimage: {
+    type: String,
+    default:''
+  },
+});
 const AdminSchema = new mongoose.Schema({
     Aname: {
         type: String

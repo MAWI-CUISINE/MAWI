@@ -2,17 +2,21 @@ const express = require("express");
 var morgan = require('morgan');
 const {User}=require('./database')
 const mawiRouter=require('../server/routes/route.js')
+const cookieParser=require('cookie-parser')
 const app=express()
 const cors = require("cors");
+const bodyParser = require("body-parser");
 // const { Router } = require("express");
-
+app.use(cors());
+app.use(bodyParser.json({ limit: "10mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../client/dist'));
-// app.use(Router())
-app.use(cors());
+app.use(cookieParser())
 
+ 
 app.use("/user",mawiRouter)
 
 const PORT = 5000;
