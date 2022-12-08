@@ -13,31 +13,52 @@ const NewHome = () => {
         <div className="header-area ">
             <div id="sticky-header" className="main-header-area ">
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-xl-3 col-lg-2">
-                            <div className="logo">
-                                <a href="index.html">
-                                    <img src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png" alt="" style={{width:"200px",height:"200px"  }} className=" top-0 start-0"/>
-                                </a>
+                    <div className="row align-items-center" style={{height: "130px"}}>
+                        <div className="col-xl-1 col-md-1 col-lg-1" >
+                            <div className="logo" style={{position:"relative" , bottom:"28px"}} >
+                                
+                                    <img src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png" alt="" style={{width:"200px",height:"200px" ,  }} className=" top-0 start-0 p5"/>
+                               
                             </div>
                         </div>
-                        <div className="col-xl-6 col-lg-7">
+                        <div className="col-xl-10 col-lg-10 col-md-10">
                             <div className="main-menu   d-none d-lg-block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><h4 style={{color:"white"}} href="index">Home</h4></li>
-                                        <li><h4 style={{color:"white"}} href="shop">Shop</h4></li>
-                                        <li><h4 style={{color:"white"}} href="/">Recipes<FontAwesomeIcon icon="fa-light fa-angle-down" /></h4>
-                                            <ul className="submenu">
+                                    <ul  style={{position:"relative" , bottom:"15px"}} id="navigation">
+                                        <li><a href="home"><h4 style={{color:"white"}} href="/home">Home</h4></a></li>
+                                        <li><a href="shop"><h4 style={{color:"white"}} href="/shop">Shop</h4></a></li>
+                                        <li><a href="allrecipes" ><h4 style={{color:"white"}}>Recipes</h4></a>
+                                            {/* <ul className="submenu">
                                                 <li><a href="allrecipes">All Recipes</a></li>
                                                 <li><a href="AddRecipe">Add Recipe</a></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-                                        <li><h4 style={{color:"white"}} href="about">About</h4></li>
+                                        <li><a href="about"><h4 style={{color:"white"}} href="/about">About</h4></a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
+                      <div className='col-xl-1 col-md-1 col-lg-1' style={{position:"relative" , bottom:"28px"}}><a href='cart'>
+                      <div
+                                  className="rounded-circle"
+                                  style={{
+                                    height: "60px",
+                                    width: "60px",
+                                   
+                                  }}
+                                >
+                                  <img
+                                  src="https://res.cloudinary.com/dn9qfvg2p/image/upload/v1670497130/mawi%20logo/icon-panier-repas2_wif2x0.png"
+                                    alt="not"
+                                    className="rounded-circle"
+                                    
+                                    style={{
+                                      width: "40%%",
+                                      height: "100%",
+                                    }}
+                                  />
+                                </div></a>
+                      </div>
                       
                         <div className="col-12">
                             <div className="mobile_menu d-block d-lg-none"></div>
@@ -48,9 +69,6 @@ const NewHome = () => {
             </div>
         </div>
     </header>
-    {/* <!-- header-end --> */}
-
-    {/* <!-- slider_area_start --> */}
     <div className="slider_area">
         <div className="single_slider  d-flex align-items-center slider_bg_1">
             <div className="container">
@@ -181,7 +199,7 @@ const NewHome = () => {
                 </div>
                 <div className="col-lg-6 col-md-6">
                 <div className="col-xl-9">
-                <img src={"https://bestanimations.com/media/food/142730108waffles-animated-gif.gif#.Y5DpAY1l0G8.link"}  style={{position:"relative" ,left:"40%"}} alt="my-gif" />
+                <img src={"https://bestanimations.com/media/food/142730108waffles-animated-gif.gif#.Y5DpAY1l0G8.link"} alt="my-gif" />
                 </div>
                 </div>
             </div>
@@ -297,123 +315,7 @@ const NewHome = () => {
     {/* <!--/ download_app_area --> */}
 
     {/* <!-- footer  --> */}
-    <footer className="footer">
-            <div className="footer_top">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-2 col-md-6 col-lg-2">
-                            <div className="footer_widget">
-                                <h3 className="footer_title">
-                                    Top Products
-                                </h3>
-                                <ul>
-                                    <li><a href="/">Managed Website</a></li>
-                                    <li><a href="/"> Manage Reputation</a></li>
-                                    <li><a href="/">Power Tools</a></li>
-                                    <li><a href="/">Marketing Service</a></li>
-                                </ul>
-    
-                            </div>
-                        </div>
-                        <div className="col-xl-2 col-md-6 col-lg-2">
-                            <div className="footer_widget">
-                                <h3 className="footer_title">
-                                    Quick Links
-                                </h3>
-                                <ul>
-                                    <li><a href="/">Jobs</a></li>
-                                    <li><a href="/">Brand Assets</a></li>
-                                    <li><a href="/">Investor Relations</a></li>
-                                    <li><a href="/">Terms of Service</a></li>
-                                </ul>
-    
-                            </div>
-                        </div>
-                        <div className="col-xl-2 col-md-6 col-lg-2">
-                            <div className="footer_widget">
-                                <h3 className="footer_title">
-                                    Features
-                                </h3>
-                                <ul>
-                                    <li><a href="/">Jobs</a></li>
-                                    <li><a href="/">Brand Assets</a></li>
-                                    <li><a href="/">Investor Relations</a></li>
-                                    <li><a href="/">Terms of Service</a></li>
-                                </ul>
-    
-                            </div>
-                        </div>
-                        <div className="col-xl-2 col-md-6 col-lg-2">
-                            <div className="footer_widget">
-                                <h3 className="footer_title">
-                                    Resources
-                                </h3>
-                                <ul>
-                                    <li><a href="/">Guides</a></li>
-                                    <li><a href="/">Research</a></li>
-                                    <li><a href="/">Experts</a></li>
-                                    <li><a href="/">Agencies</a></li>
-                                </ul>
-    
-                            </div>
-                        </div>
-                        <div className="col-xl-4 col-md-6 col-lg-4">
-                                <div className="footer_widget">
-                                        <h3 className="footer_title">
-                                                Subscribe
-                                        </h3>
-                                        <p className="newsletter_text">You can trust us. we only send promo offers,</p>
-                                        <form action="/" className="newsletter_form">
-                                            <input type="text" placeholder="Enter your mail"/>
-                                            <button type="submit"> <i className="ti-arrow-right"></i> </button>
-                                        </form>
-                                        
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="copy-right_text">
-                <div className="container">
-                    <div className="footer_border"></div>
-                    <div className="row align-items-center">
-                        <div className="col-xl-8 col-md-8">
-                            <p className="copy_right">
-                                {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="fa fa-heart-o" aria-hidden="true"></i> by 
-{/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-                            </p>
-                        </div>
-                        <div className="col-xl-4 col-md-4">
-                            <div className="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="/">
-                                            <i className="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            <i className="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            <i className="fa fa-dribbble"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            <i className="fa fa-behance"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer></div>
+    </div>
   )
 }
 

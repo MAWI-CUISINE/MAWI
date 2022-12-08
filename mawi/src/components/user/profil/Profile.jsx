@@ -1,14 +1,16 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import './Profile.css'
+import Navbar from '../navbar/Navbar.jsx'
+//TODO: fixe the req !!
 const Finaleprofile = (props) => {
     const [ancientPassword,setancientPassword]=useState('')
     const [newPassword,setNewPassword]=useState('')
     const [confirmPassword,setConfirmPassword]=useState('')
     const[Uname,setUname]=useState(props.user.Uname)
     const [Uemail, setUemail] = useState(props.user.Uemail);
-    const [Uimage, setUimage] = useState('');
-console.log(Uimage);
+    const [Uimage, setUimage] = useState(props.user.Uimage);
+console.log("hounii",Uimage);
      const [uploadedImage,setUploadedImage] = useState({current:null})
      const [imageUploader,setImageUploader] = useState({ current: null });
 
@@ -17,7 +19,7 @@ console.log(Uimage);
         console.log('passed');
       }).catch(err=>console.log(err))
      }
-console.log(imageUploader);
+console.log("houni",imageUploader);
      const handleImageUpload = (e) => {
        const [file] = e.target.files;
        if (file) {
@@ -38,26 +40,31 @@ console.log(imageUploader);
       if (show===false) {
           return (
             <div>
+              <Navbar/>
+            <div>
+             
               <div className="page-content page-container" id="page-content">
                 <div className="padding">
-                  <div className="row container d-flex justify-content-center">
+                  <div className="row container d-flex justify-content-center" style={{position:"relative" ,left:"6%",top:"65px"}}>
                     <div className="col-xl-6 col-md-12">
                       <div className="card user-card-full">
                         <div className="row m-l-0 m-r-0">
-                          <div className="col-sm-4 bg-c-lite-green user-profile">
+                          <div className="col-sm-4 bg-c-lite-green user-profile" style={{width:"100%"}}> 
                             <div className="card-block text-center text-white">
                               <div className="m-b-25">
                                 <img
-                                  src="https://img.icons8.com/bubbles/100/000000/user.png"
-                                  className="img-radius"
+                                style={{height:"130px"
+                              ,width:'140px'}}
+                                  src={props.user.Uimage}
+                                  className="rounded-circle"
                                   alt="User-Profile"
                                 />
                               </div>
-                              <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            
                             </div>
                           </div>
-                          <div className="col-sm-8">
-                            <div className="card-block">
+                          <div className="col-sm-8 align-items-center justify-content-center">
+                            <div className="card-block" style={{position:"relative" ,left:"26%"}}>
                               <div>
                                 <h6 className="m-b-20 row p-b-5 b-b-default f-w-600">
                                   <div className="col-9"> Information</div>
@@ -75,13 +82,13 @@ console.log(imageUploader);
                               <div className="row">
                                 <div className="col-sm-6">
                                   <p className="m-b-10 f-w-600">name</p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     {props.user.Uname}
                                   </h6>
                                 </div>
-                                <div className="col-sm-6">
+                                <div className="col-sm-10">
                                   <p className="m-b-10 f-w-600">Email</p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     {" "}
                                     {props.user.Uemail}
                                   </h6>
@@ -93,7 +100,7 @@ console.log(imageUploader);
                               <div className="row">
                                 <div className="col-sm-6">
                                   <p className="m-b-10 f-w-600"></p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     ***********
                                   </h6>
                                 </div>
@@ -153,18 +160,20 @@ console.log(imageUploader);
                   </div>
                 </div>
               </div>
-            </div>
+            </div></div>
           );
       }else{
           return (
             <div>
+            <Navbar/>
+            <div>
               <div className="page-content page-container" id="page-content">
                 <div className="padding">
-                  <div className="row container d-flex justify-content-center">
+                  <div className="row container d-flex justify-content-center" style={{position:"relative" ,left:"6%",top:"65px"}}>
                     <div className="col-xl-6 col-md-12">
                       <div className="card user-card-full">
                         <div className="row m-l-0 m-r-0">
-                          <div className="col-sm-4 bg-c-lite-green user-profile">
+                          <div className="col-sm-4 bg-c-lite-green user-profile" style={{width:"100%"}}>
                             <div className="card-block text-center text-white">
                               <div
                                 style={{
@@ -186,8 +195,8 @@ console.log(imageUploader);
                                 <div
                                   className="rounded-circle"
                                   style={{
-                                    height: "60px",
-                                    width: "60px",
+                                    height:"130px"
+                                    ,width:'140px',
                                     border: "1px dashed black",
                                   }}
                                   onClick={() => imageUploader.current.click()}
@@ -195,15 +204,14 @@ console.log(imageUploader);
                                   <img
                                     alt="not"
                                     className="rounded-circle"
-                                    ref={uploadedImage}
-                                    style={{
-                                      width: "40%%",
-                                      height: "100%",
-                                    }}
+                                   src={Uimage}
+                                    style={{height:"130px"
+                                    ,width:'140px'}}
                                   />
                                 </div>
+                               
                               </div>
-                              <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                             
                             </div>
                           </div>
                           <div className="col-sm-8">
@@ -214,9 +222,9 @@ console.log(imageUploader);
                                 </h6>
                               </div>
                               <div className="row">
-                                <div className="col-sm-6">
+                                <div className="col-12">
                                   <p className="m-b-10 f-w-600">name</p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     <input
                                       onChange={(e) => setUname(e.target.value)}
                                       type="text"
@@ -225,9 +233,9 @@ console.log(imageUploader);
                                     />
                                   </h6>
                                 </div>
-                                <div className="col-sm-6">
+                                <div className="col-12">
                                   <p className="m-b-10 f-w-600">Email</p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     <input
                                       onChange={(e) =>
                                         setUemail(e.target.value)
@@ -243,9 +251,9 @@ console.log(imageUploader);
                                 Password
                               </h6>
                               <div className="row">
-                                <div className="col-sm-6">
+                                <div className="col-12">
                                   <p className="m-b-10 f-w-600"></p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     type ur old password
                                     <input
                                       onChange={(e) =>
@@ -257,9 +265,9 @@ console.log(imageUploader);
                                     />
                                   </h6>
                                 </div>
-                                <div className="col-sm-6">
+                                <div className="col-12">
                                   <p className="m-b-10 f-w-600"></p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     choose a new password
                                     <input
                                       onChange={(e) =>
@@ -271,9 +279,9 @@ console.log(imageUploader);
                                     />
                                   </h6>
                                 </div>
-                                <div className="col-sm-6">
+                                <div className="col-12">
                                   <p className="m-b-10 f-w-600"></p>
-                                  <h6 className="text-muted f-w-400">
+                                  <h6 className="text-muted f-w-600">
                                     confirm password
                                     <input
                                       onChange={(e) => setConfirmPassword(e.target.value)}
@@ -345,6 +353,7 @@ console.log(imageUploader);
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           );
       }

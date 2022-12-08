@@ -23,18 +23,22 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default:''
   },
+  admin:{
+    type:Boolean,
+    default:false
+  }
 });
-const AdminSchema = new mongoose.Schema({
-    Aname: {
-        type: String
-    },
-    Apassword: {
-        type: String
-    },
-    Aemail: {
-        type: String
-    }
-})
+// const AdminSchema = new mongoose.Schema({
+//     Aname: {
+//         type: String
+//     },
+//     Apassword: {
+//         type: String
+//     },
+//     Aemail: {
+//         type: String
+//     }
+// })
 
 const RecipeSchema = new mongoose.Schema({
     Rname: {
@@ -85,9 +89,6 @@ const ShopSchema = new mongoose.Schema({
     Sprice: {
         type: Number
     },
-    Squantite: {
-        type: Number
-    },
     Simage: {
         type: String
     }
@@ -122,8 +123,8 @@ const PostSchema = new mongoose.Schema({
     }
 })
 const User = mongoose.model('User', UserSchema);
-const Admin = mongoose.model('Admin', AdminSchema);
+// const Admin = mongoose.model('Admin', AdminSchema);
 const Recipe = mongoose.model('Recipe', RecipeSchema);
 const Post = mongoose.model('Post', PostSchema);
 const Shop = mongoose.model('Shop', ShopSchema);
-module.exports = { User, Admin, Recipe, Post, Shop }
+module.exports = { User, Recipe, Post, Shop }
