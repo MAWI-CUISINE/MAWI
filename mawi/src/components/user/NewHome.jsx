@@ -1,5 +1,8 @@
 import React from 'react'
 import "./home.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Typewriter from 'typewriter-effect';
+
 
 const NewHome = () => {
   return (
@@ -14,7 +17,7 @@ const NewHome = () => {
                         <div className="col-xl-3 col-lg-2">
                             <div className="logo">
                                 <a href="index.html">
-                                    <img src="img/logo.png" alt=""/>
+                                    <img src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png" alt="" style={{width:"200px",height:"200px"  }} className=" top-0 start-0"/>
                                 </a>
                             </div>
                         </div>
@@ -22,33 +25,20 @@ const NewHome = () => {
                             <div className="main-menu   d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">home</a></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="Recipes.html">Recipes</a></li>
-                                        <li><a href="/">blog <i className="ti-angle-down"></i></a>
+                                        <li><h4 style={{color:"white"}} href="index">Home</h4></li>
+                                        <li><h4 style={{color:"white"}} href="shop">Shop</h4></li>
+                                        <li><h4 style={{color:"white"}} href="/">Recipes<FontAwesomeIcon icon="fa-light fa-angle-down" /></h4>
                                             <ul className="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
+                                                <li><a href="allrecipes">All Recipes</a></li>
+                                                <li><a href="AddRecipe">Add Recipe</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="/">pages <i className="ti-angle-down"></i></a>
-                                            <ul className="submenu">
-                                                <li><a href="recipes_details.html">Recipes Details</a></li>
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><h4 style={{color:"white"}} href="about">About</h4></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div className="search_icon">
-                                <a href="/">
-                                    <i className="ti-search"></i>
-                                </a>
-                            </div>
-                        </div>
+                      
                         <div className="col-12">
                             <div className="mobile_menu d-block d-lg-none"></div>
                         </div>
@@ -65,60 +55,13 @@ const NewHome = () => {
         <div className="single_slider  d-flex align-items-center slider_bg_1">
             <div className="container">
                 <div className="row align-items-center justify-content-center">
-                    <div className="col-xl-8 ">
-                        <div className="slider_text text-center">
-                            <div className="text">
-                                <h3>
-                                    Chicken dish with per boiled egg 
-                                </h3>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </div>
         </div>
     </div>
     {/* <!-- slider_area_end --> */}
-    {/* <!-- recepie_area_start  --> */}
-    <div className="recepie_area">
-        <div className="container">
-            <div className="row">
-                <div className="col-xl-4 col-lg-4 col-md-6">
-                    <div className="single_recepie text-center">
-                        <div className="recepie_thumb">
-                            <img src="img/recepie/recpie_1.png" alt=""/>
-                        </div>
-                        <h3>Egg Manchurian</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="/" className="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div className="col-xl-4 col-lg-4 col-md-6">
-                    <div className="single_recepie text-center">
-                        <div className="recepie_thumb">
-                            <img src="img/recepie/recpie_2.png" alt=""/>
-                        </div>
-                        <h3>Pure Vegetable Bowl</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="/" className="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-                <div className="col-xl-4 col-lg-4 col-md-6">
-                    <div className="single_recepie text-center">
-                        <div className="recepie_thumb">
-                            <img src="img/recepie/recpie_3.png" alt=""/>
-                        </div>
-                        <h3>Egg Masala Ramen</h3>
-                        <span>Appetizer</span>
-                        <p>Time Needs: 30 Mins</p>
-                        <a href="/" className="line_btn">View Full Recipe</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     {/* <!-- /recepie_area_start  --> */}
 
     {/* <!-- recepie_videos   --> */}
@@ -166,24 +109,24 @@ const NewHome = () => {
                     <div className="dish_wrap d-flex">
                         <div className="single_dish text-center">
                             <div className="thumb">
+                                <img src="img/recepie/recpie_1.png" style={{height:"192px" , width:"195px"}} alt=""/>
+                            </div>
+                            <h3>Breakfast</h3>
+                            <p>“All happiness depends on a leisurely breakfast. There is nothing better than a proper breakfast. Expect problems and eat them for breakfast.”</p>
+                        </div>
+                        <div className="single_dish text-center">
+                            <div className="thumb">
+                                <img src="img/recepie/recpie_3.png" style={{height:"192px" , width:"195px"}} alt=""/>
+                            </div>
+                            <h3>Dinner</h3>
+                            <p>“Dinner is where the magic happens in the kitchen.”</p>
+                        </div>
+                        <div className="single_dish text-center">
+                            <div className="thumb">
                                 <img src="img/recepie/recpie_4.png" alt=""/>
                             </div>
-                            <h3>Birthday Catering</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div className="single_dish text-center">
-                            <div className="thumb">
-                                <img src="img/recepie/recpie_5.png" alt=""/>
-                            </div>
-                            <h3>Birthday Catering</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div className="single_dish text-center">
-                            <div className="thumb">
-                                <img src="img/recepie/recpie_6.png" alt=""/>
-                            </div>
-                            <h3>Birthday Catering</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h3>Dessert</h3>
+                            <p>“You can't buy happiness, but you can prepare dessert and that's kind of the same thing.”</p>
                         </div>
                     </div>
                 </div>
@@ -211,14 +154,39 @@ const NewHome = () => {
     {/* <!-- customer_feedback_area  --> */}
     <div className="customer_feedback_area">
         <div className="container">
-            <div className="row justify-content-center mb-50">
+            
+            {/* <div className="row justify-content-center mb-50">
                 <div className="col-xl-9">
-                    <div className="section_title text-center">
-                        <h3>Feedback From Customers</h3>
-                        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially <br/> in the workplace. That’s why it’s crucial that, as women.</p>
+                <img src={"https://bestanimations.com/media/food/142730108waffles-animated-gif.gif#.Y5DpAY1l0G8.link"}  style={{position:"relative" ,left:"80%"}} alt="my-gif" />
+                </div>
+            </div> */}
+                <div className="recepie_videoes_area">
+        <div className="container">
+            <div className="row">
+                <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="recepie_info">
+                       <h3>
+                        <Typewriter
+                        options={{
+                            autoStart: true,
+                            loop: true,
+                            delay: 60,
+                            strings:["NOTHING BRINGS PEOPLE TOGETHER LIKE GOOD FOOD."]
+                        }}
+                        />
+                       </h3>
+                
+                 
                     </div>
                 </div>
+                <div className="col-lg-6 col-md-6">
+                <div className="col-xl-9">
+                <img src={"https://bestanimations.com/media/food/142730108waffles-animated-gif.gif#.Y5DpAY1l0G8.link"}  style={{position:"relative" ,left:"40%"}} alt="my-gif" />
+                </div>
+                </div>
             </div>
+        </div>
+    </div>
             <div className="row">
                 <div className="col-xl-12">
                     <div className="customer_active owl-carousel">

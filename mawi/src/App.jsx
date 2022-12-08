@@ -3,7 +3,7 @@ import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
 import SignUp from './components/login/SignUp.jsx';
-import Home from './components/user/Home.jsx';
+
 import Post from './components/user/PostRecipie.jsx'
 import Recipies from './components/user/RecipeDetails.jsx';
 import NewHome from './components/user/NewHome.jsx';
