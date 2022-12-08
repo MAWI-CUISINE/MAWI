@@ -3,8 +3,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { User, Admin, Recipe, Post, Shop } = require("../database");
-
-
+const cloudinary = require("../cloudinary");
 
 const SignUp= async(req,res)=>{
     let body=req.body
@@ -79,7 +78,33 @@ const GetAllRecipes=async(req,res)=>{
       res.send(err)
   }
 }
+const UpdateUser = async (req, res) => {
+  const username = req.params.name;
+  const {Uname,Uimage,Uemail,Upassword}=req.body
+  try {
+const result=await cloudinary.uploader.upload(Uimage,{
+  folder:'MAWI'
+})
 
+    await User.findOneAndUpdate(
+      { Uname: username },
+      { Uname, Uimage:result.public_id, Uemail, Upassword }
+    ).then((result) => {
+      res.send(result);
+    });
+  } catch (err) {
+    res.send(err);
+  }
+};
+const getUser=async(req,res)=>{
+const username=req.params.name
+  try{
+      await User.findOne({Uname:username}).then (result=>{res.send(result)})
+  }
+  catch(err){
+      res.send(err)
+  }
+}
 const getAllPosts=async(req,res)=>{
 
   try{
@@ -97,6 +122,8 @@ module.exports = {
   PostRecipe,
   SignUp,
   Login,
+  getUser,
+  UpdateUser,
 };
 
 
