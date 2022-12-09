@@ -3,16 +3,21 @@ import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
 import SignUp from './components/login/SignUp.jsx';
+<<<<<<< HEAD
 import Post from './components/user/post/PostRecipe'
+=======
+import Post from './components/user/post/PostRecipie.jsx'
+>>>>>>> cc79794f9db449643e4c4bac36cc3773a319f96d
 import Recipies from './components/user/RecipeDetails.jsx';
-import NewHome from './components/user/NewHome.jsx';
-import NavBar from './components/user/NavBar.jsx';
-import Profile from './components/user/Finaleprofile.jsx';
+import NewHome from './components/user/home/NewHome.jsx';
+import Profile from './components/user/profil/Profile.jsx';
 import jwt_decode from "jwt-decode";
+import Navbar from "./components/user/navbar/Navbar.jsx"
+import Shop from './components/shop/Shop.jsx';
  function App() {
   const [recipe,setRecipe]=useState([])
   const [user,setUser]=useState('')
-  
+  const [shop,setShop]=useState([])
 
 
 
@@ -28,18 +33,19 @@ const token = localStorage.getItem('token')
 			}
     else{
       axios.get(`http://localhost:5000/user/getUser/${user.name}`).then(res=>{
+        
         setUser(res.data);
         
       })
     }
     }
+    axios.get (`http://localhost:5000/user/allShop`).then(res=>{
+      setShop(res.data)
+    })
     axios.get(`http://localhost:5000/user/getRecipies`).then((response) => {
-       
       setRecipe(response.data)
-      
-       
       }).catch((err) => console.error(err));
-      
+
     },[]);
   console.log(recipe,"walid");
   return (
@@ -51,9 +57,9 @@ const token = localStorage.getItem('token')
           <Route path="/Profile" element={<Profile user={user}/>} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<NewHome />} />
-          <Route path="/NavBar" element={<NavBar />} />
-
-          <Route path="/post" element={<Post />} />
+          <Route path="/nav" element={<Navbar />} />
+          <Route path="/shop" element={<Shop shop ={shop} />} />
+          <Route path="/post" element={<Post   />} />
         </Route>
       </Routes>
     </div>
