@@ -12,7 +12,7 @@ const {
   UpdateUser,
 
   postShop,
-  getAllShop
+  getAllShop,
 
   CheckUser,
 

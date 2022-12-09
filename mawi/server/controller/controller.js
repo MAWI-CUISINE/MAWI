@@ -178,7 +178,7 @@ module.exports = {
   UpdateUser,
  
   postShop,
-  getAllShop
+  getAllShop,
 
   
 
