@@ -3,7 +3,7 @@ import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
 import SignUp from './components/login/SignUp.jsx';
-import Post from './components/user/PostRecipie.jsx'
+import Post from './components/user/post/PostRecipie.jsx'
 import Recipies from './components/user/RecipeDetails.jsx';
 import NewHome from './components/user/home/NewHome.jsx';
 import Profile from './components/user/profil/Profile.jsx';
@@ -29,6 +29,7 @@ const token = localStorage.getItem('token')
 			}
     else{
       axios.get(`http://localhost:5000/user/getUser/${user.name}`).then(res=>{
+        
         setUser(res.data);
         
       })
@@ -40,7 +41,7 @@ const token = localStorage.getItem('token')
     axios.get(`http://localhost:5000/user/getRecipies`).then((response) => {
       setRecipe(response.data)
       }).catch((err) => console.error(err));
-      
+
     },[]);
   console.log(recipe,"walid");
   return (
