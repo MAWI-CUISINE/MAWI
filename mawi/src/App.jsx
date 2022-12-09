@@ -49,7 +49,7 @@ const token = localStorage.getItem('token')
     <div>
       <Routes>
         <Route>
-          <Route path="/detail" element={<REcipedet recipe={recipe[0]} />} />
+          <Route path="/detail" element={<Recipies recipe={recipe[0]} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Profile" element={<Profile user={user}/>} />
           <Route path="/signup" element={<SignUp />} />
