@@ -2,9 +2,8 @@ import React , {useEffect,useState}from 'react';
 import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
-import REcipedet from './components/user/RecipeDet.jsx'
 import SignUp from './components/login/SignUp.jsx';
-import Post from './components/user/PostRecipie.jsx'
+import Post from './components/user/post/PostRecipie.jsx'
 import Recipies from './components/user/RecipeDetails.jsx';
 import NewHome from './components/user/home/NewHome.jsx';
 import Profile from './components/user/profil/Profile.jsx';
