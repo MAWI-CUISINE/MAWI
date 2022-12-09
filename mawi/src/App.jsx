@@ -2,6 +2,7 @@ import React , {useEffect,useState}from 'react';
 import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
+import REcipedet from './components/user/RecipeDet.jsx'
 import SignUp from './components/login/SignUp.jsx';
 import Post from './components/user/PostRecipie.jsx'
 import Recipies from './components/user/RecipeDetails.jsx';
@@ -29,6 +30,7 @@ const token = localStorage.getItem('token')
 			}
     else{
       axios.get(`http://localhost:5000/user/getUser/${user.name}`).then(res=>{
+        
         setUser(res.data);
         
       })
@@ -40,14 +42,14 @@ const token = localStorage.getItem('token')
     axios.get(`http://localhost:5000/user/getRecipies`).then((response) => {
       setRecipe(response.data)
       }).catch((err) => console.error(err));
-      
+
     },[]);
   console.log(recipe,"walid");
   return (
     <div>
       <Routes>
         <Route>
-          <Route path="/detail" element={<Recipies recipe={recipe[0]} />} />
+          <Route path="/detail" element={<REcipedet recipe={recipe[0]} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Profile" element={<Profile user={user}/>} />
           <Route path="/signup" element={<SignUp />} />
