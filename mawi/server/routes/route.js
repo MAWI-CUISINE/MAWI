@@ -10,6 +10,7 @@ const {
   Login,
   getUser,
   UpdateUser,
+  CheckUser,
 } = require("../controller/controller");
 Mawirouter.route('/post').post(addPost)//mtea mariem
 Mawirouter.route("/getallrecipes").get(GetAllRecipes); //mtea wiwi
@@ -20,7 +21,7 @@ Mawirouter.route('/getAllPost').get(getAllPosts)//mtea maryem
 Mawirouter.route('/postRecipies').post(PostRecipe)//mtea wiwi
 Mawirouter.route("/signup").post(SignUp);
 Mawirouter.route("/login").post(Login);
-
+Mawirouter.route("/check").post(CheckUser);
 
 
 module.exports = Mawirouter;

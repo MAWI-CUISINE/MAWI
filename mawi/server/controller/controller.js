@@ -21,6 +21,55 @@ await User.create({
 }
 }
 
+const CheckUser=async(req,res)=>{
+
+try{
+  const oldPassword = await bcrypt.hash(req.body.oldPassword, 10);
+  const NewPassword = req.body.newPassword
+
+  console.log(oldPassword,'     ',NewPassword);
+
+  let Check = await bcrypt.compare( NewPassword,oldPassword);
+  console.log(Check);
+  if (Check) {
+    
+    return res.json(true);
+  } else {
+  
+    return res.json({ status: "error", user: false });
+  }
+}catch(err){
+  console.log(err);
+}
+}
+const UpdateUser = async (req, res) => {
+  const username = req.params.name;
+  let body = req.body;
+  const {Uname,Uimage,Upassword}=body
+  try {
+
+ 
+
+ 
+
+  const Password = await bcrypt.hash(body.password, 10);
+
+const result=await cloudinary.uploader.upload(Uimage,{
+  folder:'MAWI'
+})
+
+  
+console.log(result);
+    await User.findOneAndUpdate(
+      { Uname: username },
+      { Uname, Uimage:result.url, Upassword:Password }
+    ).then((result) => {
+      res.json(result);
+    });
+  } catch (err) {
+    res.json(err,'errorrororoeeeee');
+  }
+};
 const Login=async(req,res)=>{
   let body=req.body
 
@@ -78,24 +127,6 @@ const GetAllRecipes=async(req,res)=>{
       res.send(err)
   }
 }
-const UpdateUser = async (req, res) => {
-  const username = req.params.name;
-  const {Uname,Uimage,Uemail,Upassword}=req.body
-  try {
-const result=await cloudinary.uploader.upload(Uimage,{
-  folder:'MAWI'
-})
-
-    await User.findOneAndUpdate(
-      { Uname: username },
-      { Uname, Uimage:result.public_id, Uemail, Upassword }
-    ).then((result) => {
-      res.send(result);
-    });
-  } catch (err) {
-    res.send(err);
-  }
-};
 const getUser=async(req,res)=>{
 const username=req.params.name
   try{
@@ -124,6 +155,7 @@ module.exports = {
   Login,
   getUser,
   UpdateUser,
+  CheckUser,
 };
 
 
