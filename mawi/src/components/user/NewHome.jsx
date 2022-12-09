@@ -8,88 +8,77 @@ const NewHome = () => {
 
   return (
     <div>
-      {/* <!-- header-start --> */}
-      <header>
+    {/* <!-- header-start --> */}
+    <header>
         <div className="header-area ">
-          <div id="sticky-header" className="main-header-area ">
-            <div className="container">
-              <div className="row align-items-center">
-                <div className="col-xl-3 col-lg-2">
-                  <div className="logo">
-                    <a href="index.html">
-                      <img
-                        src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png"
-                        alt=""
-                        style={{ width: "200px", height: "200px" }}
-                        className=" top-0 start-0"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className="col-xl-6 col-lg-7">
-                  <div className="main-menu   d-none d-lg-block">
-                    <nav>
-                      <ul id="navigation">
-                        <li>
-                          <h4 style={{ color: "white" }} href="index">
-                            Home
-                          </h4>
-                        </li>
-                        <li>
-                          <h4 style={{ color: "white" }} href="shop">
-                            Shop
-                          </h4>
-                        </li>
-                        <li>
-                          <h4 style={{ color: "white" }} href="/">
-                            Recipes
-                            <FontAwesomeIcon icon="fa-light fa-angle-down" />
-                          </h4>
-                          <ul className="submenu">
-                            <li>
-                              <a href="allrecipes">All Recipes</a>
-                            </li>
-                            <li>
-                              <a href="AddRecipe">Add Recipe</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <h4 style={{ color: "white" }} href="about">
-                            About
-                          </h4>
-                        </li>
-                        <li>
-                         
-                          <div>
-                            <a href="/">
-                              <FontAwesomeIcon icon="fa-duotone fa-user-pen" />
-                            </a>
-                          </div>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
+            <div id="sticky-header" className="main-header-area ">
+                <div className="container">
+                    <div className="row align-items-center" style={{height: "130px"}}>
+                        <div className="col-xl-1 col-md-1 col-lg-1" >
+                            <div className="logo" style={{position:"relative" , bottom:"28px"}} >
+                                
+                                    <img src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png" alt="" style={{width:"200px",height:"200px" ,  }} className=" top-0 start-0 p5"/>
+                               
+                            </div>
+                        </div>
+                        <div className="col-xl-10 col-lg-10 col-md-10">
+                            <div className="main-menu   d-none d-lg-block">
+                                <nav>
+                                    <ul  style={{position:"relative" , bottom:"15px"}} id="navigation">
+                                        <li><a href="home"><h4 style={{color:"white"}} href="/home">Home</h4></a></li>
+                                        <li><a href="shop"><h4 style={{color:"white"}} href="/shop">Shop</h4></a></li>
+                                        <li><a href="allrecipes" ><h4 style={{color:"white"}}>Recipes</h4></a>
+                                            {/* <ul className="submenu">
+                                                <li><a href="allrecipes">All Recipes</a></li>
+                                                <li><a href="AddRecipe">Add Recipe</a></li>
+                                            </ul> */}
+                                        </li>
+                                        <li><a href="about"><h4 style={{color:"white"}} href="/about">About</h4></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                      <div className='col-xl-1 col-md-1 col-lg-1' style={{position:"relative" , bottom:"28px"}}><a href='cart'>
+                      <div
+                                  className="rounded-circle"
+                                  style={{
+                                    height: "60px",
+                                    width: "60px",
+                                   
+                                  }}
+                                >
+                                  <img
+                                  src="https://res.cloudinary.com/dn9qfvg2p/image/upload/v1670497130/mawi%20logo/icon-panier-repas2_wif2x0.png"
+                                    alt="not"
+                                    className="rounded-circle"
+                                    
+                                    style={{
+                                      width: "40%%",
+                                      height: "100%",
+                                    }}
+                                  />
+                                </div></a>
+                      </div>
+                      
+                        <div className="col-12">
+                            <div className="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
 
-                <div className="col-12">
-                  <div className="mobile_menu d-block d-lg-none"></div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </header>
-      {/* <!-- header-end --> */}
-
-      {/* <!-- slider_area_start --> */}
-      <div className="slider_area">
+    </header>
+    <div className="slider_area">
         <div className="single_slider  d-flex align-items-center slider_bg_1">
-          <div className="container">
-            <div className="row align-items-center justify-content-center"></div>
-          </div>
+            <div className="container">
+                <div className="row align-items-center justify-content-center">
+            
+            </div>
         </div>
-      </div>
+        </div>
+    </div>
+    {/* <!-- slider_area_end --> */}
       {/* <!-- slider_area_end --> */}
 
       {/* <!-- /recepie_area_start  --> */}
@@ -392,7 +381,8 @@ const NewHome = () => {
           <div className="single-insta-feeds">
             <img
               src={e}
-              alt=""
+              alt="" 
+              
             />
             <div class="insta-icon">
         <a href="/">
