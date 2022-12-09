@@ -2,7 +2,7 @@
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const { User, Admin, Recipe, Post, Shop } = require("../database");
+const { User, Recipe, Post, Shop } = require("../database");
 const cloudinary = require("../cloudinary");
 
 const SignUp= async(req,res)=>{
@@ -146,6 +146,27 @@ const getAllPosts=async(req,res)=>{
   }
 }
 
+const postShop=async(req,res)=>{
+  const body=req.body
+    try{
+      await  Shop.create(body,(err,result)=>{
+        if (err) res.json(err)
+        res.json(result)
+      })
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+const getAllShop=async(req,res)=>{
+  try{
+      await Shop.find({}).then (result=>{res.send(result)})
+  }
+  catch(err){
+      res.send(err)
+  }
+}
+
 module.exports = {
   addPost,
   GetAllRecipes,
@@ -155,7 +176,14 @@ module.exports = {
   Login,
   getUser,
   UpdateUser,
+ 
+  postShop,
+  getAllShop,
+
+  
+
   CheckUser,
+
 };
 
 
