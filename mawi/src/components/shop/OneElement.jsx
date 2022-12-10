@@ -5,7 +5,7 @@ import { useState } from 'react'
 const OneElement = (props) => {
     const e = props.e
 
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
     const inc = () => {
         let c = counter + 1
         setCounter(c)
@@ -29,7 +29,7 @@ const OneElement = (props) => {
                         {/* <!-- Product price-->  */}
                         <h5 >{e.Sprice}Dt</h5>
 
-                        <div className='row' ><div className='col-4'></div>
+                        <div className='row ' ><div className='col-3'></div>
                             <div className='col-1' onClick={() => inc()}>
                                 <FontAwesomeIcon icon="fa-solid fa-plus" />
                             </div>
@@ -47,10 +47,10 @@ const OneElement = (props) => {
 
                     <div className="text-center">
                         
-                        <a className="btn btn-outline-dark mt-auto" href="#"
+                        <button className="btn btn-outline-dark mt-auto"
                                                onClick={()=>props.add({Total:counter*e.Sprice,ArticleName:e.Sname,Quantity:counter,ArticleImage:e.Simage})}
 
-                       >Add to cart</a>
+                       >Add to cart</button>
                         </div>
                 </div>
             </div>
