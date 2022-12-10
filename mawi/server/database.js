@@ -77,7 +77,7 @@ const RecipeSchema = new mongoose.Schema({
     },
     Rcategorie: {
         type: String,
-        enum: ["breakfast", "dinner", "desert"]
+        enum: ["breakfast", "dinner", "dessert"]
     }
 })
 const ShopSchema = new mongoose.Schema({
