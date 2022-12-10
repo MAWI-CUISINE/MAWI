@@ -37,7 +37,9 @@ const OneElement = (props) => {
                             <div className='col-1' onClick={() => dec()}>
                                 <FontAwesomeIcon icon="fa-solid fa-minus" />
                             </div></div>
-                        {/* <QtyPicker
+                        {/*
+                        TODO
+                         <QtyPicker
                                                     value={value}
                                                     onChange={function (newValue) { value = newValue }} /> */}
                     </div>
