@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Typewriter from "typewriter-effect";
+import Foot from "../footer/Foot.jsx"
 
 const NewHome = () => {
   const Im = [
@@ -19,7 +20,7 @@ const NewHome = () => {
       {/* <!-- header-start --> */}
       <header>
         <div className="header-area ">
-          <div id="sticky-header" className="main-header-area ">
+          <div id="sticky-header" className="main-header-area"  >
             <div className="container">
               <div
                 className="row align-items-center"
@@ -409,75 +410,7 @@ const NewHome = () => {
       </div>
       {/* <!--/ download_app_area --> */}
 
-      <div className="follow-us-instagram">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <h5>Follow Us Instragram</h5>
-            </div>
-          </div>
-        </div>
-        {/* <!-- Instagram Feeds --> */}
-        <div className="insta-feeds d-flex flex-wrap">
-          {Im.map((e, i) => (
-            <>
-              {/* <!-- Single Insta Feeds --> */}
-              <div className="single-insta-feeds">
-                <img src={e} alt="" />
-                <div class="insta-icon">
-                  <a href="/">
-                    <FontAwesomeIcon icon="fa-brands fa-instagram" />
-                  </a>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
-      {/* <!-- footer  --> */}
-      <footer className="footer-area">
-        <div className="container h-100">
-          <div className="row h-100">
-            <div className="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-              {/* <!-- Footer Social Info --> */}
-              <div className="footer-social-info text-right">
-                <a href="/">
-                  <FontAwesomeIcon icon="fa-brands fa-pinterest" />
-                </a>
-                <a href="/">
-                  <FontAwesomeIcon icon="fa-brands fa-facebook" />
-                </a>
-                <a href="/">
-                  <FontAwesomeIcon icon="fa-brands fa-twitter" />
-                </a>
-                <a href="/">
-                  <FontAwesomeIcon icon="fa-brands fa-dribbble" />
-                </a>
-                <a href="/">
-                  <FontAwesomeIcon icon="fa-brands fa-behance" />
-                </a>
-                <a href="/">
-                  <FontAwesomeIcon icon="fa-brands fa-linkedin" />
-                </a>
-              </div>
-              {/* <!-- Footer Logo --> */}
-              <div className="footer-logo">
-                <a href="index.html">
-                  <img
-                    src="https://res.cloudinary.com/dugewmeeh/image/upload/v1670249613/mawi%20cuisine/logo_cptyxq.png"
-                    alt=""
-                  />
-                </a>
-              </div>
-              {/* <!-- Copywrite --> */}
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All
-              rights reserved | This Application is made with
-              <FontAwesomeIcon icon="fa-regular fa-heart" />
-            </div>
-          </div>
-        </div>
-      </footer>
+    <Foot/>
     </div>
   );
 };
