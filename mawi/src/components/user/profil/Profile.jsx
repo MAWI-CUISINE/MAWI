@@ -62,7 +62,7 @@ const Finaleprofile = (props) => {
   if (show === false) {
     return (
       <div>
-        <Navbar />
+        <Navbar user={props.user} />
         <div>
           <div>
             <div className="page-content page-container" id="page-content">
@@ -196,7 +196,7 @@ const Finaleprofile = (props) => {
   } else {
     return (
       <div>
-        <Navbar />
+        <Navbar user={props.user} />
         <div>
           <div>
             <div className="page-content page-container" id="page-content">
@@ -378,15 +378,12 @@ const Finaleprofile = (props) => {
                           <div className="m-4 text-center">
                             <button
                               onClick={() => {
-                                Uploaddata(
-                                 
-                                  {
-                                    Uname,
-                                    Uemail,
-                                    Uimage: previewSource,
-                                    password: newPassword,
-                                  }
-                                );
+                                Uploaddata({
+                                  Uname,
+                                  Uemail,
+                                  Uimage: previewSource,
+                                  password: newPassword,
+                                });
                               }}
                               className=" center btn btn-info btn-rounded"
                             >

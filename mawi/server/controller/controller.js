@@ -20,10 +20,11 @@ try {
 }
 }
 const SignUp= async(req,res)=>{
-    let body=req.body
+    let body= req.body
     try{
 const Password= await bcrypt.hash(body.password,10)
-await User.create({
+
+ await User.create({
     Uname:body.username,
     Uemail:body.email,
     Upassword:Password},(err,result)=>{
@@ -32,7 +33,7 @@ await User.create({
       else res.json(result);
     })
   } catch (err) {
-    console.log(err);
+    console.log(err,'err');
   }
 }
 
@@ -109,7 +110,7 @@ const Login = async (req, res) => {
 const addPost = async (req, res) => {
   let body = req.body
   try {
-    await Post.create(body, (err, result) => {
+    await Post.create(body,{unique:true}, (err, result) => {
       if (err) res.json(err)
       res.json(result)
     })
@@ -136,28 +137,28 @@ const PostRecipe = async (req, res) => {
 
 const GetAllRecipes = async (req, res) => {
   try {
-    await Recipe.find({}).then(result => { res.send(result) })
+    await Recipe.find({}).then(result => { res.json(result) })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 const getUser = async (req, res) => {
   const username = req.params.name
   try {
-    await User.findOne({ Uname: username }).then(result => { res.send(result) })
+    await User.findOne({ Uname: username }).then(result => { res.json(result) })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 const getAllPosts = async (req, res) => {
 
   try {
-    await Post.find({}).then(result => { res.send(result) })
+    await Post.find({}).then(result => { res.json(result) })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 
@@ -175,10 +176,10 @@ const postShop = async (req, res) => {
 }
 const getAllShop = async (req, res) => {
   try {
-    await Shop.find({}).then(result => { res.send(result) })
+    await Shop.find({}).then(result => { res.json(result) })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 
@@ -196,10 +197,10 @@ const addCart = async (req, res) => {
 }
 const getAllCart = async (req, res) => {
   try {
-    await Cart.find({}).then(result => { res.send(result) })
+    await Cart.find({}).then(result => { res.json(result) })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 const upTotal = async (req, res) => {
@@ -212,7 +213,7 @@ const upTotal = async (req, res) => {
     })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 
@@ -226,7 +227,7 @@ const upQ = async (req, res) => {
     })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
 const downQ = async (req, res) => {
@@ -239,10 +240,52 @@ const downQ = async (req, res) => {
     })
   }
   catch (err) {
-    res.send(err)
+    res.json(err)
   }
 }
+const disLike = async (req, res) => {
+  try {
+     Recipe.findOneAndUpdate(
+      { Rname: req.params.name },
+      {
+        $inc: { Rdislike: 1 },
+      },
+      (err, result) => {
+        if (err) console.log(err);
+         res.json(result);
+      }
+    );
+  } catch (err) {
+    res.json(err);
+  }
+};
+const Like = async (req, res) => {
+ 
+     Recipe.findOneAndUpdate(
+      { Rname: req.params.name },
+      {
+        $inc: { Rlike: 1 },
+      },
+      (err, result) => {
+        if (err) console.log(err);
+        res.json(result);
+      }
+    );
+
+};
+const getOneRecipe = async (req, res) => {
+  try {
+    await Recipe.find({Rname:req.params.name}).then((result) => {
+      res.json(result);
+    });
+  } catch (err) {
+    res.json(err);
+  }
+};
 module.exports = {
+  getOneRecipe,
+  Like,
+  disLike,
   addPost,
   GetAllRecipes,
   getAllPosts,

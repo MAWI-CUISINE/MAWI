@@ -20,7 +20,7 @@ const NewHome = () => {
       {/* <!-- header-start --> */}
       <header>
         <div className="header-area ">
-          <div id="sticky-header" className="main-header-area"  >
+          <div id="sticky-header" className="main-header-area">
             <div className="container">
               <div
                 className="row align-items-center"
@@ -379,7 +379,7 @@ const NewHome = () => {
               <div className="download_text">
                 <h3>Download app to get recipes from Everywhere</h3>
                 <div className="download_android_apple">
-                  <a className="active" href="/">
+                  <a className="active" target="blank" href="https://youtu.be/dQw4w9WgXcQ">
                     <div className="download_link d-flex">
                       <FontAwesomeIcon icon="fa-brands fa-apple" />
                       <div className="store">
@@ -388,15 +388,10 @@ const NewHome = () => {
                       </div>
                     </div>
                   </a>
-                  <a href="/">
+                  <a href="https://youtu.be/dQw4w9WgXcQ">
                     <div className="download_link d-flex">
                       <FontAwesomeIcon icon="fa-brands fa-android" />
-                      <div
-                        className="store"
-                        onClick={() =>
-                          window.open("https://youtu.be/dQw4w9WgXcQ", "_blank")
-                        }
-                      >
+                      <div className="store">
                         <h5>Download</h5>
                         <p>from Play Store</p>
                       </div>
@@ -410,7 +405,7 @@ const NewHome = () => {
       </div>
       {/* <!--/ download_app_area --> */}
 
-    <Foot/>
+      <Foot />
     </div>
   );
 };

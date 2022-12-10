@@ -4,7 +4,7 @@ import axios from "axios";
 import BootstrapSelect from "react-bootstrap-select-dropdown";
 import "./post.css";
 import Navbar from "../navbar/Navbar.jsx";
-const PostRecipe = () => {
+const PostRecipe = (props) => {
   const [Pname, setPname] = useState("");
   const [Ppeparation_time, setPpeparation_time] = useState(0);
   const [Pcook_time, setPcook_time] = useState(0);
@@ -13,7 +13,9 @@ const PostRecipe = () => {
   const [Pmethodecook, setPmethodecook] = useState([]);
   const [Pimage, setPimage] = useState("");
   const [Pcategorie, setPcategorie] = useState("");
-  console.log(Pcategorie);
+
+  const [Pdescription, setPdescription] = useState("");
+  
   const handleChange = (e) => {
     setPcategorie(e.selectedValue[0]);
   };
@@ -104,6 +106,14 @@ const PostRecipe = () => {
                 onChange={(event) => setPserves(event.target.value)}
               />
             </div>
+            <div className="input">
+              <input
+                className="input--style-2 js-datepicker"
+                type="text"
+                placeholder="description:"
+                onChange={(event) => setPdescription(event.target.value)}
+              />
+            </div>
 
 
             <div className="row ">
@@ -136,11 +146,12 @@ const PostRecipe = () => {
                     Ppeparation_time,
                     Pcook_time,
                     Pserves,
-                    Pdescription,
+                  
                     Pingredients: [Pingredients],
                     Pmethodecook: [Pmethodecook],
                     Pimage,
                     Pcategorie,
+                    Uname:props.user
                   });
                 }}
               >
