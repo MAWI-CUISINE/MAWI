@@ -26,7 +26,7 @@ function App() {
   const [OneRecipe,setOneRecipe]=useState({})
 
 
-  console.log(OneRecipe,'one');
+  console.log(user,'one');
 console.log(allrecipe);
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -53,7 +53,18 @@ console.log(allrecipe);
       })
       .catch((err) => console.error(err));
   }, []);
-
+if(!user){
+  return (
+    <div>
+      <Routes>
+        <Route>
+          <Route path ="/" element={<Login/>}/>
+          <Route path="/signup" element={<SignUp />} />
+        </Route>
+      </Routes>
+    </div>
+  )
+}
 if (user.admin===true) {
   <div>hi</div>
 }else {return (
@@ -61,11 +72,10 @@ if (user.admin===true) {
     <Routes>
       <Route>
         <Route
-          path="/recipes"
+          path="/allrecipes"
           element={<AllRecipesAndDetails recipe={OneRecipe} />}
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Profile" element={<Profile user={user} />} />
+        <Route path="/Profile" element={<Profile user={user && user} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/allRecipesad" element={<AllRecipesAdd />} />
 

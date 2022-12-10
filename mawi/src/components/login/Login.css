@@ -2,15 +2,10 @@
 
 .gradient-custom-2 {
 /* fallback for old browsers */
-background: #fccb90;
+background: #ffffff;
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right,#fbfcf7 
-, #c7e15f, #eed2ea, #e7bfbf);
 
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right,#e27d7d 
-, #dc5959, #712c2c, #000000);
 }
 
 @media (min-width: 768px) {
