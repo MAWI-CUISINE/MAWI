@@ -29,7 +29,9 @@ useEffect(()=>{
             <div className="row">
               { allRecipes.map((e,i)=>{
                 return (
-                  <div className="col-12 col-sm-6 col-lg-4">
+                  <div onClick={()=>{
+                    props.changeview('one')
+                    props.changeRecipe(e)}} className="col-12 col-sm-6 col-lg-4">
                     <div className="showhim single-best-receipe-area mb-30">
                       <img
                         style={{ width: "339px", height: "339px" }}
