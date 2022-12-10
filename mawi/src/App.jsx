@@ -22,9 +22,7 @@ function App() {
   const [user, setUser] = useState("");
   const [shop, setShop] = useState([]);
   const [OneRecipe,setOneRecipe]=useState({})
-  const changeRecipe = (option)=>{
-    setOneRecipe(option)
-  }
+
   console.log(OneRecipe,'one');
 console.log(allrecipe);
   useEffect(() => {
@@ -52,30 +50,33 @@ console.log(allrecipe);
       })
       .catch((err) => console.error(err));
   }, []);
+if (user.admin===true) {
+  <div>hi</div>
+}else {return (
+  <div>
+    <Routes>
+      <Route>
+        <Route
+          path="/recipes"
+          element={<AllRecipesAndDetails recipe={OneRecipe} />}
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Profile" element={<Profile user={user} />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/allRecipesad" element={<AllRecipesAdd />} />
 
-  return (
-    <div>
-      <Routes>
-        <Route>
-          <Route path="/recipes" element={<AllRecipesAndDetails recipe={OneRecipe} />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/Profile" element={<Profile user={user} />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/allRecipesad" element={<AllRecipesAdd />} />
+        <Route path="/home" element={<NewHome user={user} />} />
+        <Route path="/nav" element={<Navbar user={user} />} />
 
-          <Route path="/home" element={<NewHome />} />
-          <Route path="/nav" element={<Navbar />} />
+        <Route path="/shop" element={<Shop shop={shop} />} />
+        <Route path="/post" element={<Post user={user} />} />
 
-          <Route path="/shop" element={<Shop shop={shop} />} />
-          <Route path="/post" element={<Post />} />
-        
-
-          <Route path="/foot" element={<Foot />} />
-          <Route path="/cart" element={<Cart />} />
-        </Route>
-      </Routes>
-    </div>
-  );
+        <Route path="/foot" element={<Foot />} />
+        <Route path="/cart" element={<Cart user={user} />} />
+      </Route>
+    </Routes>
+  </div>
+);}
 }
 
 export default App;
