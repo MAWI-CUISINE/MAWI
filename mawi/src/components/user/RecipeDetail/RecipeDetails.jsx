@@ -58,13 +58,21 @@ const DisLike=(nama)=>{
                           {One && One.Rcategorie}
                         </h6>
                       </div>
+                
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-4">
+                  <img src = {One.Rimage}/>
+                   <div className="row p-3 d-flex justify-content-center" >
                       <div className=" col-2 col-lg-2">
-                        <h6
+                        <h6 
                           onClick={() => {
                             Like(One.Rname);
                           }}
                         >
-                          <FontAwesomeIcon icon="fa-regular fa-thumbs-up" />
+                          <FontAwesomeIcon icon="fa-regular fa-thumbs-up"/>
                           {likes}
                         </h6>
                       </div>{" "}
@@ -78,14 +86,9 @@ const DisLike=(nama)=>{
                           {dislikes}
                         </h6>
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-12 pb-5 col-md-4">
-                  <img src = {One.Rimage}/>
-                  {/* <div className="receipe-ratings text-right my-5"></div> */}
-                </div>
+                      </div>
+                </div>   
+                  
               </div>
 
               <div className="row">

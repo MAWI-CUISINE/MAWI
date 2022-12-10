@@ -7,7 +7,7 @@ const cloudinary = require("../cloudinary");
 
 
 
-const delteRecipe=async(req,res)=>{
+const deleteRecipe=async(req,res)=>{
 let id=req.params.id
 try {
   await Recipe.deleteOne({Rname:id},(err,result)=>{
@@ -282,6 +282,18 @@ const getOneRecipe = async (req, res) => {
     res.json(err);
   }
 };
+const delte1Cart=async(req,res)=>{
+  let name=req.params.name
+  try {
+    Cart.deleteOne({ArticleName:name},(err,result)=>{
+      if(err)console.log(err)
+      res.json(result)
+    })
+  
+  } catch (error) {
+    res.json(error)
+  }
+  }
 module.exports = {
   getOneRecipe,
   Like,
@@ -298,7 +310,7 @@ module.exports = {
   getAllShop,
 
 
-  delteRecipe,
+  deleteRecipe,
 
 
   CheckUser,
@@ -306,7 +318,8 @@ module.exports = {
   getAllCart,
   upTotal,
   upQ,
-  downQ
+  downQ,
+  delte1Cart
 };
 
 
