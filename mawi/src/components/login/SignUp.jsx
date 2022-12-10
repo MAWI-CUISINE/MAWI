@@ -104,6 +104,7 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
                         Register
                       </button>
                     </div>
+                    
 
                     <p className="text-center text-muted mt-5 mb-0">
                       Have already an account?
