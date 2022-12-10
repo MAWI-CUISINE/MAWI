@@ -104,7 +104,7 @@ const PostRecipe = () => {
                 onChange={(event) => setPserves(event.target.value)}
               />
             </div>
-       
+
 
             <div className="row ">
               <div className="">
@@ -127,8 +127,8 @@ const PostRecipe = () => {
               </div>
             </div>
             <div className="p-t-30">
-              <button
-                className="btn btn--radius btn--green"
+              <button 
+                className="btn btn--radius btn-success"
                 type="submit"
                 onClick={() => {
                   add({

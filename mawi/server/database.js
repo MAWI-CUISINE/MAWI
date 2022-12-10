@@ -52,8 +52,6 @@ const RecipeSchema = new mongoose.Schema({
     Rcook_time: {
         type: String,
         required: true
-
-       
     },
    
     Rserves: {
@@ -84,7 +82,8 @@ const RecipeSchema = new mongoose.Schema({
 })
 const ShopSchema = new mongoose.Schema({
     Sname: {
-        type: String
+        type: String,
+        unique:true
     },
     Sprice: {
         type: Number
@@ -93,7 +92,21 @@ const ShopSchema = new mongoose.Schema({
         type: String
     }
 })
+const CartSchema=new mongoose.Schema({
+    Total:{
+        type:Number,
+    },
+    ArticleName:{
+        type:String
+    },
+    Quantity:{
+        type:Number
+    },
+     ArticleImage: {
+        type: String
+    }
 
+})
 const PostSchema = new mongoose.Schema({
     Pname: {
         type: String
@@ -123,8 +136,9 @@ const PostSchema = new mongoose.Schema({
     }
 })
 const User = mongoose.model('User', UserSchema);
+const Cart = mongoose.model('Cart', CartSchema);
 // const Admin = mongoose.model('Admin', AdminSchema);
 const Recipe = mongoose.model('Recipe', RecipeSchema);
 const Post = mongoose.model('Post', PostSchema);
 const Shop = mongoose.model('Shop', ShopSchema);
-module.exports = { User, Recipe, Post, Shop }
+module.exports = { User, Recipe, Post, Shop,Cart }
