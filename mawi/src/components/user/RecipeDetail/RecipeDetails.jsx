@@ -10,21 +10,14 @@ import Foot from "../footer/Foot.jsx";
 import Singleingr from "./Singleingr";
 
 const Recipies = (props) => {
-
-  console.log(props, "ena");
+const One =props.recipe
+ 
  
   const [allRecipes, setAllRecipes] = useState([]);
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDisLikes] = useState(0);
-  const [image, setImage] = useState("")
-  useEffect(() => {
-    axios.get("http://localhost:5000/user/getallrecipes").then((res) => {
-      setAllRecipes(res.data);
-      setLikes(res.data[5].Rlike)
-      setDisLikes(res.data[5].Rdislike);
-setImage(res.data[5].Rimage)
-    });
-  }, []);
+  const [likes, setLikes] = useState(One.Rlike);
+  const [dislikes, setDisLikes] = useState(One.Rdislike);
+  const [image, setImage] = useState(One.Rimage)
+ 
 const Like=(nama)=>{
   axios.put(`http://localhost:5000/user/recipelike/${nama}`);
   let laca=likes
@@ -54,7 +47,7 @@ const DisLike=(nama)=>{
             <div className="row">
               <div className="col-12">
                 <div className="receipe-slider owl-carousel">
-                  <img src={allRecipes[5] && allRecipes[5].Rimage} alt="" />
+                  <img src={One && One.Rimage} alt="" />
                 </div>
               </div>
             </div>
@@ -66,29 +59,29 @@ const DisLike=(nama)=>{
               <div className="row">
                 <div className="col-12 col-md-8">
                   <div className="receipe-headline my-5">
-                    <h2>{allRecipes[5] && allRecipes[5].Rname}</h2>
+                    <h2>{One && One.Rname}</h2>
                     <div className="row">
                       <div className="receipe-duration col-8 col-md-8">
                         <h6>
                           Prep:{" "}
-                          {allRecipes[5] && allRecipes[5].Rpeparation_time}
+                          {One && One.Rpeparation_time}
                         </h6>
                         <h6>
-                          Cook: {allRecipes[5] && allRecipes[5].Rcook_time}
+                          Cook: {One && One.Rcook_time}
                         </h6>
                         <h6>
-                          Yields:{allRecipes[5] && allRecipes[5].Rserves}
+                          Yields:{One && One.Rserves}
                           Servings
                         </h6>
                         <h6>
                           Categorie:
-                          {allRecipes[5] && allRecipes[5].Rcategorie}
+                          {One && One.Rcategorie}
                         </h6>
                       </div>
                       <div className=" col-2 col-lg-2">
                         <h6
                           onClick={() => {
-                            Like(allRecipes[5].Rname);
+                            Like(One.Rname);
                           }}
                         >
                           <FontAwesomeIcon icon="fa-regular fa-thumbs-up" />
@@ -98,7 +91,7 @@ const DisLike=(nama)=>{
                       <div className=" col-2 col-lg-2">
                         <h6
                           onClick={() => {
-                            DisLike(allRecipes[5].Rname);
+                            DisLike(One.Rname);
                           }}
                         >
                           <FontAwesomeIcon icon="fa-regular fa-thumbs-down" />
@@ -116,8 +109,8 @@ const DisLike=(nama)=>{
 
               <div className="row">
                 <div className="col-8 col-lg-8">
-                  {allRecipes[5] &&
-                    allRecipes[5].Rmethodecook.map((e, i) => (
+                  {One &&
+                    One.Rmethodecook.map((e, i) => (
                       <div>
                         {/* <!-- Single Preparation Step --> */}
                         <div className="single-preparation-step d-flex">
@@ -132,8 +125,8 @@ const DisLike=(nama)=>{
                   <div className="ingredients">
                     <h4>Ingredients</h4>
 
-                    {allRecipes[5] &&
-                      allRecipes[5].Ringredients.map((e, i) => (
+                    {One &&
+                      One.Ringredients.map((e, i) => (
                         <Singleingr e={e} />
                       ))}
                   </div>

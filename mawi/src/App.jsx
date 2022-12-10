@@ -4,7 +4,7 @@ import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login.jsx";
 import SignUp from "./components/login/SignUp.jsx";
-
+import AllRecipesAndDetails from "./AllRecipeandDetails.jsx"
 import Post from "./components/user/post/PostRecipie.jsx";
 import AllRecipesAdd from "./components/user/allrecipessad/AllRecipes.jsx";
 import Recipies from "./components/user/RecipeDetail/RecipeDetails.jsx";
@@ -18,10 +18,15 @@ import AllRecipes from "./components/user/allrecipess/AllRecipes.jsx";
 
 import Cart from "./components/cart/Cart.jsx";
 function App() {
-  const [recipe, setRecipe] = useState([]);
+  const [allrecipe, setAllRecipe] = useState([]);
   const [user, setUser] = useState("");
   const [shop, setShop] = useState([]);
-
+  const [OneRecipe,setOneRecipe]=useState({})
+  const changeRecipe = (option)=>{
+    setOneRecipe(option)
+  }
+  console.log(OneRecipe,'one');
+console.log(allrecipe);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -41,18 +46,18 @@ function App() {
       setShop(res.data);
     });
     axios
-      .get(`http://localhost:5000/user/getRecipies`)
+      .get(`http://localhost:5000/user/getallRecipes`)
       .then((response) => {
-        setRecipe(response.data);
+        setAllRecipe(response.data);
       })
       .catch((err) => console.error(err));
   }, []);
-  console.log(recipe, "walid");
+
   return (
     <div>
       <Routes>
         <Route>
-          <Route path="/detail" element={<Recipies recipe={recipe[0]} />} />
+          <Route path="/recipes" element={<AllRecipesAndDetails recipe={OneRecipe} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Profile" element={<Profile user={user} />} />
           <Route path="/signup" element={<SignUp />} />
@@ -63,7 +68,7 @@ function App() {
 
           <Route path="/shop" element={<Shop shop={shop} />} />
           <Route path="/post" element={<Post />} />
-          <Route path="/Recipes" element={<AllRecipes />} />
+        
 
           <Route path="/foot" element={<Foot />} />
           <Route path="/cart" element={<Cart />} />
