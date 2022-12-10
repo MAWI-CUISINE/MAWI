@@ -15,13 +15,16 @@ import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import AllRecipes from "./components/user/allrecipess/AllRecipes.jsx";
+import Approve from "./components/user/approval/Approve.jsx";
 
 import Cart from "./components/cart/Cart.jsx";
 function App() {
   const [allrecipe, setAllRecipe] = useState([]);
   const [user, setUser] = useState("");
   const [shop, setShop] = useState([]);
+
   const [OneRecipe,setOneRecipe]=useState({})
+
 
   console.log(OneRecipe,'one');
 console.log(allrecipe);
@@ -50,6 +53,7 @@ console.log(allrecipe);
       })
       .catch((err) => console.error(err));
   }, []);
+
 if (user.admin===true) {
   <div>hi</div>
 }else {return (
@@ -65,18 +69,22 @@ if (user.admin===true) {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/allRecipesad" element={<AllRecipesAdd />} />
 
+
         <Route path="/home" element={<NewHome user={user} />} />
         <Route path="/nav" element={<Navbar user={user} />} />
 
         <Route path="/shop" element={<Shop shop={shop} />} />
         <Route path="/post" element={<Post user={user} />} />
 
+
+  <Route path="/approve" element={<Approve />} />
         <Route path="/foot" element={<Foot />} />
         <Route path="/cart" element={<Cart user={user} />} />
       </Route>
     </Routes>
   </div>
 );}
+
 }
 
 export default App;

@@ -13,7 +13,9 @@ const PostRecipe = (props) => {
   const [Pmethodecook, setPmethodecook] = useState([]);
   const [Pimage, setPimage] = useState("");
   const [Pcategorie, setPcategorie] = useState("");
-  console.log(props);
+
+  const [Pdescription, setPdescription] = useState("");
+  
   const handleChange = (e) => {
     setPcategorie(e.selectedValue[0]);
   };
@@ -102,6 +104,14 @@ const PostRecipe = (props) => {
                 type="text"
                 placeholder="servings:"
                 onChange={(event) => setPserves(event.target.value)}
+              />
+            </div>
+            <div className="input">
+              <input
+                className="input--style-2 js-datepicker"
+                type="text"
+                placeholder="description:"
+                onChange={(event) => setPdescription(event.target.value)}
               />
             </div>
 
