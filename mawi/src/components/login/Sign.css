@@ -1,24 +1,5 @@
-.gradient-custom-3 {
-/* fallback for old browsers */
-    background: #84fab0;
-background-image: url("https://res.cloudinary.com/dugewmeeh/image/upload/v1670169147/mawi%20cuisine/logo_rxiwsp.png");
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right,#fcf7f7 
-, #f5e4e4, #eed2d2, #e7bfbf);
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right,#fcf7f7 
-, #f5e4e4, #eed2d2, #e7bfbf);
-}
-
 .gradient-custom-4 {
 /* fallback for old browsers */
-background: #fccb90;
+background: #FFC000;
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right,#fcf7f7 
-, #f5e4e4, #eed2d2, #e7bfbf);
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right,#fcf7f7 
-, #f5e4e4, #eed2d2, #e7bfbf);
 }

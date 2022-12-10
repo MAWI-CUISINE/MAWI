@@ -36,7 +36,7 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
               <div className="card" style={{ borderRadius: "15px" }}>
                 <div className="card-body p-5">
                   <h2 className="text-uppercase text-center mb-5">
-                    Create an account
+                    Create a MAWI account
                   </h2>
 
                   <form>
@@ -95,25 +95,6 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
                         className="form-control form-control-lg"
                       />
                     </div>
-
-                    <div className="form-check d-flex justify-content-center mb-5">
-                      <input
-                        className="form-check-input me-2"
-                        type="checkbox"
-                        value=""
-                        id="form2Example3cg"
-                      />
-                      <label
-                        className="form-check-label"
-                        htmlFor="form2Example3g"
-                      >
-                        I agree all statements in
-                        <a href="/" className="text-body">
-                          <u>Terms of service</u>
-                        </a>
-                      </label>
-                    </div>
-
                     <div className="d-flex justify-content-center">
                       <button
                       onClick={()=>{SignUp({username,email,password,passwordagain})}}
@@ -126,7 +107,7 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
 
                     <p className="text-center text-muted mt-5 mb-0">
                       Have already an account?
-                      <a href="login" className="fw-bold text-body">
+                      <a href="/" className="fw-bold text-body">
                         <u>Login here</u>
                       </a>
                     </p>
