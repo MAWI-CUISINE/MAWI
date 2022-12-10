@@ -7,16 +7,28 @@ const cloudinary = require("../cloudinary");
 
 
 
-const SignUp = async (req, res) => {
-  let body = req.body
-  try {
-    const Password = await bcrypt.hash(body.password, 10)
-    await User.create({
-      Uname: body.username,
-      Uemail: body.email,
-      Upassword: Password
-    }, (err, result) => {
-      if (err) console.log(err);
+const delteRecipe=async(req,res)=>{
+let id=req.params.id
+try {
+  await Recipe.deleteOne({Rname:id},(err,result)=>{
+    if(err)console.log(err)
+    res.json(result)
+  })
+
+} catch (error) {
+  res.json(error)
+}
+}
+const SignUp= async(req,res)=>{
+    let body=req.body
+    try{
+const Password= await bcrypt.hash(body.password,10)
+await User.create({
+    Uname:body.username,
+    Uemail:body.email,
+    Upassword:Password},(err,result)=>{
+      if (err)console.log(err);
+
       else res.json(result);
     })
   } catch (err) {
@@ -241,6 +253,11 @@ module.exports = {
   UpdateUser,
   postShop,
   getAllShop,
+
+
+  delteRecipe,
+
+
   CheckUser,
   addCart,
   getAllCart,

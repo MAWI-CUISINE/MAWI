@@ -31,23 +31,23 @@ const Finaleprofile = (props) => {
       setPreviewSource(reader.result);
     };
   };
-  const Update = (old, newP, confirm, body) => {
-    if (newP.length >= 8 && confirm === newP) {
-      console.log(old, "old", newP, "new");
-      axios
-        .post("http://localhost:5000/user/check", {
-          oldPassword: old,
-          newPassword: newP,
-        })
-        .then((res) => {
-          console.log(res.data);
-          if (res.data === true) {
-            Uploaddata(body).then((res) => console.log("passed"));
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-  };
+  // const Update = (old, newP, confirm, body) => {
+  //   if (newP.length >= 8 && confirm === newP) {
+  //     console.log(old, "old", newP, "new");
+  //     axios
+  //       .post("http://localhost:5000/user/check", {
+  //         oldPassword: old,
+  //         newPassword: newP,
+  //       })
+  //       .then((res) => {
+  //         console.log(res.data);
+  //         if (res.data === true) {
+  //           Uploaddata(body).then((res) => console.log("passed"));
+  //         }
+  //       })
+  //       .catch((err) => console.log(err));
+  //   }
+  // };
   const Uploaddata = (body) => {
     axios
       .put(`http://localhost:5000/user/getUser/${props.user.Uname}`, body)
@@ -378,10 +378,8 @@ const Finaleprofile = (props) => {
                           <div className="m-4 text-center">
                             <button
                               onClick={() => {
-                                Update(
-                                  oldPassword,
-                                  newPassword,
-                                  confirmPassword,
+                                Uploaddata(
+                                 
                                   {
                                     Uname,
                                     Uemail,
