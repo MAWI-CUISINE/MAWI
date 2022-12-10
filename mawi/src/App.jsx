@@ -3,11 +3,8 @@ import axios from "axios"
 import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
 import SignUp from './components/login/SignUp.jsx';
-<<<<<<< HEAD
-import Post from './components/user/post/PostRecipe'
-=======
+import Foot from "./components/user/footer/Foot.jsx"
 import Post from './components/user/post/PostRecipie.jsx'
->>>>>>> cc79794f9db449643e4c4bac36cc3773a319f96d
 import Recipies from './components/user/RecipeDetails.jsx';
 import NewHome from './components/user/home/NewHome.jsx';
 import Profile from './components/user/profil/Profile.jsx';
@@ -60,6 +57,7 @@ const token = localStorage.getItem('token')
           <Route path="/nav" element={<Navbar />} />
           <Route path="/shop" element={<Shop shop ={shop} />} />
           <Route path="/post" element={<Post   />} />
+          <Route path="/foot" element={<Foot   />} />
         </Route>
       </Routes>
     </div>
