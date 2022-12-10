@@ -26,7 +26,7 @@ function App() {
   const [OneRecipe,setOneRecipe]=useState({})
 
 
-  console.log(OneRecipe,'one');
+  console.log(user,'one');
 console.log(allrecipe);
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -72,10 +72,10 @@ if (user.admin===true) {
     <Routes>
       <Route>
         <Route
-          path="/recipes"
+          path="/allrecipes"
           element={<AllRecipesAndDetails recipe={OneRecipe} />}
         />
-        <Route path="/Profile" element={<Profile user={user} />} />
+        <Route path="/Profile" element={<Profile user={user && user} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/allRecipesad" element={<AllRecipesAdd />} />
 

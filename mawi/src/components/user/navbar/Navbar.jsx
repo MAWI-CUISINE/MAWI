@@ -1,10 +1,28 @@
 import React from 'react'
 import Dropdown from "react-bootstrap/Dropdown";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import './navbar.css'
+import jwt_decode from "jwt-decode";
+import axios from 'axios';
 import { useState } from 'react'
+import { useEffect } from 'react';
 const Navbar = (props) => {
 console.log(props.user,'props');
+const [user,setUser]=useState("")
+useEffect(()=>{
+  const token = localStorage.getItem("token");
+  if (token) {
+    const user = jwt_decode(token);
+
+    if (!user) {
+      localStorage.removeItem("token");
+    } else {
+      axios
+        .get(`http://localhost:5000/user/getUser/${user.name}`)
+        .then((res) => {
+          setUser(res.data);
+        });
+    }
+  }
+},[])
     return (
       <div>
         {/* <!-- header-start --> */}
@@ -46,7 +64,7 @@ console.log(props.user,'props');
                 <li className="nav-item" style={{ color: "white" }}>
                   <a
                     className="nav-link"
-                    href="/recipes"
+                    href="/allrecipes"
                     style={{ color: "white" }}
                   >
                     Recipes
@@ -69,7 +87,7 @@ console.log(props.user,'props');
                       className="d-inline-block rounded-circle align-text-top"
                       width="70"
                       height="70"
-                      src={props.user.Uimage}
+                      src={user.Uimage}
                       alt=""
                     />
                   </Dropdown.Toggle>
