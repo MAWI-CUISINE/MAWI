@@ -105,14 +105,7 @@ const PostRecipe = () => {
                 onChange={(event) => setPserves(event.target.value)}
               />
             </div>
-            <div className="input">
-              <input
-                className="input--style-2 js-datepicker"
-                type="text"
-                placeholder="description:"
-                onChange={(event) => setPdescription(event.target.value)}
-              />
-            </div>
+            
 
             <div className="row ">
               <div className="">
@@ -135,8 +128,8 @@ const PostRecipe = () => {
               </div>
             </div>
             <div className="p-t-30">
-              <button
-                className="btn btn--radius btn--green"
+              <button 
+                className="btn btn--radius btn-success"
                 type="submit"
                 onClick={() => {
                   add({

@@ -5,6 +5,19 @@ const bcrypt = require("bcryptjs");
 const { User, Recipe, Post, Shop } = require("../database");
 const cloudinary = require("../cloudinary");
 
+
+const delteRecipe=async(req,res)=>{
+let id=req.params.id
+try {
+  await Recipe.deleteOne({Rname:id},(err,result)=>{
+    if(err)console.log(err)
+    res.json(result)
+  })
+
+} catch (error) {
+  res.json(error)
+}
+}
 const SignUp= async(req,res)=>{
     let body=req.body
     try{
@@ -180,7 +193,7 @@ module.exports = {
   postShop,
   getAllShop,
 
-  
+  delteRecipe,
 
   CheckUser,
 
