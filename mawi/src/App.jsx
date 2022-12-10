@@ -15,12 +15,14 @@ import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import AllRecipes from "./components/user/allrecipess/AllRecipes.jsx";
+import Approve from "./components/user/approval/Approve.jsx";
 
 import Cart from "./components/cart/Cart.jsx";
 function App() {
   const [recipe, setRecipe] = useState([]);
   const [user, setUser] = useState("");
   const [shop, setShop] = useState([]);
+  
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -47,6 +49,10 @@ function App() {
       })
       .catch((err) => console.error(err));
   }, []);
+
+
+
+
   console.log(recipe, "walid");
   return (
     <div>
@@ -67,6 +73,8 @@ function App() {
 
           <Route path="/foot" element={<Foot />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/approve" element={<Approve />} />
+
         </Route>
       </Routes>
     </div>
