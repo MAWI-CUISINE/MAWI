@@ -53,7 +53,18 @@ console.log(allrecipe);
       })
       .catch((err) => console.error(err));
   }, []);
-
+if(!user){
+  return (
+    <div>
+      <Routes>
+        <Route>
+          <Route path ="/" element={<Login/>}/>
+          <Route path="/signup" element={<SignUp />} />
+        </Route>
+      </Routes>
+    </div>
+  )
+}
 if (user.admin===true) {
   <div>hi</div>
 }else {return (
@@ -64,7 +75,6 @@ if (user.admin===true) {
           path="/recipes"
           element={<AllRecipesAndDetails recipe={OneRecipe} />}
         />
-        <Route path="/login" element={<Login />} />
         <Route path="/Profile" element={<Profile user={user} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/allRecipesad" element={<AllRecipesAdd />} />

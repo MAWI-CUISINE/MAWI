@@ -26,12 +26,8 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
   }
 
   return (
-    <section
-      className="vh-100 bg-image"
-      style={{
-        backgroundImage:
-          "url('https://res.cloudinary.com/dugewmeeh/image/upload/v1670169147/mawi%20cuisine/logo_rxiwsp.png')",
-      }}
+    <div
+  
     >
       <div className="mask d-flex align-items-center h-100 gradient-custom-3">
         <div className="container h-100">
@@ -141,7 +137,7 @@ axios.post("http://localhost:5000/user/signup",body).then((res)=>{
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
