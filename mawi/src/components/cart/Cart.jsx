@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './cart.css'
 import Navbar from '../user/navbar/Navbar.jsx'
 import OneCard from './OneCard'
 const Cart = () => {
+  useEffect(()=>{},[])
   return (
     <div>
         <Navbar/>
