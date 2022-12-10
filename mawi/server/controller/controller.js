@@ -20,10 +20,11 @@ try {
 }
 }
 const SignUp= async(req,res)=>{
-    let body=req.body
+    let body= req.body
     try{
 const Password= await bcrypt.hash(body.password,10)
-await User.create({
+
+ await User.create({
     Uname:body.username,
     Uemail:body.email,
     Upassword:Password},(err,result)=>{
@@ -32,7 +33,7 @@ await User.create({
       else res.json(result);
     })
   } catch (err) {
-    console.log(err);
+    console.log(err,'err');
   }
 }
 
@@ -109,7 +110,7 @@ const Login = async (req, res) => {
 const addPost = async (req, res) => {
   let body = req.body
   try {
-    await Post.create(body, (err, result) => {
+    await Post.create(body,{unique:true}, (err, result) => {
       if (err) res.json(err)
       res.json(result)
     })

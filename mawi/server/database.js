@@ -41,45 +41,45 @@ const UserSchema = new mongoose.Schema({
 // })
 
 const RecipeSchema = new mongoose.Schema({
-    Rname: {
-        type: String
-    },
-    Rpeparation_time: {
+  Rname: {
+    type: String,
+  },
+  Rpeparation_time: {
+    type: String,
+    required: true,
+  },
+  Rcook_time: {
+    type: String,
+    required: true,
+  },
 
-        type: String,
-        required: true
-    },
-    Rcook_time: {
-        type: String,
-        required: true
-    },
-   
-    Rserves: {
-        type: Number
-    },
-    Ringredients: {
-        type: Array
-    },
-    Rmethodecook: {
-        type: Array
-
-    },
-    Rimage: {
-        type: String
-    },
-    Rlike: {
-        type: Number,
-        default: 0
-    },
-    Rdislike: {
-        type: Number,
-        default: 0
-    },
-    Rcategorie: {
-        type: String,
-        enum: ["breakfast", "dinner", "dessert"]
-    }
-})
+  Rserves: {
+    type: Number,
+  },
+  Ringredients: {
+    type: Array,
+  },
+  Rmethodecook: {
+    type: Array,
+  },
+  Rimage: {
+    type: String,
+  },
+  Rlike: {
+    type: Number,
+    default: 0,
+  },
+  Rdislike: {
+    type: Number,
+    default: 0,
+  },
+  Rcategorie: {
+    type: String,
+    enum: ["breakfast", "dinner", "dessert"],
+  },
+  Rdescription: { type: String },
+  // Uname: { type: String },
+});
 const ShopSchema = new mongoose.Schema({
     Sname: {
         type: String,
@@ -109,7 +109,7 @@ const CartSchema=new mongoose.Schema({
 })
 const PostSchema = new mongoose.Schema({
     Pname: {
-        type: String
+        type: String,unique:true
     },
     Ppeparation_time: {
         type: Number
@@ -133,7 +133,9 @@ const PostSchema = new mongoose.Schema({
     Pcategorie: {
         type: String,
         enum: ["breakfast", "dinner", "desert"]
-    }
+    },
+    Pdescription:{type:String},
+    // Uname:{type:String}
 })
 const User = mongoose.model('User', UserSchema);
 const Cart = mongoose.model('Cart', CartSchema);
