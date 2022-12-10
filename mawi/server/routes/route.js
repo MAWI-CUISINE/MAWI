@@ -10,26 +10,30 @@ const {
   Login,
   getUser,
   UpdateUser,
-
+  Like,
+  disLike,
   postShop,
   getAllShop,
-delteRecipe,
+  delteRecipe,
   CheckUser,
   addCart,
   getAllCart,
   upTotal,
   upQ,
-  downQ
-
+  downQ,
+  getOneRecipe
 } = require("../controller/controller");
 Mawirouter.route('/post').post(addPost)//mtea mariem
 Mawirouter.route("/getallrecipes").get(GetAllRecipes); //mtea wiwi
 Mawirouter.route("/getUser/:name").get(getUser); //mtea wiwi
 Mawirouter.route("/getUser/:name").put(UpdateUser); //mtea wiwi
 Mawirouter.route("/deleteRecipe/:id").delete(delteRecipe); //mtea wiwi
+Mawirouter.route("/recipelike/:name").put(Like); //mtea wiwi
+Mawirouter.route("/recipedislike/:name").put(disLike); //mtea wiwi
+Mawirouter.route("/onerecipe/:name").get(getOneRecipe); //mtea wiwi
 
 Mawirouter.route('/getAllPost').get(getAllPosts)//mtea maryem
-Mawirouter.route('/postRecipies').post(PostRecipe)//mtea wiwi
+Mawirouter.route('/postRecipes').post(PostRecipe)//mtea wiwi
 Mawirouter.route("/signup").post(SignUp);
 Mawirouter.route("/login").post(Login);
 
