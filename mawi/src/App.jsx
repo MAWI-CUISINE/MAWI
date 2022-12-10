@@ -4,20 +4,17 @@ import {Routes, Route } from "react-router-dom";
 import Login from './components/login/Login.jsx';
 import SignUp from './components/login/SignUp.jsx';
 import Post from './components/user/post/PostRecipie.jsx'
-
 import Recipies from './components/user/RecipeDetails.jsx';
 import NewHome from './components/user/home/NewHome.jsx';
 import Profile from './components/user/profil/Profile.jsx';
 import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx"
 import Shop from './components/shop/Shop.jsx';
+import Cart from './components/cart/Cart.jsx';
  function App() {
   const [recipe,setRecipe]=useState([])
   const [user,setUser]=useState('')
   const [shop,setShop]=useState([])
-
-
-
   useEffect(() => {
 const token = localStorage.getItem('token')
 		if (token) {
@@ -57,6 +54,7 @@ const token = localStorage.getItem('token')
           <Route path="/nav" element={<Navbar />} />
           <Route path="/shop" element={<Shop shop ={shop} />} />
           <Route path="/post" element={<Post   />} />
+          <Route path="/cart" element={<Cart   />} />
         </Route>
       </Routes>
     </div>
