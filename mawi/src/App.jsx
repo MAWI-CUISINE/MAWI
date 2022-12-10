@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
@@ -13,10 +14,13 @@ import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import AllRecipes from "./components/user/allrecipess/AllRecipes.jsx";
-function App() {
-  const [recipe, setRecipe] = useState([]);
-  const [user, setUser] = useState("");
-  const [shop, setShop] = useState([]);
+
+
+import Cart from './components/cart/Cart.jsx';
+ function App() {
+  const [recipe,setRecipe]=useState([])
+  const [user,setUser]=useState('')
+  const [shop,setShop]=useState([])
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -56,9 +60,14 @@ function App() {
 
           <Route path="/home" element={<NewHome />} />
           <Route path="/nav" element={<Navbar />} />
+
           <Route path="/shop" element={<Shop shop={shop} />} />
           <Route path="/post" element={<Post />} />
           <Route path="/Recipes" element={<AllRecipes />} />
+
+     
+          <Route path="/cart" element={<Cart   />} />
+
         </Route>
       </Routes>
     </div>
