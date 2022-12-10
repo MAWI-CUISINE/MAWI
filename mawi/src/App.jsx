@@ -1,4 +1,5 @@
 
+import Foot from "./components/user/footer/Foot.jsx"
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Routes, Route } from "react-router-dom";
@@ -10,6 +11,7 @@ import Post from "./components/user/post/PostRecipie.jsx";
 import Recipies from "./components/user/RecipeDetails.jsx";
 import NewHome from "./components/user/home/NewHome.jsx";
 import Profile from "./components/user/profil/Profile.jsx";
+
 import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
@@ -61,12 +63,14 @@ import Cart from './components/cart/Cart.jsx';
           <Route path="/home" element={<NewHome />} />
           <Route path="/nav" element={<Navbar />} />
 
+
           <Route path="/shop" element={<Shop shop={shop} />} />
           <Route path="/post" element={<Post />} />
           <Route path="/Recipes" element={<AllRecipes />} />
 
-     
+          <Route path="/foot" element={<Foot   />} />
           <Route path="/cart" element={<Cart   />} />
+
 
         </Route>
       </Routes>

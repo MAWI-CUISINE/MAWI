@@ -9,7 +9,6 @@ const PostRecipe = () => {
   const [Ppeparation_time, setPpeparation_time] = useState(0);
   const [Pcook_time, setPcook_time] = useState(0);
   const [Pserves, setPserves] = useState(0);
-  const [Pdescription, setPdescription] = useState(0);
   const [Pingredients, setPingredients] = useState([]);
   const [Pmethodecook, setPmethodecook] = useState([]);
   const [Pimage, setPimage] = useState("");
@@ -34,7 +33,7 @@ const PostRecipe = () => {
           <div className="imageforwiwi col-4"></div>
           <div className="col-6 inputs">
             {/* TODO */}
-            <h2 className="title">YA MARIEM AL9ALNA ESM</h2>
+            <h2 className="title"></h2>
 
             <div className="input row">
               <input
@@ -105,7 +104,7 @@ const PostRecipe = () => {
                 onChange={(event) => setPserves(event.target.value)}
               />
             </div>
-            
+
 
             <div className="row ">
               <div className="">
