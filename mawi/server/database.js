@@ -95,9 +95,10 @@ const ShopSchema = new mongoose.Schema({
 const CartSchema=new mongoose.Schema({
     Total:{
         type:Number,
+        
     },
     ArticleName:{
-        type:String
+        type:String,unique:true
     },
     Quantity:{
         type:Number

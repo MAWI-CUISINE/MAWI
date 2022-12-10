@@ -192,7 +192,7 @@ const getAllCart = async (req, res) => {
 }
 const upTotal = async (req, res) => {
   try {
-    await Cart.findOneAndUpdate({ ArticleName: req.params.name }, {
+     Cart.findOneAndUpdate({ ArticleName: req.params.name }, {
       Total: req.body.total
     }, (err, result) => {
       if (err) console.log(err);
