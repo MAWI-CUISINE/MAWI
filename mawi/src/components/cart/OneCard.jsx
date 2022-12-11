@@ -10,12 +10,12 @@ const OneCard = ({e,changeCart}) => {
   const deleteE = (name) => {
     axios.delete(`http://localhost:5000/user/deleteC/${name}`).then(res => changeCart())
       .catch(err => {
-        console.log(err);
+        
         alert("can't delete this product, there's an issue ! Please try again later")
       })
   }
   const [counter, setCounter] = useState(e.Quantity)
-  console.log(counter,'counter');
+ 
     const inc = () => {
         let c = counter + 1
         setCounter(c)

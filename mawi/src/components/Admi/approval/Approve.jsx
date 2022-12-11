@@ -6,7 +6,7 @@ import "./approve.css";
 const Approve = () => {
   const [suggestion, setSuggestion] = useState([]);
 const approve=(name,body)=>{
-  console.log(body);
+ 
   axios
     .post("http://localhost:5000/user/postRecipes", body)
     .then((res) => {
@@ -31,7 +31,7 @@ const deny=(name)=>{
       setSuggestion(response.data);
     });
   }, []);
-  console.log(suggestion[0], "maryouma");
+ 
 
   return (
     <div>

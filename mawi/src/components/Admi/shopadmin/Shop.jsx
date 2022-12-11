@@ -3,7 +3,7 @@ import OneElement from "./OneElement.jsx";
 import Navbar from "../adminNavbar/Navbar.jsx";
 import "./shop.css";
 const Shop = (props) => {
-  console.log("propsp", props);
+ 
 const [shop,setShop]=useState(props.shop)
 
   return (
