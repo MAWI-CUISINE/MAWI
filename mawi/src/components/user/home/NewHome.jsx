@@ -5,18 +5,10 @@ import Typewriter from "typewriter-effect";
 import Foot from "../footer/Foot.jsx"
 
 const NewHome = () => {
-  const Im = [
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670248932/mawi%20cuisine/insta1_qlet3h.jpg",
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670248989/mawi%20cuisine/insta2_uwrmlo.jpg",
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670249063/mawi%20cuisine/insta3_ehnaae.jpg",
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670249083/mawi%20cuisine/insta4_nd6wrw.jpg",
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670249105/mawi%20cuisine/insta5_oyivr8.jpg",
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670249126/mawi%20cuisine/insta6_rlzig6.jpg",
-    "https://res.cloudinary.com/dugewmeeh/image/upload/v1670249146/mawi%20cuisine/insta7_rjzno4.jpg",
-  ];
 
   return (
     <div>
+     
       {/* <!-- header-start --> */}
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -45,7 +37,7 @@ const NewHome = () => {
                 <div className="col-xl-1 col-md-1 col-lg-1">
                   <div
                     className="logo"
-                    style={{ position: "relative", bottom: "28px" }}
+                    style={{ position: "relative", bottom: "28px" , width:"200px"}}
                   >
                     <img
                       src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png"
@@ -189,10 +181,10 @@ const NewHome = () => {
       {/* <!-- dish_area start  --> */}
       <div className="dish_area">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-start">
             <div className="col-xl-12">
               <div className="dish_wrap d-flex">
-                <div className="single_dish text-center">
+                <div className="single_dish col text-center" onClick={{}}>
                   <div className="thumb">
                     <img
                       src="img/recepie/recpie_1.png"
@@ -207,7 +199,7 @@ const NewHome = () => {
                     eat them for breakfast.”
                   </p>
                 </div>
-                <div className="single_dish text-center">
+                <div className="single_dish col text-center">
                   <div className="thumb">
                     <img
                       src="img/recepie/recpie_3.png"
@@ -218,7 +210,7 @@ const NewHome = () => {
                   <h3>Dinner</h3>
                   <p>“Dinner is where the magic happens in the kitchen.”</p>
                 </div>
-                <div className="single_dish text-center">
+                <div className="single_dish col text-center">
                   <div className="thumb">
                     <img src="img/recepie/recpie_4.png" alt="" />
                   </div>

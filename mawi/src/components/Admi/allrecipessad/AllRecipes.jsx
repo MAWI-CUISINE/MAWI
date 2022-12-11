@@ -3,6 +3,7 @@ import './allRecipes.css'
 import Navbar from "../adminNavbar/Navbar";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
+import Foot from "../../user/footer/Foot.jsx";
 const AllRecipes = (props) => {
   const [allrecipes,setAllRecipes]=useState([])
  useEffect(() => {
@@ -79,6 +80,7 @@ axios
         </section>
         {/* ##### Best Receipe Area End ##### */}
       </>
+      <Foot/>
     </div>
   );
 }
