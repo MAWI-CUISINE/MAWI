@@ -39,6 +39,15 @@ Mawirouter.route('/getAllPost').get(getAllPosts)
 
 
 // Cart
+
+
+
+Mawirouter.route("/cart").get(getAllCart);
+Mawirouter.route("/uptotal/:name").put(upTotal)
+Mawirouter.route("/upQ/:name").put(upQ)
+Mawirouter.route("/downQ/:name").put(downQ)
+Mawirouter.route("/addCart").post(addCart)
+Mawirouter.route("/deleteC/:name").delete(delte1Cart)
 Mawirouter.route("/emptyCart").delete(emptyCart); 
 //  Shop
 Mawirouter.route("/UpdateItem/:name").put(UpdateItem);
@@ -62,20 +71,11 @@ Mawirouter.route("/recipelike/:name").put(Like);
 Mawirouter.route("/recipedislike/:name").put(disLike); 
 Mawirouter.route("/onerecipe/:name").get(getOneRecipe); 
 Mawirouter.route('/postRecipes').post(PostRecipe)
+Mawirouter.route("/filter/:Rcategorie").get(FilterRecipe)
 
 //
 
 
 
-
-
-
-Mawirouter.route("/cart").get(getAllCart);
-Mawirouter.route("/uptotal/:name").put(upTotal)
-Mawirouter.route("/upQ/:name").put(upQ)
-Mawirouter.route("/downQ/:name").put(downQ)
-Mawirouter.route("/addCart").post(addCart)
-Mawirouter.route("/deleteC/:name").delete(delte1Cart)
-Mawirouter.route("/filter/:Rcategorie").get(FilterRecipe)
 module.exports = Mawirouter;
 
