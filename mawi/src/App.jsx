@@ -4,17 +4,18 @@ import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login.jsx";
 import SignUp from "./components/login/SignUp.jsx";
-import AllRecipesAndDetails from "./AllRecipeandDetails.jsx"
+import AllRecipesAndDetails from "./components/user/allRecipesfinal/AllRecipeandDetails.jsx";
+import AllRecipesAdmin from "./components/Admi/AllRecipeandDetailsAdmin.jsx";
 import Post from "./components/user/post/PostRecipie.jsx";
-import AllRecipesAdd from "./components/user/allrecipessad/AllRecipes.jsx";
+// import AllRecipesAdd from "./components/user/allrecipessad/AllRecipes.jsx";
 import Recipies from "./components/user/RecipeDetail/RecipeDetails.jsx";
 import NewHome from "./components/user/home/NewHome.jsx";
 import Profile from "./components/user/profil/Profile.jsx";
-
+import AdminShop from "./components/Admi/shopadmin/Shop.jsx";
 import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
-import AllRecipes from "./components/user/allrecipess/AllRecipes.jsx";
+import Users from "./components/user/users/Users.jsx";
 import Approve from "./components/user/approval/Approve.jsx";
 
 import Cart from "./components/cart/Cart.jsx";
@@ -23,11 +24,10 @@ function App() {
   const [user, setUser] = useState("");
   const [shop, setShop] = useState([]);
 
-  const [OneRecipe,setOneRecipe]=useState({})
+  const [OneRecipe, setOneRecipe] = useState({});
 
-
-  console.log(user,'one');
-console.log(allrecipe);
+  console.log(user, "one");
+  console.log(allrecipe);
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -53,48 +53,55 @@ console.log(allrecipe);
       })
       .catch((err) => console.error(err));
   }, []);
-if(!user){
-  return (
-    <div>
-      <Routes>
-        <Route>
-          <Route path ="/" element={<Login/>}/>
-          <Route path="/signup" element={<SignUp />} />
-        </Route>
-      </Routes>
-    </div>
-  )
-}
-if (user.admin===true) {
-  <div>hi</div>
-}else {return (
-  <div>
-    <Routes>
-      <Route>
-        <Route
-          path="/allrecipes"
-          element={<AllRecipesAndDetails recipe={OneRecipe} />}
-        />
-        <Route path="/Profile" element={<Profile user={user && user} />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/allRecipesad" element={<AllRecipesAdd />} />
+  if (!user) {
+    return (
+      <div>
+        <Routes>
+          <Route>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Route>
+        </Routes>
+      </div>
+    );
+  } else if (user.admin == true) {
+    return (
+      <div>
+        <Routes>
+          <Route>
+            <Route path="/allRecipes" element={<AllRecipesAdmin />} />
+            <Route path="/shop" element={<AdminShop shop={shop} />} />
+            <Route path="/Users" element={<Users />} />
 
+            <Route path="/approve" element={<Approve />} />
+          </Route>
+        </Routes>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Routes>
+          <Route>
+            <Route
+              path="/allrecipes"
+              element={<AllRecipesAndDetails recipe={OneRecipe} />}
+            />
+            <Route path="/Profile" element={<Profile user={user && user} />} />
 
-        <Route path="/home" element={<NewHome user={user} />} />
-        <Route path="/nav" element={<Navbar user={user} />} />
+            <Route path="/home" element={<NewHome user={user} />} />
+            <Route path="/nav" element={<Navbar user={user} />} />
 
-        <Route path="/shop" element={<Shop shop={shop} />} />
-        <Route path="/post" element={<Post user={user} />} />
+            <Route path="/shop" element={<Shop shop={shop} />} />
+            <Route path="/post" element={<Post user={user} />} />
 
-
-  <Route path="/approve" element={<Approve />} />
-        <Route path="/foot" element={<Foot />} />
-        <Route path="/cart" element={<Cart user={user} />} />
-      </Route>
-    </Routes>
-  </div>
-);}
-
+            <Route path="/foot" element={<Foot />} />
+            <Route path="/cart" element={<Cart user={user} />} />
+          </Route>
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;

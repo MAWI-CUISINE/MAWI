@@ -21,7 +21,7 @@ cb(e.target.value)
     ) {
 axios.post("http://localhost:5000/user/signup",body).then((res)=>{
   console.log(res);
-}).catch(err=>console.log(err))
+}).catch(err=>alert('fuckoff'))
     }
   }
 
