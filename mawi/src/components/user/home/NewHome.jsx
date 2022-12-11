@@ -3,9 +3,36 @@ import "./home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Typewriter from "typewriter-effect";
 import Foot from "../footer/Foot.jsx"
-
+import Dropdown from "react-bootstrap/Dropdown";
+import jwt_decode from "jwt-decode";
+import axios from 'axios';
+import { useState } from 'react'
+import { useEffect } from 'react';
 const NewHome = () => {
-
+  const [user,setUser]=useState("")
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if (token) {
+      const user = jwt_decode(token);
+  
+      if (!user) {
+        localStorage.removeItem("token");
+      } else {
+        axios
+          .get(`http://localhost:5000/user/getUser/${user.name}`)
+          .then((res) => {
+            setUser(res.data);
+          });
+      }
+    }
+  },[])
+  const logOut=()=>{
+  localStorage.clear()
+  axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.href='/').catch(err=>{
+    console.log(err)
+    alert ('failed to logout')
+  })
+  }
   return (
     <div>
      
@@ -47,7 +74,7 @@ const NewHome = () => {
                     />
                   </div>
                 </div>
-                <div className="col-xl-10 col-lg-10 col-md-10">
+                <div className="col-xl-10 col-lg-10 col-md-10 position-absolute top-50 ">
                   <div className="main-menu   d-none d-lg-block">
                     <nav>
                       <ul
@@ -88,31 +115,29 @@ const NewHome = () => {
                     </nav>
                   </div>
                 </div>
-                <div
-                  className="col-xl-1 col-md-1 col-lg-1"
-                  style={{ position: "relative", bottom: "28px" }}
-                >
-                  <a href="cart">
-                    <div
-                      className="rounded-circle"
-                      style={{
-                        height: "60px",
-                        width: "60px",
-                      }}
-                    >
-                      <img
-                        src="https://res.cloudinary.com/dn9qfvg2p/image/upload/v1670497130/mawi%20logo/icon-panier-repas2_wif2x0.png"
-                        alt="not"
-                        className="rounded-circle"
-                        style={{
-                          width: "40%%",
-                          height: "100%",
-                        }}
-                      />
-                    </div>
-                  </a>
-                </div>
+               
+              <div
+              
+              
+                className=" col-1 position-absolute top-5 end-0"
+                
+              >
+                <Dropdown  >
+                  <Dropdown.Toggle
+                 
+                   
+                    id="dropdown-basic"
+                  >
+                    
+                  </Dropdown.Toggle>
 
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+                    <Dropdown.Item href="/cart">cart</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>logOut()}>logOut</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
                 <div className="col-12">
                   <div className="mobile_menu d-block d-lg-none"></div>
                 </div>

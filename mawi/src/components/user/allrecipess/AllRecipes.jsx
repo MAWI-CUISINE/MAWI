@@ -30,6 +30,7 @@ const AllRecipes = (props) => {
                   <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     categories
                   </button>
+                 
                   <div className="dropdown-menu">
                     <a className="dropdown-item" href="#"
                      onClick={()=>{
@@ -94,8 +95,10 @@ const AllRecipes = (props) => {
 
               {/* Single Best Receipe Area */}
 
-            </div>
+            </div> <div className='row postition-absolute bottom-0  end-0'><div className='col-1'></div><div className='col'></div><div className='col'><button className='btn btn-outline-success ' onClick={()=>{window.location.href='/post'}}>Add Recepie</button></div></div>
           </div>
+         
+         
         </section>
         {/* ##### Best Receipe Area End ##### */}
       </>
