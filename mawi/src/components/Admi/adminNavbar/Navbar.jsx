@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState } from 'react'
 import { useEffect } from 'react';
 const Navbar = (props) => {
-console.log(props.user,'props');
+
 const [user,setUser]=useState("")
 const [PostsToApprove,setPosts]=useState(0)
 useEffect(()=>{
@@ -30,7 +30,7 @@ useEffect(()=>{
 const logOut=()=>{
 localStorage.clear()
 axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.href='/').catch(err=>{
-  console.log(err)
+ 
   alert ('failed to logout')
 })
 }
