@@ -8,9 +8,9 @@ const cloudinary = require("../cloudinary");
 
 
 const emptyCart = async (req, res) => {
-  
+
   try {
-     Cart.deleteMany({ }, (err, result) => {
+    Cart.deleteMany({}, (err, result) => {
       if (err) console.log(err);
       res.json(result);
     });
@@ -18,18 +18,19 @@ const emptyCart = async (req, res) => {
     res.json(error);
   }
 };
-const deleteRecipe=async(req,res)=>{
-let id=req.params.id
-try {
-   Recipe.deleteOne({Rname:id},(err,result)=>{
-    if(err)console.log(err)
-    res.json(result)
-  })
+const deleteRecipe = async (req, res) => {
+  let id = req.params.id
+  try {
+    Recipe.deleteOne({ Rname: id }, (err, result) => {
+      if (err) console.log(err)
+      res.json(result)
+    })
 
-} catch (error) {
-  res.json(error)
+  } catch (error) {
+    res.json(error)
+  }
 }
-}
+
 const deletePost = async (req, res) => {
   let name = req.params.name;
   try {
@@ -46,17 +47,20 @@ const SignUp= async(req,res)=>{
     try{
 const Password= await bcrypt.hash(body.password,10)
 
- await User.create({
-    Uname:body.username,
-    Uemail:body.email,
-    Upassword:Password},(err,result)=>{
-      if (err)console.log(err);
+
+    await User.create({
+      Uname: body.username,
+      Uemail: body.email,
+      Upassword: Password
+    }, (err, result) => {
+      if (err) console.log(err);
 
       else res.json(result);
     })
   } catch (err) {
-    console.log(err,'err');
-    alert('error')
+
+ 
+    alert('err')
   }
 }
 
@@ -133,7 +137,7 @@ const Login = async (req, res) => {
 const addPost = async (req, res) => {
   let body = req.body
   try {
-    await Post.create(body,{unique:true}, (err, result) => {
+    await Post.create(body, { unique: true }, (err, result) => {
       if (err) res.json(err)
       res.json(result)
     })
@@ -187,7 +191,7 @@ const getAllPosts = async (req, res) => {
 
 const getAllUsers = async (req, res) => {
   try {
-    await User.find({admin:false}).then((result) => {
+    await User.find({ admin: false }).then((result) => {
       res.json(result);
     });
   } catch (err) {
@@ -237,7 +241,7 @@ const getAllCart = async (req, res) => {
 }
 const upTotal = async (req, res) => {
   try {
-     Cart.findOneAndUpdate({ ArticleName: req.params.name }, {
+    Cart.findOneAndUpdate({ ArticleName: req.params.name }, {
       Total: req.body.total
     }, (err, result) => {
       if (err) console.log(err);
@@ -250,9 +254,9 @@ const upTotal = async (req, res) => {
 }
 const UpdateItem = async (req, res) => {
   try {
-     Shop.findOneAndUpdate(
+    Shop.findOneAndUpdate(
       { Sname: req.params.name },
-      {Sname:req.body.name,Sprice:req.body.price},
+      { Sname: req.body.name, Sprice: req.body.price },
       (err, result) => {
         if (err) console.log(err);
         res.json(result);
@@ -290,14 +294,14 @@ const downQ = async (req, res) => {
 }
 const disLike = async (req, res) => {
   try {
-     Recipe.findOneAndUpdate(
+    Recipe.findOneAndUpdate(
       { Rname: req.params.name },
       {
         $inc: { Rdislike: 1 },
       },
       (err, result) => {
         if (err) console.log(err);
-         res.json(result);
+        res.json(result);
       }
     );
   } catch (err) {
@@ -305,40 +309,40 @@ const disLike = async (req, res) => {
   }
 };
 const Like = async (req, res) => {
- 
-     Recipe.findOneAndUpdate(
-      { Rname: req.params.name },
-      {
-        $inc: { Rlike: 1 },
-      },
-      (err, result) => {
-        if (err) console.log(err);
-        res.json(result);
-      }
-    );
+
+  Recipe.findOneAndUpdate(
+    { Rname: req.params.name },
+    {
+      $inc: { Rlike: 1 },
+    },
+    (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    }
+  );
 
 };
 const getOneRecipe = async (req, res) => {
   try {
-    await Recipe.find({Rname:req.params.name}).then((result) => {
+    await Recipe.find({ Rname: req.params.name }).then((result) => {
       res.json(result);
     });
   } catch (err) {
     res.json(err);
   }
 };
-const delte1Cart=async(req,res)=>{
-  let name=req.params.name
+const delte1Cart = async (req, res) => {
+  let name = req.params.name
   try {
-    Cart.deleteOne({ArticleName:name},(err,result)=>{
-      if(err)console.log(err)
+    Cart.deleteOne({ ArticleName: name }, (err, result) => {
+      if (err) console.log(err)
       res.json(result)
     })
-  
+
   } catch (error) {
     res.json(error)
   }
-  }
+}
 
 const deleteUser = async (req, res) => {
   let name = req.params.name;
@@ -362,6 +366,15 @@ const deleteElement = async (req, res) => {
     res.json(error);
   }
 };
+const FilterRecipe = async (req, res) => {
+  try {
+    Recipe.find({ Rcategorie: req.params.Rcategorie }).then((result) => {
+      res.json(result);
+    });
+  } catch (err) {
+    res.json(err);
+  }
+};
 module.exports = {
   deleteElement,
   deleteUser,
@@ -378,7 +391,6 @@ module.exports = {
   UpdateUser,
   postShop,
   getAllShop,
-
   emptyCart,
   deleteRecipe,
   UpdateItem,
@@ -390,6 +402,7 @@ module.exports = {
   upQ,
   downQ,
   delte1Cart,
+  FilterRecipe,
   deletePost,
 };
 

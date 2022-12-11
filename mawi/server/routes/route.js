@@ -28,6 +28,7 @@ const {
   deleteUser,
   UpdateItem,
   deleteElement,
+  FilterRecipe,
   deletePost,
 } = require("../controller/controller");
 Mawirouter.route('/post').post(addPost)//mtea mariem
@@ -63,6 +64,6 @@ Mawirouter.route("/upQ/:name").put(upQ)
 Mawirouter.route("/downQ/:name").put(downQ)
 Mawirouter.route("/addCart").post(addCart)
 Mawirouter.route("/deleteC/:name").delete(delte1Cart)
-
+Mawirouter.route("/filter/:Rcategorie").get(FilterRecipe)
 module.exports = Mawirouter;
 

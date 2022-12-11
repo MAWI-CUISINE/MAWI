@@ -17,7 +17,7 @@ import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import Users from "./components/Admi/users/Users.jsx";
 import Approve from "./components/Admi/approval/Approve.jsx";
-
+import About from "./components/About/About.jsx"
 import Cart from "./components/cart/Cart.jsx";
 function App() {
   const [allrecipe, setAllRecipe] = useState([]);
@@ -97,6 +97,7 @@ function App() {
 
             <Route path="/foot" element={<Foot />} />
             <Route path="/cart" element={<Cart user={user} />} />
+            <Route path="/about" element={<About />} />
           </Route>
         </Routes>
       </div>
