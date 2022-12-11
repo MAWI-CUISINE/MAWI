@@ -33,26 +33,6 @@ const DisLike=(nama)=>{
       <Navbar />
       <div>
         <div className="receipe-post-area section-padding-80">
-          {/* <!-- Receipe Post Search --> */}
-          <div className="receipe-post-search mb-80">
-            <img
-              src={image}
-              style={{ width: "100%", height: "400px" }}
-              alt=""
-            />
-          </div>
-
-          {/* <!-- Receipe Slider --> */}
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <div className="receipe-slider owl-carousel">
-                  <img src={One && One.Rimage} alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* <!-- Receipe Content Area --> */}
           <div className="receipe-content-area">
             <div className="container">
@@ -78,13 +58,21 @@ const DisLike=(nama)=>{
                           {One && One.Rcategorie}
                         </h6>
                       </div>
+                
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-4">
+                  <img src = {One.Rimage}/>
+                   <div className="row p-3 d-flex justify-content-center" >
                       <div className=" col-2 col-lg-2">
-                        <h6
+                        <h6 
                           onClick={() => {
                             Like(One.Rname);
                           }}
                         >
-                          <FontAwesomeIcon icon="fa-regular fa-thumbs-up" />
+                          <FontAwesomeIcon icon="fa-regular fa-thumbs-up"/>
                           {likes}
                         </h6>
                       </div>{" "}
@@ -98,13 +86,9 @@ const DisLike=(nama)=>{
                           {dislikes}
                         </h6>
                       </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-12 col-md-4">
-                  <div className="receipe-ratings text-right my-5"></div>
-                </div>
+                      </div>
+                </div>   
+                  
               </div>
 
               <div className="row">
