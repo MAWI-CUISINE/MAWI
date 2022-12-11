@@ -15,8 +15,7 @@ let add=(a)=>{
 const addtoCart=(body)=>{
     axios.post('http://localhost:5000/user/addcart',body)
 }
-console.log(cart,"<---------------->");
-    console.log("hedhi", props);    
+ 
     return (
         <div>
             <Navbar />

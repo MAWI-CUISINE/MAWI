@@ -33,11 +33,7 @@ const Finaleprofile = (props) => {
   };
   const Uploaddata = (body) => {
     axios
-      .put(`http://localhost:5000/user/getUser/${props.user.Uname}`, body)
-      .then((res) => {
-        console.log("passed");
-      })
-      .catch((err) => console.log(err));
+      .put(`http://localhost:5000/user/getUser/${props.user.Uname}`, body).catch((err) => alert(err));
   };
 
   const [show, setShow] = useState(false);
@@ -262,7 +258,7 @@ const Finaleprofile = (props) => {
                                   />
                                 </h6>   <br></br>
                               </div>
-                           
+
                             </div>
                             <h6 className="m-b-20 m-t-40  p-b-5 b-b-default f-w-600">
                               Password
@@ -272,7 +268,7 @@ const Finaleprofile = (props) => {
                                 <p className="m-b-10 f-w-600"></p>
                                 <h6 className="text-muted f-w-600">
                                   type ur old password
-                                
+
                                   <input
                                     onChange={(e) =>
                                       setancientPassword(e.target.value)
@@ -283,7 +279,7 @@ const Finaleprofile = (props) => {
                                   />
                                 </h6><br></br>
                               </div>
-                              
+
                               <div className="col-12">
                                 <p className="m-b-10 f-w-600"></p>
                                 <h6 className="text-muted f-w-600">
