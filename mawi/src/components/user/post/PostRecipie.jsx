@@ -5,7 +5,7 @@ import BootstrapSelect from "react-bootstrap-select-dropdown";
 import "./post.css";
 import Navbar from "../navbar/Navbar.jsx";
 const PostRecipe = (props) => {
-  console.log(props);
+
   const [Pname, setPname] = useState("");
   const [Ppeparation_time, setPpeparation_time] = useState(0);
   const [Pcook_time, setPcook_time] = useState(0);
@@ -50,11 +50,8 @@ const PostRecipe = (props) => {
         Pimage,
         Pcategorie,
       })
-      .then((res) => {
-        console.log(res);
-        alert("suxxess");
-      })
-      .catch((err) => console.log(err));
+      
+      .catch((err) => alert(err));
   };
   return (
     <div>

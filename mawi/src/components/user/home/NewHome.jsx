@@ -29,7 +29,7 @@ const NewHome = () => {
   const logOut=()=>{
   localStorage.clear()
   axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.href='/').catch(err=>{
-    console.log(err)
+   
     alert ('failed to logout')
   })
   }
