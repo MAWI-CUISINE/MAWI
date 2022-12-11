@@ -20,7 +20,7 @@ cb(e.target.value)
       body.password.length >= 8
     ) {
 axios.post("http://localhost:5000/user/signup",body).then((res)=>{
-  console.log(res);
+
 }).catch(err=>alert('fuckoff'))
     }
   }

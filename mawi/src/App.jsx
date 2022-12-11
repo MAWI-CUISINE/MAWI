@@ -26,8 +26,7 @@ function App() {
 
   const [OneRecipe, setOneRecipe] = useState({});
 
-  console.log(user, "one");
-  console.log(allrecipe);
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {

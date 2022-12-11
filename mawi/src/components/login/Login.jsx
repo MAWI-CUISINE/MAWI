@@ -6,7 +6,7 @@ const Login = () => {
   const [result, setResult] = useState("");
 
   const [password, setPassword] = useState("");
-  console.log(result);
+
   //a function to handle the changes of the input
   const handleChanges = (e, cb) => {
     cb(e.target.value);
@@ -108,7 +108,7 @@ const Login = () => {
                           className="btn btn-black bg-success gradient-custom-2 "
                           style={{color:"#ffffff"}}
                           onClick={() => {
-                            console.log("cliked");
+                          
                             window.location.href = "/signup";
                           }}
                         >
