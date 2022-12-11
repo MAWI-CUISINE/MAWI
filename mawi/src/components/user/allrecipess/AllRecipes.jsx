@@ -26,7 +26,8 @@ const AllRecipes = (props) => {
             <div className="row ">
               <div className="col">
                 {/* button filter wth categorie  */}
-                <div className="btn-group">
+               <div className='row'>
+                <div  className="col-2 btn-group">
                   <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     categories
                   </button>
@@ -49,6 +50,17 @@ const AllRecipes = (props) => {
                     >dessert</a>
                   </div>
                 </div>
+                <div className='col-6'></div>
+                <div className="col input-group">
+    <div className="form-outline">
+      <input type="search" id="form1" className="form-control" />
+    
+    </div>
+    <button type="button" className="btn btn-outline-success">
+      <i className="fas fa-search" />
+    </button>
+  
+  </div></div>
                 <div className="section-heading">
                   <h3>The best Receipies</h3>
                 </div>
