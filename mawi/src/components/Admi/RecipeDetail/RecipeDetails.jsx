@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Navbar from "../navbar/Navbar.jsx";
+import Navbar from "../adminNavbar/Navbar.jsx";
 import axios from "axios";
-import Foot from "../footer/Foot.jsx";
+import Foot from "../../user/footer/Foot.jsx";
 
 // import "./Recipe.css"
 import Singleingr from "./Singleingr";
