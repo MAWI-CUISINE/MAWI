@@ -30,6 +30,17 @@ try {
   res.json(error)
 }
 }
+const deletePost = async (req, res) => {
+  let name = req.params.name;
+  try {
+    Post.deleteOne({ Pname: name }, (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};
 const SignUp= async(req,res)=>{
     let body= req.body
     try{
@@ -45,7 +56,7 @@ const Password= await bcrypt.hash(body.password,10)
     })
   } catch (err) {
     console.log(err,'err');
-    alert('fuckoff')
+    alert('error')
   }
 }
 
@@ -173,6 +184,7 @@ const getAllPosts = async (req, res) => {
     res.json(err)
   }
 }
+
 const getAllUsers = async (req, res) => {
   try {
     await User.find({admin:false}).then((result) => {
@@ -367,17 +379,18 @@ module.exports = {
   postShop,
   getAllShop,
 
-emptyCart,
+  emptyCart,
   deleteRecipe,
-UpdateItem,
-getAllUsers,
+  UpdateItem,
+  getAllUsers,
   CheckUser,
   addCart,
   getAllCart,
   upTotal,
   upQ,
   downQ,
-  delte1Cart
+  delte1Cart,
+  deletePost,
 };
 
 
