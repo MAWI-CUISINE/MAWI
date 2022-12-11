@@ -30,10 +30,23 @@ const deleteRecipe = async (req, res) => {
     res.json(error)
   }
 }
-const SignUp = async (req, res) => {
-  let body = req.body
+
+const deletePost = async (req, res) => {
+  let name = req.params.name;
   try {
-    const Password = await bcrypt.hash(body.password, 10)
+    Post.deleteOne({ Pname: name }, (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};
+const SignUp= async(req,res)=>{
+    let body= req.body
+    try{
+const Password= await bcrypt.hash(body.password,10)
+
 
     await User.create({
       Uname: body.username,
@@ -45,8 +58,9 @@ const SignUp = async (req, res) => {
       else res.json(result);
     })
   } catch (err) {
-    console.log(err, 'err');
-    alert('fuckoff')
+
+ 
+    alert('err')
   }
 }
 
@@ -174,6 +188,7 @@ const getAllPosts = async (req, res) => {
     res.json(err)
   }
 }
+
 const getAllUsers = async (req, res) => {
   try {
     await User.find({ admin: false }).then((result) => {
@@ -387,7 +402,8 @@ module.exports = {
   upQ,
   downQ,
   delte1Cart,
-  FilterRecipe
+  FilterRecipe,
+  deletePost,
 };
 
 
