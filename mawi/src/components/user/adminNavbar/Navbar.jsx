@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 const Navbar = (props) => {
 console.log(props.user,'props');
 const [user,setUser]=useState("")
+const [PostsToApprove,setPosts]=useState(0)
 useEffect(()=>{
   const token = localStorage.getItem("token");
   if (token) {
@@ -22,6 +23,9 @@ useEffect(()=>{
         });
     }
   }
+  axios
+    .get("http://localhost:5000/user/getAllPost")
+    .then((res) => setPosts(res.data.length));
 },[])
 const logOut=()=>{
 localStorage.clear()
@@ -53,10 +57,18 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="/home"
+                    href="/approve"
                     style={{ color: "white" }}
                   >
-                    Home
+                    <div className="row">
+                      <div
+                        className="col-3 bg-danger rounded-circle "
+                        style={{ width: "10%" }}
+                      >
+                        {PostsToApprove}
+                      </div>{" "}
+                      <div className="col-6">pending</div>
+                    </div>
                   </a>
                 </li>
                 <li className="nav-item">
@@ -80,10 +92,10 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                 <li className="nav-item">
                   <a
                     className="nav-link"
-                    href="/about"
+                    href="/users"
                     style={{ color: "white" }}
                   >
-                    About
+                    Users
                   </a>
                 </li>
               </ul>
@@ -101,7 +113,9 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                       className="d-inline-block rounded-circle align-text-top"
                       width="70"
                       height="70"
-                      src={user.Uimage}
+                      src={
+                        "https://res.cloudinary.com/dugewmeeh/image/upload/v1670743970/mawi%20cuisine/blank-profile-picture-973460_1280_pgdqwd.png"
+                      }
                       alt=""
                     />
                   </Dropdown.Toggle>
@@ -109,7 +123,9 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                   <Dropdown.Menu>
                     <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                     <Dropdown.Item href="/cart">cart</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>logOut()}>logOut</Dropdown.Item>
+                    <Dropdown.Item onClick={() => logOut()}>
+                      logOut
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </div>

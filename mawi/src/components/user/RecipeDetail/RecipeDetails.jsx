@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../adminNavbar/Navbar";
 import axios from "axios";
 import Foot from "../footer/Foot.jsx";
 

@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Navbar from '../user/navbar/Navbar.jsx'
+import Navbar from "../../user/adminNavbar/Navbar.jsx";
 import './shop.css'
 const Shop = (props) => {
     console.log("propsp",props);

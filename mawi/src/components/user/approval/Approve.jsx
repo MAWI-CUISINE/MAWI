@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Navbar from "../navbar/Navbar.jsx";
+import Navbar from "../adminNavbar/Navbar";
 import "./approve.css"
 
 const Approve = () => {
