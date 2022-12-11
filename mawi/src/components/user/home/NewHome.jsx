@@ -257,7 +257,7 @@ const NewHome = () => {
               <div className="trand_info text-center">
                 <p>Thousands of recipes are waiting to be watched</p>
                 <h3>Discover latest trending recipes</h3>
-                <a href="/" className="boxed-btn3">
+                <a href="/allrecipes" className="boxed-btn3">
                   View all Recipes
                 </a>
               </div>
@@ -270,11 +270,7 @@ const NewHome = () => {
       {/* <!-- customer_feedback_area  --> */}
       <div className="customer_feedback_area">
         <div className="container">
-          {/* <div className="row justify-content-center mb-50">
-                <div className="col-xl-9">
-                <img src={"https://bestanimations.com/media/food/142730108waffles-animated-gif.gif#.Y5DpAY1l0G8.link"}  style={{position:"relative" ,left:"80%"}} alt="my-gif" />
-                </div>
-            </div> */}
+    
           <div className="recepie_videoes_area">
             <div className="container">
               <div className="row">
