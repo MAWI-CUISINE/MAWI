@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900|Satisfy&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700,900|Satisfy&display=swap");
+
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_extend.scss */
 .boxed-btn3-text:hover {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff008c+0,ff6357+100 */
@@ -23,7 +22,7 @@
 /* 1. Theme default css */
 /* line 5, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/theme-default.scss */
 body {
-  font-family: "Roboto", sans-serif;
+  
   font-weight: normal;
   font-style: normal;
 }
@@ -74,7 +73,7 @@ button {
 }
 
 /* line 39, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/theme-default.scss */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h5 {
   font-family: "Satisfy", cursive;
   color: #000000;
 }
@@ -946,7 +945,7 @@ h3 {
 /* line 16, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_header.scss */
 .header-area .main-header-area {
   padding: 25px 0px;
-  background: #fff;
+  background: rgb(58, 67, 169);
   background: transparent;
 }
 
@@ -1134,7 +1133,7 @@ h3 {
   font-weight: 500;
   display: inline-block;
   padding: 0px 0px 0px 0px;
-  font-family: "Roboto", sans-serif;
+ 
   position: relative;
   text-transform: capitalize;
 }
