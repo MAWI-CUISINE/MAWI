@@ -26,8 +26,8 @@ const Login = () => {
       });
   };
   return (
-    <section
-      className="h-100 gradient-form"
+    <div
+   
       style={{ backgroundColor: "#eee" }}
     >
       <div className="container py-5 h-100">
@@ -37,12 +37,12 @@ const Login = () => {
               <div className="row g-0">
                 <div
                   className="col-lg-6"
-                  style={{ backgroundColor: "#FCF7F7" }}
+                  style={{ backgroundColor: "#FFC000" }}
                 >
                   <div className="card-body p-md-5 mx-md-4">
                     <div className="text-center">
                       <img
-                        src="https://res.cloudinary.com/dugewmeeh/image/upload/v1670169147/mawi%20cuisine/logo_rxiwsp.png"
+                        src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png"
                         style={{ width: "185px" }}
                         alt="logo"
                       />
@@ -55,7 +55,7 @@ const Login = () => {
                     </div>
 
                     <form>
-                      <p>Please login to your account</p>
+                     
 
                       <div className="form-outline mb-4">
                         <label className="form-label" htmlor="form2Example11">
@@ -91,23 +91,22 @@ const Login = () => {
                         onClick={()=>{
                           Login({username,password})
                         }}
-                          className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                          className="btn btn-black btn-block bg-black fa-lg gradient-custom-2 mb-3"
                           type="button"
-                          style={{ color: "#715561" }}
+                          style={{color:"#ffffff"}}
                         >
                           Log in
                         </button>
                         <br />
-                        <a className="text-muted" href="/">
-                          Forgot password?
-                        </a>
+                        
                       </div>
 
                       <div className="d-flex align-items-center justify-content-center pb-4">
                         <p className="mb-0 me-2">Don't have an account?</p>
                         <button
                           type="button"
-                          className="btn btn-outline-danger "
+                          className="btn btn-black bg-success gradient-custom-2 "
+                          style={{color:"#ffffff"}}
                           onClick={() => {
                             console.log("cliked");
                             window.location.href = "/signup";
@@ -138,7 +137,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </section>
+      </div>
   );
 }
 

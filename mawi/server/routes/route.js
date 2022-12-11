@@ -14,20 +14,21 @@ const {
   disLike,
   postShop,
   getAllShop,
-  delteRecipe,
+  deleteRecipe,
   CheckUser,
   addCart,
   getAllCart,
   upTotal,
   upQ,
   downQ,
-  getOneRecipe
+  getOneRecipe,
+  delte1Cart
 } = require("../controller/controller");
 Mawirouter.route('/post').post(addPost)//mtea mariem
 Mawirouter.route("/getallrecipes").get(GetAllRecipes); //mtea wiwi
 Mawirouter.route("/getUser/:name").get(getUser); //mtea wiwi
 Mawirouter.route("/getUser/:name").put(UpdateUser); //mtea wiwi
-Mawirouter.route("/deleteRecipe/:id").delete(delteRecipe); //mtea wiwi
+Mawirouter.route("/deleteRecipe/:id").delete(deleteRecipe); //mtea wiwi
 Mawirouter.route("/recipelike/:name").put(Like); //mtea wiwi
 Mawirouter.route("/recipedislike/:name").put(disLike); //mtea wiwi
 Mawirouter.route("/onerecipe/:name").get(getOneRecipe); //mtea wiwi
@@ -49,7 +50,7 @@ Mawirouter.route("/uptotal/:name").put(upTotal)
 Mawirouter.route("/upQ/:name").put(upQ)
 Mawirouter.route("/downQ/:name").put(downQ)
 Mawirouter.route("/addCart").post(addCart)
-
+Mawirouter.route("/deleteC/:name").delete(delte1Cart)
 
 module.exports = Mawirouter;
 

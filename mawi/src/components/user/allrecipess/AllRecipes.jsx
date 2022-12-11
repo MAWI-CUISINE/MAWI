@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './allRecipes.css'
 import axios from 'axios';
 import Navbar from '../navbar/Navbar.jsx';
+import Foot from '../footer/Foot';
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const AllRecipes = (props) => {
   const [allRecipes,setAllRecipes]=useState([])
@@ -29,10 +30,10 @@ useEffect(()=>{
             <div className="row">
               { allRecipes.map((e,i)=>{
                 return (
-                  <div onClick={()=>{
+                  <div  onClick={()=>{
                     props.changeview('one')
                     props.changeRecipe(e)}} className="col-12 col-sm-6 col-lg-4">
-                    <div className="showhim single-best-receipe-area mb-30">
+                    <div className="single-best-receipe-area mb-30" >
                       <img
                         style={{ width: "339px", height: "339px" }}
                         src={e.Rimage}
@@ -40,11 +41,11 @@ useEffect(()=>{
                       />
                       <div
                         style={{ width: "339px" }}
-                        className="showme receipe-content"
+                        className="receipe-content"
                       >
-                        <a href="receipe-post.html">
+                        
                           <h5>{e.Rname}</h5>
-                        </a>
+                      
                         <div className="ratings">
                           <div className="row">
                             <div className="col-3"></div>
@@ -71,6 +72,7 @@ useEffect(()=>{
         </section>
         {/* ##### Best Receipe Area End ##### */}
       </>
+              <Foot/>
     </div>
   );
 }
