@@ -27,12 +27,12 @@ useEffect(()=>{
                 </div>
               </div>
             </div>
-            <div className="row">
+            <div className="row align-items-start">
               { allRecipes.map((e,i)=>{
                 return (
-                  <div  onClick={()=>{
+                  <div className="col col-sm-6 col-lg-4"  onClick={()=>{
                     props.changeview('one')
-                    props.changeRecipe(e)}} className="col-12 col-sm-6 col-lg-4">
+                    props.changeRecipe(e)}} >
                     <div className="single-best-receipe-area mb-30" >
                       <img
                         style={{ width: "339px", height: "339px" }}
