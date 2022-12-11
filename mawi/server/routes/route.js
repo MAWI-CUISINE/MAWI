@@ -31,30 +31,42 @@ const {
   FilterRecipe,
   deletePost,
 } = require("../controller/controller");
+
+//Posts requests
 Mawirouter.route('/post').post(addPost)//mtea mariem
-Mawirouter.route("/getallrecipes").get(GetAllRecipes); //mtea wiwi
-Mawirouter.route("/getUser/:name").get(getUser); //mtea wiwi
-Mawirouter.route("/getUser/:name").put(UpdateUser); //mtea wiwi
-Mawirouter.route("/deleteRecipe/:id").delete(deleteRecipe); //mtea wiwi
-Mawirouter.route("/recipelike/:name").put(Like); //mtea wiwi
-Mawirouter.route("/recipedislike/:name").put(disLike); //mtea wiwi
-Mawirouter.route("/onerecipe/:name").get(getOneRecipe); //mtea wiwi
-Mawirouter.route("/emptyCart").delete(emptyCart); //mtea wiwi
-Mawirouter.route('/getAllUsers').get(getAllUsers)//mtea maryem
-Mawirouter.route('/deleteUser/:name').delete(deleteUser)//mtea maryem
-Mawirouter.route("/UpdateItem/:name").put(UpdateItem);//mtea maryem
-Mawirouter.route('/deleteElement/:name').delete(deleteElement)//mtea maryem
-Mawirouter.route('/deletePost/:name').delete(deletePost)//mtea maryem
+Mawirouter.route('/deletePost/:name').delete(deletePost)
+Mawirouter.route('/getAllPost').get(getAllPosts)
 
-Mawirouter.route('/getAllPost').get(getAllPosts)//mtea maryem
-Mawirouter.route('/postRecipes').post(PostRecipe)//mtea wiwi
-Mawirouter.route("/signup").post(SignUp);
-Mawirouter.route("/login").post(Login);
 
+// Cart
+Mawirouter.route("/emptyCart").delete(emptyCart); 
+//  Shop
+Mawirouter.route("/UpdateItem/:name").put(UpdateItem);
+Mawirouter.route('/deleteElement/:name').delete(deleteElement)
 Mawirouter.route("/shop").post(postShop)//mta mimi
 Mawirouter.route("/allShop").get(getAllShop); // mta mimi
 
+//user Requests
+Mawirouter.route("/getUser/:name").get(getUser); 
+Mawirouter.route("/getUser/:name").put(UpdateUser); 
+Mawirouter.route('/getAllUsers').get(getAllUsers)
+Mawirouter.route('/deleteUser/:name').delete(deleteUser)
+Mawirouter.route("/signup").post(SignUp);
+Mawirouter.route("/login").post(Login);
 Mawirouter.route("/check").post(CheckUser);
+
+//Recipe Requests
+Mawirouter.route("/getallrecipes").get(GetAllRecipes); 
+Mawirouter.route("/deleteRecipe/:id").delete(deleteRecipe); 
+Mawirouter.route("/recipelike/:name").put(Like); 
+Mawirouter.route("/recipedislike/:name").put(disLike); 
+Mawirouter.route("/onerecipe/:name").get(getOneRecipe); 
+Mawirouter.route('/postRecipes').post(PostRecipe)
+
+//
+
+
+
 
 
 

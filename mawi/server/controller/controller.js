@@ -70,10 +70,10 @@ const CheckUser = async (req, res) => {
     const oldPassword = await bcrypt.hash(req.body.oldPassword, 10);
     const NewPassword = req.body.newPassword
 
-    console.log(oldPassword, '     ', NewPassword);
+    
 
     let Check = await bcrypt.compare(NewPassword, oldPassword);
-    console.log(Check);
+   
     if (Check) {
 
       return res.json(true);
@@ -102,7 +102,7 @@ const UpdateUser = async (req, res) => {
     })
 
 
-    console.log(result);
+ 
     await User.findOneAndUpdate(
       { Uname: username },
       { Uname, Uimage: result.url, Upassword: Password }
