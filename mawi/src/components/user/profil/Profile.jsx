@@ -31,23 +31,6 @@ const Finaleprofile = (props) => {
       setPreviewSource(reader.result);
     };
   };
-  // const Update = (old, newP, confirm, body) => {
-  //   if (newP.length >= 8 && confirm === newP) {
-  //     console.log(old, "old", newP, "new");
-  //     axios
-  //       .post("http://localhost:5000/user/check", {
-  //         oldPassword: old,
-  //         newPassword: newP,
-  //       })
-  //       .then((res) => {
-  //         console.log(res.data);
-  //         if (res.data === true) {
-  //           Uploaddata(body).then((res) => console.log("passed"));
-  //         }
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  // };
   const Uploaddata = (body) => {
     axios
       .put(`http://localhost:5000/user/getUser/${props.user.Uname}`, body)
@@ -249,7 +232,7 @@ const Finaleprofile = (props) => {
                             </div>
                           </div>
                         </div>
-                        <div className="col-sm-8">
+                        <div className="col-sm-12">
                           <div className="card-block">
                             <div>
                               <h6 className="m-b-20 row p-b-5 b-b-default f-w-600">
@@ -277,10 +260,11 @@ const Finaleprofile = (props) => {
                                     style={{ width: "90%" }}
                                     defaultValue={props.user.Uemail}
                                   />
-                                </h6>
+                                </h6>   <br></br>
                               </div>
+                           
                             </div>
-                            <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">
+                            <h6 className="m-b-20 m-t-40  p-b-5 b-b-default f-w-600">
                               Password
                             </h6>
                             <div className="row">
@@ -288,6 +272,7 @@ const Finaleprofile = (props) => {
                                 <p className="m-b-10 f-w-600"></p>
                                 <h6 className="text-muted f-w-600">
                                   type ur old password
+                                
                                   <input
                                     onChange={(e) =>
                                       setancientPassword(e.target.value)
@@ -296,8 +281,9 @@ const Finaleprofile = (props) => {
                                     style={{ width: "90%" }}
                                     placeholder="password"
                                   />
-                                </h6>
+                                </h6><br></br>
                               </div>
+                              
                               <div className="col-12">
                                 <p className="m-b-10 f-w-600"></p>
                                 <h6 className="text-muted f-w-600">
@@ -310,7 +296,7 @@ const Finaleprofile = (props) => {
                                     style={{ width: "90%" }}
                                     placeholder="password"
                                   />
-                                </h6>
+                                </h6>  <br></br>
                               </div>
                               <div className="col-12">
                                 <p className="m-b-10 f-w-600"></p>
@@ -327,7 +313,7 @@ const Finaleprofile = (props) => {
                                 </h6>
                               </div>
                             </div>
-                            <ul className="social-link list-unstyled m-t-40 m-b-10">
+                            <ul className="social-link list-unstyled m-t-30 m-b-10">
                               <li>
                                 <a
                                   href="/"
@@ -375,7 +361,7 @@ const Finaleprofile = (props) => {
                               </li>
                             </ul>
                           </div>
-                          <div className="m-4 text-center">
+                          <div className="m-4 text-center text-center">
                             <button
                               onClick={() => {
                                 Uploaddata({
@@ -385,7 +371,7 @@ const Finaleprofile = (props) => {
                                   password: newPassword,
                                 });
                               }}
-                              className=" center btn btn-info btn-rounded"
+                              className="   btn btn-outline-success btn-rounded"
                             >
                               update
                             </button>
