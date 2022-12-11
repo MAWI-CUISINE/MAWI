@@ -8,10 +8,10 @@ const Singleingr = (props) => {
           <input
             type="checkbox"
             className="custom-control-input"
-            id="customCheck1"
+            id={`customCheck${props.i}`}
           />
-          <label className="custom-control-label" htmlFor="customCheck1">
-           { props.e}
+          <label className="custom-control-label" htmlFor={`customCheck${props.i}`}>
+            {props.e}
           </label>
         </div>
       </div>

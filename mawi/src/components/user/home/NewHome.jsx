@@ -379,7 +379,11 @@ const NewHome = () => {
               <div className="download_text">
                 <h3>Download app to get recipes from Everywhere</h3>
                 <div className="download_android_apple">
-                  <a className="active" target="blank" href="https://youtu.be/dQw4w9WgXcQ">
+                  <a
+                    className="active"
+                    target="blank"
+                    href="https://youtu.be/dQw4w9WgXcQ"
+                  >
                     <div className="download_link d-flex">
                       <FontAwesomeIcon icon="fa-brands fa-apple" />
                       <div className="store">
@@ -388,7 +392,7 @@ const NewHome = () => {
                       </div>
                     </div>
                   </a>
-                  <a href="https://youtu.be/dQw4w9WgXcQ">
+                  <a target="blank" href="https://youtu.be/dQw4w9WgXcQ">
                     <div className="download_link d-flex">
                       <FontAwesomeIcon icon="fa-brands fa-android" />
                       <div className="store">
