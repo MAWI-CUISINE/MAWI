@@ -7,6 +7,17 @@ const cloudinary = require("../cloudinary");
 
 
 
+const emptyCart = async (req, res) => {
+  
+  try {
+     Cart.deleteMany({ }, (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};
 const deleteRecipe=async(req,res)=>{
 let id=req.params.id
 try {
@@ -34,6 +45,7 @@ const Password= await bcrypt.hash(body.password,10)
     })
   } catch (err) {
     console.log(err,'err');
+    alert('fuckoff')
   }
 }
 
@@ -161,7 +173,15 @@ const getAllPosts = async (req, res) => {
     res.json(err)
   }
 }
-
+const getAllUsers = async (req, res) => {
+  try {
+    await User.find({admin:false}).then((result) => {
+      res.json(result);
+    });
+  } catch (err) {
+    res.json(err);
+  }
+};
 const postShop = async (req, res) => {
   const body = req.body
   try {
@@ -216,7 +236,20 @@ const upTotal = async (req, res) => {
     res.json(err)
   }
 }
-
+const UpdateItem = async (req, res) => {
+  try {
+     Shop.findOneAndUpdate(
+      { Sname: req.params.name },
+      {Sname:req.body.name,Sprice:req.body.price},
+      (err, result) => {
+        if (err) console.log(err);
+        res.json(result);
+      }
+    );
+  } catch (err) {
+    res.json(err);
+  }
+};
 const upQ = async (req, res) => {
   try {
     await Cart.findOneAndUpdate({ ArticleName: req.params.name }, {
@@ -294,7 +327,32 @@ const delte1Cart=async(req,res)=>{
     res.json(error)
   }
   }
+
+const deleteUser = async (req, res) => {
+  let name = req.params.name;
+  try {
+    User.deleteOne({ Uname: name }, (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};
+const deleteElement = async (req, res) => {
+  let name = req.params.name;
+  try {
+    Shop.deleteOne({ Sname: name }, (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};
 module.exports = {
+  deleteElement,
+  deleteUser,
   getOneRecipe,
   Like,
   disLike,
@@ -309,10 +367,10 @@ module.exports = {
   postShop,
   getAllShop,
 
-
+emptyCart,
   deleteRecipe,
-
-
+UpdateItem,
+getAllUsers,
   CheckUser,
   addCart,
   getAllCart,

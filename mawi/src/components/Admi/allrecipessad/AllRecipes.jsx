@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './allRecipes.css'
-import Navbar from '../navbar/Navbar.jsx';
+import Navbar from "../adminNavbar/Navbar";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 const AllRecipes = (props) => {
+  const [allrecipes,setAllRecipes]=useState([])
+ useEffect(() => {
+   axios.get("http://localhost:5000/user/getallrecipes").then((res) => {
+     setAllRecipes(res.data);
+   });
+ }, []);
 const DeleteRecipe=(name)=>{
-axios.delete(`http://localhost:5000/user/delete/Wedding Gift Spaghetti Sauce`);
+axios.delete(`http://localhost:5000/user/delete/${name}`);
 }
   return (
     <div>
@@ -16,30 +22,41 @@ axios.delete(`http://localhost:5000/user/delete/Wedding Gift Spaghetti Sauce`);
             <div className="row">
               <div className="col-12">
                 <div className="section-heading">
-                  <h3>The best Receipies</h3>
+                  <h3></h3>
                 </div>
               </div>
             </div>
             <div className="row">
-              {['','','','','',''].map((e,i)=>{
+              {allrecipes.map((e,i)=>{
                 return (
                   <div className="col-12 col-sm-6 col-lg-4">
                     <div className="single-best-receipe-area mb-30">
                       <img
-                        src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670513504/mawi/insta2_vpzwmj.jpg"
-                        alt=""
+                        onClick={() => {
+                          props.changeview("one");
+                          props.changeRecipe(e);
+                        }}
+                        style={{ width: "339px", height: "339px" }}
+                        src={e.Rimage}
+                        alt="recipeImage"
                       />
-                      <div className="receipe-content">
-                        <a href="receipe-post.html">
-                          <h5>test</h5>
-                        </a>
+                      <div
+                        style={{ width: "339px" }}
+                        className="receipe-content"
+                      >
+                        <h5>{e.Rname}</h5>
+
                         <div className="ratings">
                           <div className="row">
                             <div className="col-5"></div>
-                            <div className="col-2">
+                            <div
+                              className="col-2 btn text-danger"
+                              onClick={() => {
+                                delete e.Rname;
+                              }}
+                            >
                               <FontAwesomeIcon icon="fa-solid fa-trash" />
                             </div>
-                           
                           </div>
                         </div>
                       </div>
