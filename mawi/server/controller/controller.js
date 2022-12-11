@@ -21,7 +21,7 @@ const emptyCart = async (req, res) => {
 const deleteRecipe=async(req,res)=>{
 let id=req.params.id
 try {
-  await Recipe.deleteOne({Rname:id},(err,result)=>{
+   Recipe.deleteOne({Rname:id},(err,result)=>{
     if(err)console.log(err)
     res.json(result)
   })

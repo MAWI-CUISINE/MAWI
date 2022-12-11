@@ -11,7 +11,14 @@ const AllRecipes = (props) => {
    });
  }, []);
 const DeleteRecipe=(name)=>{
-axios.delete(`http://localhost:5000/user/delete/${name}`);
+axios
+  .delete(`http://localhost:5000/user/deleteRecipe/${name}`)
+  .then((res) => {
+    axios.get("http://localhost:5000/user/getallrecipes").then((res) => {
+      setAllRecipes(res.data);
+    });
+  })
+  .catch((err) => alert("Error deleting"));
 }
   return (
     <div>
@@ -51,8 +58,8 @@ axios.delete(`http://localhost:5000/user/delete/${name}`);
                             <div className="col-5"></div>
                             <div
                               className="col-2 btn text-danger"
-                              onClick={() => {
-                                delete e.Rname;
+                              onClick={() => {console.log('hi');
+                                DeleteRecipe(e.Rname)
                               }}
                             >
                               <FontAwesomeIcon icon="fa-solid fa-trash" />
