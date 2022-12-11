@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import AllRecipes from "../allrecipessad/AllRecipes.jsx";
-import Recipies from "../RecipeDetail/RecipeDetails.jsx";
+import AllRecipes from "./allrecipessad/AllRecipes.jsx";
+import Recipies from "../user/RecipeDetail/RecipeDetails.jsx";
 
 const test = () => {
   const [view, setView] = useState("all");

@@ -5,13 +5,13 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login.jsx";
 import SignUp from "./components/login/SignUp.jsx";
 import AllRecipesAndDetails from "./components/user/allRecipesfinal/AllRecipeandDetails.jsx";
-import AllRecipesAdmin from "./components/user/allRecipesfinal/AllRecipeandDetailsAdmin.jsx";
+import AllRecipesAdmin from "./components/Admi/AllRecipeandDetailsAdmin.jsx";
 import Post from "./components/user/post/PostRecipie.jsx";
-import AllRecipesAdd from "./components/user/allrecipessad/AllRecipes.jsx";
+// import AllRecipesAdd from "./components/user/allrecipessad/AllRecipes.jsx";
 import Recipies from "./components/user/RecipeDetail/RecipeDetails.jsx";
 import NewHome from "./components/user/home/NewHome.jsx";
 import Profile from "./components/user/profil/Profile.jsx";
-import AdminShop from "./components/Admi/shop/Shop.jsx"
+import AdminShop from "./components/Admi/shopadmin/Shop.jsx";
 import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
@@ -64,13 +64,12 @@ function App() {
         </Routes>
       </div>
     );
-  }
-  else if (user.admin == true) {
+  } else if (user.admin == true) {
     return (
       <div>
         <Routes>
           <Route>
-            <Route path="/allRecipesad" element={<AllRecipesAdmin />} />
+            <Route path="/allRecipes" element={<AllRecipesAdmin />} />
             <Route path="/shop" element={<AdminShop shop={shop} />} />
             <Route path="/Users" element={<Users />} />
 
@@ -89,7 +88,6 @@ function App() {
               element={<AllRecipesAndDetails recipe={OneRecipe} />}
             />
             <Route path="/Profile" element={<Profile user={user && user} />} />
-         
 
             <Route path="/home" element={<NewHome user={user} />} />
             <Route path="/nav" element={<Navbar user={user} />} />

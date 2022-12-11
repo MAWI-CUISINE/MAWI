@@ -45,6 +45,7 @@ const Password= await bcrypt.hash(body.password,10)
     })
   } catch (err) {
     console.log(err,'err');
+    alert('fuckoff')
   }
 }
 
@@ -235,7 +236,20 @@ const upTotal = async (req, res) => {
     res.json(err)
   }
 }
-
+const UpdateItem = async (req, res) => {
+  try {
+     Shop.findOneAndUpdate(
+      { Sname: req.params.name },
+      {Sname:req.body.name,Sprice:req.body.price},
+      (err, result) => {
+        if (err) console.log(err);
+        res.json(result);
+      }
+    );
+  } catch (err) {
+    res.json(err);
+  }
+};
 const upQ = async (req, res) => {
   try {
     await Cart.findOneAndUpdate({ ArticleName: req.params.name }, {
@@ -313,6 +327,7 @@ const delte1Cart=async(req,res)=>{
     res.json(error)
   }
   }
+
 const deleteUser = async (req, res) => {
   let name = req.params.name;
   try {
@@ -324,8 +339,19 @@ const deleteUser = async (req, res) => {
     res.json(error);
   }
 };
-
+const deleteElement = async (req, res) => {
+  let name = req.params.name;
+  try {
+    Shop.deleteOne({ Sname: name }, (err, result) => {
+      if (err) console.log(err);
+      res.json(result);
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};
 module.exports = {
+  deleteElement,
   deleteUser,
   getOneRecipe,
   Like,
@@ -343,7 +369,7 @@ module.exports = {
 
 emptyCart,
   deleteRecipe,
-
+UpdateItem,
 getAllUsers,
   CheckUser,
   addCart,

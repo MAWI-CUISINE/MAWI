@@ -121,8 +121,7 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-                    <Dropdown.Item href="/cart">cart</Dropdown.Item>
+                 
                     <Dropdown.Item onClick={() => logOut()}>
                       logOut
                     </Dropdown.Item>
