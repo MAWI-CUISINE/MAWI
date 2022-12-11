@@ -17,8 +17,8 @@ const OneElement = ({ e }) => {
       .catch((err) => alert("an error occured"));
   }; 
   return (
-    <div>
-      <div className="col mb-5">
+    <div >
+      <div className="col mb-5"style={{width:'300px', height:'500px'}}>
         <div className="card h-100">
           {/* <!-- Product image-->  */}
           <img

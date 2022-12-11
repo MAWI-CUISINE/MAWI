@@ -70,6 +70,7 @@ function App() {
         <Routes>
           <Route>
             <Route path="/allRecipes" element={<AllRecipesAdmin />} />
+            <Route path="/" element={<AllRecipesAdmin />} />
             <Route path="/shop" element={<AdminShop shop={shop} />} />
             <Route path="/Users" element={<Users />} />
 
