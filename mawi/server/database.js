@@ -134,7 +134,7 @@ const PostSchema = new mongoose.Schema({
     },
     Pcategorie: {
         type: String,
-        enum: ["breakfast", "dinner", "desert"]
+        enum: ["breakfast", "dinner", "dessert"]
     },
     Pdescription:{type:String},
     // Uname:{type:String}

@@ -5,6 +5,7 @@ import BootstrapSelect from "react-bootstrap-select-dropdown";
 import "./post.css";
 import Navbar from "../navbar/Navbar.jsx";
 const PostRecipe = (props) => {
+  console.log(props);
   const [Pname, setPname] = useState("");
   const [Ppeparation_time, setPpeparation_time] = useState(0);
   const [Pcook_time, setPcook_time] = useState(0);
@@ -20,10 +21,38 @@ const PostRecipe = (props) => {
     setPcategorie(e.selectedValue[0]);
   };
   const add = (para) => {
+    let {
+                    Pname,
+                    Ppeparation_time,
+                    Pcook_time,
+                    Pserves,
+
+                    Pingredients,
+                    Pmethodecook,
+                    Pimage,
+                    Pcategorie,
+                   
+                  }=para
+     Pmethodecook = Pmethodecook.split(".");
+     Pingredients = Pingredients.split(".");
+ 
+ 
+
     axios
-      .post("http://localhost:5000/user/post", para)
+      .post("http://localhost:5000/user/post", {
+        Pname,
+        Ppeparation_time,
+        Pcook_time,
+        Pserves,
+
+        Pingredients,
+        Pmethodecook,
+        Pimage,
+        Pcategorie,
+      })
       .then((res) => {
         console.log(res);
+        alert("suxxess");
       })
       .catch((err) => console.log(err));
   };
@@ -115,11 +144,11 @@ const PostRecipe = (props) => {
               />
             </div>
 
-
             <div className="row ">
               <div className="">
                 <h4>Ingredients:</h4>
                 <textarea
+                  placeholder="please separete ur ingredients  with a   '.'"
                   className="Array"
                   type="text"
                   onChange={(event) => setPingredients(event.target.value)}
@@ -130,6 +159,7 @@ const PostRecipe = (props) => {
               <div className="">
                 <h4>Method to cook:</h4>
                 <textarea
+                  placeholder="please separete ur methods  with a   '.'"
                   className="Array"
                   type="text"
                   onChange={(event) => setPmethodecook(event.target.value)}
@@ -137,7 +167,7 @@ const PostRecipe = (props) => {
               </div>
             </div>
             <div className="p-t-30">
-              <button 
+              <button
                 className="btn btn--radius btn-success"
                 type="submit"
                 onClick={() => {
@@ -146,12 +176,12 @@ const PostRecipe = (props) => {
                     Ppeparation_time,
                     Pcook_time,
                     Pserves,
-                  
-                    Pingredients: [Pingredients],
-                    Pmethodecook: [Pmethodecook],
+
+                    Pingredients,
+                    Pmethodecook,
                     Pimage,
                     Pcategorie,
-                    Uname:props.user
+                   
                   });
                 }}
               >
