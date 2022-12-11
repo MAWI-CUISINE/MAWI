@@ -62,7 +62,7 @@ const PostRecipe = (props) => {
       <div className="hi p-5  justify-content-center">
         <div className="row maindiv border ">
           <div className="imageforwiwi col-4"></div>
-          <div className="col-6 inputs">
+          <div className="col-7 inputs">
             {/* TODO */}
             <h2 className="title"></h2>
 
@@ -166,8 +166,9 @@ const PostRecipe = (props) => {
                 />
               </div>
             </div>
-            <div className="p-t-30">
-              <button
+            <div className="p-t-30 row">
+              <div className="col-10"></div>
+              <div className="col p-2"> <button
                 className="btn btn--radius btn-success"
                 type="submit"
                 onClick={() => {
@@ -186,7 +187,9 @@ const PostRecipe = (props) => {
                 }}
               >
                 Post
-              </button>
+              </button></div>
+
+             
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ const Foot = () => {
           <div className="single-insta-feeds">
             <img src={e} alt="" />
             <div className="insta-icon">
-              <a href="/">
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                 <FontAwesomeIcon icon="fa-brands fa-instagram" />
               </a>
             </div>
@@ -45,22 +45,22 @@ const Foot = () => {
         <div className="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
           {/* <!-- Footer Social Info --> */}
           <div className="footer-social-info text-right">
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
               <FontAwesomeIcon icon="fa-brands fa-pinterest" />
             </a>
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
               <FontAwesomeIcon icon="fa-brands fa-facebook" />
             </a>
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
               <FontAwesomeIcon icon="fa-brands fa-twitter" />
             </a>
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
               <FontAwesomeIcon icon="fa-brands fa-dribbble" />
             </a>
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
               <FontAwesomeIcon icon="fa-brands fa-behance" />
             </a>
-            <a href="/">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
               <FontAwesomeIcon icon="fa-brands fa-linkedin" />
             </a>
           </div>

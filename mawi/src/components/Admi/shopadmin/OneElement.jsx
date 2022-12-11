@@ -5,7 +5,7 @@ const OneElement = ({ e }) => {
     const [originalname,setOriginalName]=useState(e.Sname)
   const [price, setPrice] = useState(e.Sprice);
   const [name, setName] = useState(e.Sname);
-  console.log(price,name);
+  
   const UpdateElement=(element,body)=>{
     axios
       .put(`http://localhost:5000/user/UpdateItem/${element}`, body)
@@ -17,8 +17,8 @@ const OneElement = ({ e }) => {
       .catch((err) => alert("an error occured"));
   }; 
   return (
-    <div>
-      <div className="col mb-5">
+    <div >
+      <div className="col mb-5"style={{width:'300px', height:'500px'}}>
         <div className="card h-100">
           {/* <!-- Product image-->  */}
           <img
