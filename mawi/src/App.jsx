@@ -15,8 +15,8 @@ import AdminShop from "./components/Admi/shopadmin/Shop.jsx";
 import jwt_decode from "jwt-decode";
 import Navbar from "./components/user/navbar/Navbar.jsx";
 import Shop from "./components/shop/Shop.jsx";
-import Users from "./components/user/users/Users.jsx";
-import Approve from "./components/user/approval/Approve.jsx";
+import Users from "./components/Admi/users/Users.jsx";
+import Approve from "./components/Admi/approval/Approve.jsx";
 
 import Cart from "./components/cart/Cart.jsx";
 function App() {
