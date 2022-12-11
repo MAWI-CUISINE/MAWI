@@ -59,7 +59,7 @@ axios
                             <div className="col-5"></div>
                             <div
                               className="col-2 btn text-danger"
-                              onClick={() => {console.log('hi');
+                              onClick={() => {
                                 DeleteRecipe(e.Rname)
                               }}
                             >

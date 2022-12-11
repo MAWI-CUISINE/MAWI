@@ -11,8 +11,8 @@ const AllRecipes = (props) => {
       setAllRecipes(res.data)
     })
   }, [])
- const filter=(para)=>{
-    axios.get(`http://localhost:5000/user/filter/${para}`).then(res =>{
+  const filter = (para) => {
+    axios.get(`http://localhost:5000/user/filter/${para}`).then(res => {
       setAllRecipes(res.data)
     })
   }
@@ -30,21 +30,22 @@ const AllRecipes = (props) => {
                   <button type="button" className="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     categories
                   </button>
+
                   <div className="dropdown-menu">
                     <a className="dropdown-item" href="#"
-                     onClick={()=>{
-                      filter("breakfast")
-                    }}
+                      onClick={() => {
+                        filter("breakfast")
+                      }}
                     >breakfast</a>
                     <a className="dropdown-item" href="#"
-                    onClick={()=>{
-                      filter("dnner")
-                    }}
+                      onClick={() => {
+                        filter("dnner")
+                      }}
                     >dinner</a>
                     <a className="dropdown-item" href="#"
-                    onClick={()=>{
-                      filter("dessert")
-                    }}
+                      onClick={() => {
+                        filter("dessert")
+                      }}
                     >dessert</a>
                   </div>
                 </div>
@@ -94,8 +95,10 @@ const AllRecipes = (props) => {
 
               {/* Single Best Receipe Area */}
 
-            </div>
+            </div> <div className='row postition-absolute bottom-0  end-0'><div className='col-9'></div><div className='col'> join our coumunity by posting a recipe</div><div className='col'><button className='btn btn-outline-success ' onClick={() => { window.location.href = '/post' }}>Add Recepie</button></div></div>
           </div>
+
+
         </section>
         {/* ##### Best Receipe Area End ##### */}
       </>

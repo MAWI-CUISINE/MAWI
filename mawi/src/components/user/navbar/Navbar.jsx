@@ -40,7 +40,7 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
           <div className=" container-fluid">
             <div className="collapse navbar-collapse row" id="navbarNav">
               <a className="navbar-brand col-4" href="#">
-                <img
+                <img 
                   src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670434638/mawi/Brown_Illustration_Traditional_Food_Logo-removebg-preview_v6tutd.png"
                   alt=""
                   width="100"
@@ -49,44 +49,46 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                 />
                 MAWI
               </a>
-              <ul className="navbar-nav col-5">
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/home"
-                    style={{ color: "white" }}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/shop"
-                    style={{ color: "white" }}
-                  >
-                    Shop
-                  </a>
-                </li>
-                <li className="nav-item" style={{ color: "white" }}>
-                  <a
-                    className="nav-link"
-                    href="/allrecipes"
-                    style={{ color: "white" }}
-                  >
-                    Recipes
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="/about"
-                    style={{ color: "white" }}
-                  >
-                    About
-                  </a>
-                </li>
-              </ul>
+             <ul className='col-5 row '
+                        style={{ position: "relative", bottom: "15px" }}
+                        id="navigation"
+                      >
+                        <li className='col' onClick={()=>{
+                          window.location.href="/home"
+                        }}>
+                         
+                            <h4 style={{ color: "white" }} href="/home">
+                              Home
+                            </h4>
+                        
+                        </li>
+                        <li className='col' onClick={()=>{
+                          window.location.href="/shop"
+                        }}>
+                         
+                            <h4 style={{ color: "white" }} href="/shop">
+                              Shop
+                            </h4>
+                        
+                        </li>
+                        <li className='col' onClick={()=>{
+                          window.location.href="/allrecipes"
+                        }}>
+                         
+                            <h4 style={{ color: "white" }}>Recipes</h4>
+                       
+                         
+                        </li>
+                        <li className='col' onClick={()=>{
+                          window.location.href="/about"
+                        }}>
+                      
+                            <h4 style={{ color: "white" }} href="/about">
+                              About
+                            </h4>
+                        
+                        </li>
+                      </ul>
               <div
                 style={{ position: "relative", left: "10%" }}
                 className=" col-2"
