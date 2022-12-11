@@ -111,7 +111,7 @@ const DisLike=(nama)=>{
 
                     {One &&
                       One.Ringredients.map((e, i) => (
-                        <Singleingr e={e} />
+                        <Singleingr e={e} i={i}/>
                       ))}
                   </div>
                 </div>
