@@ -164,14 +164,7 @@ Pdescription,
                 onChange={(event) => setPcook_time(event.target.value)}
               />
             </div>
-            <div className="input">
-              <input
-                className="input--style-2 js-datepicker"
-                type="text"
-                placeholder="Recipe image url :"
-                onChange={(event) => setPimage(event.target.value)}
-              />
-            </div>
+         
 
             <div className="input">
               <input
