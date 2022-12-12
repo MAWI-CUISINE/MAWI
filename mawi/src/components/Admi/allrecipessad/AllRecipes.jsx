@@ -37,7 +37,7 @@ axios
             <div className="row">
               {allrecipes.map((e,i)=>{
                 return (
-                  <div className="col-12 col-sm-6 col-lg-4">
+                  <div key={i} className="col-12 col-sm-6 col-lg-4">
                     <div className="single-best-receipe-area mb-30">
                       <img
                         onClick={() => {

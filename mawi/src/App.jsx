@@ -88,6 +88,7 @@ function App() {
               element={<AllRecipesAndDetails recipe={OneRecipe} />}
             />
             <Route path="/Profile" element={<Profile user={user && user} />} />
+            <Route path="/" element={<NewHome user={user} />} />
 
             <Route path="/home" element={<NewHome user={user} />} />
             <Route path="/nav" element={<Navbar user={user} />} />

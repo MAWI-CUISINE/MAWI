@@ -6,6 +6,7 @@ import Foot from '../footer/Foot';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const AllRecipes = (props) => {
   const [allRecipes, setAllRecipes] = useState([])
+  const [searching,setSearching]=useState('')
   useEffect(() => {
     axios.get("http://localhost:5000/user/getallrecipes").then(res => {
       setAllRecipes(res.data)
@@ -16,6 +17,18 @@ const AllRecipes = (props) => {
       setAllRecipes(res.data)
     })
   }
+  
+//   const search = async(para) => {
+    
+//     let searcharray=await allRecipes.filter((e) =>
+//    
+      
+//      JSON.stringify(e.Rname).includes(JSON.stringify(para));}
+//       )
+//     
+// setAllRecipes(searcharray)
+    
+//   }
   return (
     <div>
       <>
@@ -40,7 +53,7 @@ const AllRecipes = (props) => {
                     >breakfast</a>
                     <a className="dropdown-item" href="#"
                       onClick={() => {
-                        filter("dnner")
+                        filter("di  nner")
                       }}
                     >dinner</a>
                     <a className="dropdown-item" href="#"
@@ -51,17 +64,22 @@ const AllRecipes = (props) => {
                   </div>
                 </div>
                 <div className='col-6'></div>
-                <div className="col input-group">
+                {/* <div className="col input-group">
     <div className="form-outline">
-      <input type="search" id="form1" className="form-control" />
+      <input type="text" placeholder='search for a recipe' onChange={e=>setSearching(e.target.value)} id="form1" className="form-control" />
     
     </div>
-    <button type="button" className="btn btn-outline-success">
+    <button type="button" onClick={()=>search(searching)} className="btn btn-outline-success">
       <i className="fas fa-search" />
     </button>
   
-  </div></div>
-                <div className="section-heading">
+  </div> */}
+  </div>
+                <div onClick={()=>{ axios
+                  .get("http://localhost:5000/user/getallrecipes")
+                  .then((res) => {
+                    setAllRecipes(res.data);
+                  });}} className="section-heading">
                   <h3>The best Receipies</h3>
                 </div>
               </div>
@@ -69,7 +87,7 @@ const AllRecipes = (props) => {
             <div className="row align-items-start">
               {allRecipes.map((e, i) => {
                 return (
-                  <div className="col col-sm-6 col-lg-4" onClick={() => {
+                  <div key={i} className="col col-sm-6 col-lg-4" onClick={() => {
                     props.changeview('one')
                     props.changeRecipe(e)
                   }} >
