@@ -51,7 +51,7 @@ setAllRecipes(searcharray)
                     >breakfast</a>
                     <a className="dropdown-item" href="#"
                       onClick={() => {
-                        filter("di  nner")
+                        filter("dinner")
                       }}
                     >dinner</a>
                     <a className="dropdown-item" href="#"
