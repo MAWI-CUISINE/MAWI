@@ -17,8 +17,9 @@ const approve=(name,body)=>{
           axios
             .get(`http://localhost:5000/user/getAllPost`)
             .then((response) => {
-              setSuggestion(response.data);
-              alert("yayy");
+              let filtred=response.data.filter(e=>e.Pname)
+              setSuggestion(filtred);
+           
             });
         });
     })
@@ -34,7 +35,8 @@ const deny=(name)=>{
 }
   useEffect(() => {
     axios.get(`http://localhost:5000/user/getAllPost`).then((response) => {
-      setSuggestion(response.data);
+     let filtred = response.data.filter((e) => e.Pname);
+     setSuggestion(filtred);
     });
   }, []);
  
