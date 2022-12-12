@@ -65,7 +65,7 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                         className="col-3 bg-danger rounded-circle "
                         style={{ width: "10%" }}
                       >
-                        {PostsToApprove}
+                        {PostsToApprove-1}
                       </div>{" "}
                       <div className="col-6">pending</div>
                     </div>
