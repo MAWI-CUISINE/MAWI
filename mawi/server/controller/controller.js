@@ -151,6 +151,7 @@ const addPost = async (req, res) => {
 const PostRecipe = async (req, res) => {
 
   const body = req.body
+  console.log(body);
   try {
     await Recipe.create(body, (err, result) => {
       if (err) res.json(err)
