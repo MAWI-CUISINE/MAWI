@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import AllRecipes from "./allrecipessad/AllRecipes.jsx";
 import Recipies from "./RecipeDetail/RecipeDetails.jsx";
 
-const test = () => {
+const AllrecipesAd = () => {
   const [view, setView] = useState("all");
   const [allRecipes, setAllRecipes] = useState([]);
   const [OneRecipe, setOneRecipe] = useState({});
@@ -31,4 +31,4 @@ const test = () => {
   } else return <Recipies recipe={OneRecipe} />;
 };
 
-export default test;
+export default AllrecipesAd;
