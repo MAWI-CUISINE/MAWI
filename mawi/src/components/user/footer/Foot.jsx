@@ -24,17 +24,17 @@ const Foot = () => {
         {/* <!-- Instagram Feeds --> */}
         <div className="insta-feeds d-flex flex-wrap">
           {Im.map((e, i) => (
-            <div key={i}>
-              {/* <!-- Single Insta Feeds --> */}
-              <div className="single-insta-feeds">
+           
+           
+              <div key={i} className="single-insta-feeds">
                 <img src={e} alt="" />
                 <div className="insta-icon">
-                  <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                     <FontAwesomeIcon icon="fa-brands fa-instagram" />
                   </a>
                 </div>
               </div>
-            </div>
+           
           ))}
         </div>
       </div>
@@ -45,22 +45,22 @@ const Foot = () => {
             <div className="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
               {/* <!-- Footer Social Info --> */}
               <div className="footer-social-info text-right">
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                   <FontAwesomeIcon icon="fa-brands fa-pinterest" />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                   <FontAwesomeIcon icon="fa-brands fa-facebook" />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                   <FontAwesomeIcon icon="fa-brands fa-twitter" />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                   <FontAwesomeIcon icon="fa-brands fa-dribbble" />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                   <FontAwesomeIcon icon="fa-brands fa-behance" />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                   <FontAwesomeIcon icon="fa-brands fa-linkedin" />
                 </a>
               </div>
