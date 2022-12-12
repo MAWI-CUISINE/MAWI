@@ -18,17 +18,15 @@ const AllRecipes = (props) => {
     })
   }
   
-//   const search = async(para) => {
+  const search = async(para) => {
+
+    let searcharray = allRecipes.filter((e) =>
+      e.Rname.toLowerCase().includes(para.toLowerCase())
+    );
     
-//     let searcharray=await allRecipes.filter((e) =>
-//    
-      
-//      JSON.stringify(e.Rname).includes(JSON.stringify(para));}
-//       )
-//     
-// setAllRecipes(searcharray)
+setAllRecipes(searcharray)
     
-//   }
+  }
   return (
     <div>
       <>
@@ -64,7 +62,7 @@ const AllRecipes = (props) => {
                   </div>
                 </div>
                 <div className='col-6'></div>
-                {/* <div className="col input-group">
+                <div className="col input-group">
     <div className="form-outline">
       <input type="text" placeholder='search for a recipe' onChange={e=>setSearching(e.target.value)} id="form1" className="form-control" />
     
@@ -73,7 +71,7 @@ const AllRecipes = (props) => {
       <i className="fas fa-search" />
     </button>
   
-  </div> */}
+  </div>
   </div>
                 <div onClick={()=>{ axios
                   .get("http://localhost:5000/user/getallrecipes")
