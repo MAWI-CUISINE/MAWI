@@ -56,25 +56,14 @@ const About = () => {
       <div className="row">
         <div className="col-12">
           <h6 className="sub-heading pb-5">
-            Donec quis metus ac arcu luctus accumsan. Nunc in justo tincidunt,
-            sodales nunc id, finibus nibh. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos. Fusce
-            nec ante vitae lacus aliquet vulputate. Donec scelerisque accumsan
-            molestie. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia Curae
+          Abdelkefi Mariem , Amdouni Amine and Mimouni Wiem
+         we are 3 web developpers ,  ambitious students and especially food lovers that's why
+           we created this website to give people the chance to make their life feel tasty .
           </h6>
           <p className="text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque
-            tortor. Aenean congue sed metus in iaculis. Cras a tortor enim.
-            Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius
-            natoque penatibus et magnis dis parturient montes, nascetur
-            ridiculus mus. Proin malesuada et mauris ut lobortis. Sed eu iaculis
-            sapien, eget luctus quam. Aenean hendrerit varius massa quis
-            laoreet. Donec quis metus ac arcu luctus accumsan. Nunc in justo
-            tincidunt, sodales nunc id, finibus nibh. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos.
+          Food for us comes from our relatives, whether they have wings or fins or roots. 
+          That is how we consider food. Food has a culture. It has a history. It has a story. It has relationships. 
+
           </p>
         </div>
       </div>
@@ -124,17 +113,7 @@ const About = () => {
         <div className="col-12">
           <img className="mb-70" src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670756844/mawi/about_pswo9u.png" alt="" />
           <p className="text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            nec varius dui. Suspendisse potenti. Vestibulum ac pellentesque
-            tortor. Aenean congue sed metus in iaculis. Cras a tortor enim.
-            Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius
-            natoque penatibus et magnis dis parturient montes, nascetur
-            ridiculus mus. Proin malesuada et mauris ut lobortis. Sed eu iaculis
-            sapien, eget luctus quam. Aenean hendrerit varius massa quis
-            laoreet. Donec quis metus ac arcu luctus accumsan. Nunc in justo
-            tincidunt, sodales nunc id, finibus nibh. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos
-            himenaeos.
+          Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.
           </p>
         </div>
       </div>
@@ -148,7 +127,7 @@ const About = () => {
       <div className="text-center">
         <h2 className="section-heading text-uppercase">About</h2>
         <h3 className="section-subheading text-muted">
-          Lorem ipsum dolor sit amet consectetur.
+          
         </h3>
       </div>
       <ul className="timeline">
@@ -156,21 +135,18 @@ const About = () => {
           <div className="timeline-image">
             <img
               className="rounded-circle img-fluid"
-              src="assets/img/about/1.jpg"
+              src="https://res.cloudinary.com/dnwi9wvci/image/upload/v1670813365/mawi/wcsjusjc14vj4srsrat7.png"
               alt="..."
             />
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <h4>2009-2011</h4>
+              <h4>septembre 2022</h4>
               <h4 className="subheading">Our Humble Beginnings</h4>
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-                dolore laudantium consectetur!
+                RBK was the component that holds us as props and from there the story begins
               </p>
             </div>
           </div>
@@ -185,15 +161,12 @@ const About = () => {
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <h4>March 2011</h4>
-              <h4 className="subheading">An Agency is Born</h4>
+              <h4>October 2022</h4>
+              <h4 className="subheading">A baby developer is Born</h4>
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-                dolore laudantium consectetur!
+               we've passed to the junior phase after passing 6 weeks in Bootstrap suffering from for loops and while loops , recursion , "google it ", "search for it by your own"
               </p>
             </div>
           </div>
@@ -208,15 +181,12 @@ const About = () => {
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <h4>December 2015</h4>
-              <h4 className="subheading">Transition to Full Service</h4>
+              <h4>from october to november</h4>
+              <h4 className="subheading">Junipr phase</h4>
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-                dolore laudantium consectetur!
+                Actually during this period when you can truly suffer a lot and maybe you will try to kill yourself or throw your laptop out of the window thats why junior phase where the strongest survive and you should keep trying , trusting the process and believing in chkara7oms.
               </p>
             </div>
           </div>
@@ -231,15 +201,12 @@ const About = () => {
           </div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <h4>July 2020</h4>
-              <h4 className="subheading">Phase Two Expansion</h4>
+              <h4>December 2022</h4>
+              <h4 className="subheading">Seniors</h4>
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                quibusdam, recusandae sit vero unde, sed, incidunt et ea quo
-                dolore laudantium consectetur!
+                the fruit of our hard work during the passed three months is the senior phase , where MAWI Kitchen has born 
               </p>
             </div>
           </div>
@@ -263,9 +230,9 @@ const About = () => {
   <section className="page-section bg-light" id="team">
     <div className="container">
       <div className="text-center">
-        <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+        <h2 className="section-heading text-uppercase">Amazing Team</h2>
         <h3 className="section-subheading text-muted">
-          Lorem ipsum dolor sit amet consectetur.
+          
         </h3>
       </div>
       <div className="row">
@@ -369,9 +336,7 @@ const About = () => {
       <div className="row">
         <div className="col-lg-8 mx-auto text-center">
           <p className="large text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-            laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
-            ea, alias ut unde.
+         
           </p>
         </div>
       </div>
