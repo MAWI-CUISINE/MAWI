@@ -16,7 +16,26 @@ const PostRecipe = (props) => {
   const [Pcategorie, setPcategorie] = useState("");
 
   const [Pdescription, setPdescription] = useState("");
-  
+   const [fileInputState, setFileInputState] = useState("");
+   const [previewSource, setPreviewSource] = useState("");
+   const [selectedFile, setSelectedFile] = useState();
+
+   const handleImageUpload = (e) => {
+     const file = e.target.files[0];
+     previewFile(file);
+     setSelectedFile(file);
+     setFileInputState(e.target.value);
+   };
+
+   const [imageUploader, setImageUploader] = useState({ current: null });
+
+   const previewFile = (file) => {
+     const reader = new FileReader();
+     reader.readAsDataURL(file);
+     reader.onloadend = () => {
+       setPreviewSource(reader.result);
+     };
+   };
   const handleChange = (e) => {
     setPcategorie(e.selectedValue[0]);
   };
@@ -26,7 +45,7 @@ const PostRecipe = (props) => {
                     Ppeparation_time,
                     Pcook_time,
                     Pserves,
-
+Pdescription,
                     Pingredients,
                     Pmethodecook,
                     Pimage,
@@ -44,13 +63,14 @@ const PostRecipe = (props) => {
         Ppeparation_time,
         Pcook_time,
         Pserves,
-
+        Pdescription,
         Pingredients,
         Pmethodecook,
         Pimage,
         Pcategorie,
       })
-      
+      .then((res) => (window.location.href = "allrecipes"))
+
       .catch((err) => alert(err));
   };
   return (
@@ -58,10 +78,39 @@ const PostRecipe = (props) => {
       <Navbar />
       <div className="hi p-5  justify-content-center">
         <div className="row maindiv border ">
-          <div className="imageforwiwi col-4"></div>
+          <div className="col-4"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              ref={imageUploader}
+              style={{
+                display: "none",
+              }}
+            />
+            <div
+              className=""
+             
+              onClick={() => imageUploader.current.click()}
+            >
+              <img
+                alt="not"
+                className=""
+                src={previewSource}
+          
+              />
+            </div>
+          </div>
           <div className="col-7 inputs">
             {/* TODO */}
-            <h2 className="title"></h2>
+            <h2 className="title pt-4">add a recipe</h2>
 
             <div className="input row">
               <input
@@ -165,28 +214,29 @@ const PostRecipe = (props) => {
             </div>
             <div className="p-t-30 row">
               <div className="col-10"></div>
-              <div className="col p-2"> <button
-                className="btn btn--radius btn-success"
-                type="submit"
-                onClick={() => {
-                  add({
-                    Pname,
-                    Ppeparation_time,
-                    Pcook_time,
-                    Pserves,
-
-                    Pingredients,
-                    Pmethodecook,
-                    Pimage,
-                    Pcategorie,
-                   
-                  });
-                }}
-              >
-                Post
-              </button></div>
-
-             
+              <div className="col p-2">
+                {" "}
+                <button
+                  className="btn btn--radius btn-success"
+                  type="submit"
+                  onClick={() => {
+                    add({
+                      Pname,
+                      Ppeparation_time,
+                      Pcook_time,
+                      Pserves,
+                      Pdescription,
+                      Pingredients,
+                      Pmethodecook,
+                      Pimage: previewSource,
+                      Pcategorie,
+                    });
+                    
+                  }}
+                >
+                  Post
+                </button>
+              </div>
             </div>
           </div>
         </div>
