@@ -49,7 +49,7 @@ axios.delete("http://localhost:5000/user/emptyCart").then(res=>window.location.h
                 />
                 MAWI
               </a>
-             <ul className='col-5 row '
+             <ul className='col-5 row pt-5 pe-5'
                         style={{ position: "relative", bottom: "15px" }}
                         id="navigation"
                       >
