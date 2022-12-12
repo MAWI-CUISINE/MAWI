@@ -146,7 +146,7 @@ const About = () => {
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                RBK was the component that holds us as props and from there the story begins
+                RBK was the component that held us as props and from there the story begins
               </p>
             </div>
           </div>
@@ -166,7 +166,7 @@ const About = () => {
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-               we've passed to the junior phase after passing 6 weeks in Bootstrap suffering from for loops and while loops , recursion , "google it ", "search for it by your own"
+               we've passed to the junior phase after passing 6 weeks in Bootstrap suffering from the infinite for loops , while loops , recursion , "google it " and "search for it by your own"
               </p>
             </div>
           </div>
@@ -182,11 +182,11 @@ const About = () => {
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4>from october to november</h4>
-              <h4 className="subheading">Junipr phase</h4>
+              <h4 className="subheading">Junior phase</h4>
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                Actually during this period when you can truly suffer a lot and maybe you will try to kill yourself or throw your laptop out of the window thats why junior phase where the strongest survive and you should keep trying , trusting the process and believing in chkara7oms.
+                Actually during this period when you can truly suffer and maybe you will try  to throw your laptop out of the window thats why junior phase where the strongest survive and you should keep trying , trusting the process and believing in chkara7oms.
               </p>
             </div>
           </div>
@@ -206,7 +206,7 @@ const About = () => {
             </div>
             <div className="timeline-body">
               <p className="text-muted">
-                the fruit of our hard work during the passed three months is the senior phase , where MAWI Kitchen has born 
+                the fruit of our hard work during the passed three months is the senior phase , where MAWI Kitchen has been  born 
               </p>
             </div>
           </div>
@@ -247,21 +247,21 @@ const About = () => {
             <p className="text-muted">Scrum Master , The Hardest</p>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Parveen Anand Twitter Profile"
             >
               <i className="fab fa-twitter" />
             </a>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Parveen Anand Facebook Profile"
             >
               <i className="fab fa-facebook-f" />
             </a>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Parveen Anand LinkedIn Profile"
             >
               <i className="fab fa-linkedin-in" />
@@ -279,21 +279,21 @@ const About = () => {
             <p className="text-muted">The Genuis</p>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Diana Petersen Twitter Profile"
             >
               <i className="fab fa-twitter" />
             </a>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Diana Petersen Facebook Profile"
             >
               <i className="fab fa-facebook-f" />
             </a>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Diana Petersen LinkedIn Profile"
             >
               <i className="fab fa-linkedin-in" />
@@ -311,21 +311,21 @@ const About = () => {
             <p className="text-muted">The kindest , The Greatest</p>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Larry Parker Twitter Profile"
             >
               <i className="fab fa-twitter" />
             </a>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Larry Parker Facebook Profile"
             >
               <i className="fab fa-facebook-f" />
             </a>
             <a
               className="btn btn-dark btn-social mx-2"
-              href="#!"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
               aria-label="Larry Parker LinkedIn Profile"
             >
               <i className="fab fa-linkedin-in" />
