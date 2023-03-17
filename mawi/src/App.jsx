@@ -25,7 +25,7 @@ function App() {
   const [shop, setShop] = useState([]);
 
   const [OneRecipe, setOneRecipe] = useState({});
-
+console.log(user);
   
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -35,6 +35,7 @@ function App() {
       if (!user) {
         localStorage.removeItem("token");
       } else {
+        console.log(user);
         axios
           .get(`http://localhost:5000/user/getUser/${user.name}`)
           .then((res) => {
@@ -79,6 +80,7 @@ function App() {
       </div>
     );
   } else {
+    console.log(user);
     return (
       <div>
         <Routes>

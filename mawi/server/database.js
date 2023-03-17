@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://mariem:4545@mawi.mmctnm7.mongodb.net/mawi",{ 
+mongoose
+  .connect("mongodb+srv://root:root@cluster0.fkaxvra.mongodb.net/test", {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-    .then((res) => console.log("data connected"))
-    .catch((err) => console.log(err))
+    useUnifiedTopology: true,
+  })
+  .then((res) => console.log("data connected"))
+  .catch((err) => console.log(err));
 
 
 const UserSchema = new mongoose.Schema({
